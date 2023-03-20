@@ -1,0 +1,223 @@
+/*-----------Style Post Loop of First Post---------------*/
+.post-grid-filter {
+    margin-bottom: 120px;
+    margin-top: 220px
+}
+
+.back_new {
+    color: #2b2b2b;
+}
+
+@media (min-width:1024px) {
+
+    .category-filter-dropdown {
+        min-width: 300px;
+    }
+}
+
+.post-grid-filter .filter-results .loop-post:nth-child(2) {
+    border-top: 1px solid rgba(43, 43, 43, 0.6) !important
+}
+
+.post-grid-filter .heading-section {
+    font-family: Roboto;
+    font-size: 50px;
+    font-weight: 500;
+    line-height: 60px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: var(--blueTheme);
+    margin-bottom: 14px;
+
+}
+
+.filter-results .loop-post1 {
+    margin-bottom: 60px
+}
+
+.pagination-navigation {
+    margin-top: 55px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px
+}
+
+.pagination-navigation .pagination-item {
+    /* border: 1px solid rgba(200, 200, 200, 0.6); */
+    padding: 4px 8px;
+    font-family: Roboto;
+    font-size: 16px !important;
+    font-weight: 500;
+    line-height: 15px;
+    letter-spacing: 0em;
+    text-align: center;
+    cursor: pointer;
+
+}
+
+.pagination-navigation .pagination-item.active-page {
+    background-color: var(--lightBlueTheme);
+    color: white;
+}
+
+/*--------------------FILTER--------------------*/
+.dropdown-filter-area {
+    display: flex;
+    gap: 286px;
+    /* border-top: 1px solid rgba(43, 43, 43, 0.6);
+    border-bottom: 1px solid rgba(43, 43, 43, 0.6); */
+    padding-top: 24px;
+    padding-bottom: 24px;
+    margin-bottom: 60px;
+    margin-top: 60px;
+}
+
+.filter-post {
+    width: fit-content
+}
+
+.filter-post .Dropdown-menu {
+    margin-top: 10px
+}
+
+.filter-post .Dropdown-menu::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+.filter-post .Dropdown-menu::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+.filter-post .Dropdown-menu::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+.filter-post .Dropdown-menu::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.filter-post .Dropdown-control {
+    border: 0px !important;
+    padding: 0px;
+    padding-right: 30px;
+    display: flex;
+    gap: 12px;
+}
+
+.filter-post .Dropdown-control .arrow-closed>span {
+    width: 8px !important;
+}
+
+.filter-post .Dropdown-control .arrow-open>span {
+    width: 8px !important;
+}
+
+.filter-post .Dropdown-placeholder.is-selected {
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: left;
+    text-transform: uppercase;
+
+}
+
+
+@media (max-width:768px) {
+
+    /*-----------Style Post Loop of First Post---------------*/
+    .post-grid-filter {
+        margin-bottom: 72px;
+        margin-top: 118px
+    }
+
+    .post-grid-filter .heading-section {
+        font-family: Roboto;
+        font-size: 30px;
+        font-weight: 500;
+        line-height: 39px;
+        letter-spacing: 0em;
+        text-align: left;
+
+        margin-bottom: 16px;
+
+    }
+
+    .filter-results .loop-post1 {
+        margin-bottom: 24px
+    }
+
+    /*--------------------FILTER--------------------*/
+    .dropdown-filter-area {
+        display: flex;
+        gap: 0px;
+        justify-content: space-between;
+        padding-top: 10px;
+        padding-bottom: 12px;
+        margin-bottom: 24px;
+    }
+
+    .filter-post.category-filter-dropdown {
+        width: 300px
+    }
+
+    .filter-post .Dropdown-menu {
+        margin-top: 10px
+    }
+
+    .filter-post .Dropdown-menu::-webkit-scrollbar {
+        width: 0px !important;
+    }
+
+    /* Track */
+    .filter-post .Dropdown-menu::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    /* Handle */
+    .filter-post .Dropdown-menu::-webkit-scrollbar-thumb {
+        background: #888;
+    }
+
+    /* Handle on hover */
+    .filter-post .Dropdown-menu::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+
+    .filter-post .Dropdown-control {
+        border: 0px !important;
+        padding: 0px;
+        padding-right: 0px;
+        display: flex;
+        gap: 12px;
+    }
+
+    .category-filter-dropdown .Dropdown-control {
+        justify-content: right;
+    }
+
+    .filter-post .Dropdown-control .arrow-closed>span {
+        width: 8px !important;
+    }
+
+    .filter-post .Dropdown-control .arrow-open>span {
+        width: 8px !important;
+    }
+
+    .filter-post .Dropdown-placeholder.is-selected {
+        font-family: Roboto;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 21px;
+        letter-spacing: 0em;
+        text-align: left;
+
+
+    }
+}

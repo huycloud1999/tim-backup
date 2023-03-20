@@ -1,0 +1,1235 @@
+.why-vietnam {
+  margin-top: 60px;
+  margin-bottom: 120px;
+}
+
+.slide-image-vietnam {
+  width: 100%;
+  height: 100% !important;
+
+}
+
+.slide-image-vietnam>span {
+  width: 100% !important;
+  height: auto !important;
+
+}
+
+.slide-image-vietnam img {
+  width: 100% !important;
+  height: auto !important;
+
+}
+
+.text__Populous_Countries p {
+  text-align: left;
+}
+
+.why-vietnam .title {
+  margin: 0px;
+}
+
+.why-vietnam .children span {
+
+  color: var(--blueTheme) !important
+}
+
+.bannerTable {
+  box-shadow: 0px 2px 50px 0px rgba(0, 0, 0, 0.08);
+}
+
+.bannerTable {
+  margin-bottom: 26px;
+}
+
+.slider-area-why-vietnam .container .custom-pagination {
+  position: relative;
+  margin-bottom: 160px;
+  display: flex;
+  justify-content: center;
+  gap: 7px;
+}
+
+.slider-area-why-vietnam .swiper-slide {
+  height: auto !important;
+}
+
+.trade-chart .legend {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  font-size: 16px;
+  justify-content: center;
+  margin-top: 15px;
+  font-family: 'Roboto';
+}
+
+.trade-chart .legend .legend-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+
+}
+
+.trade-chart .legend .legend-item:nth-child(1) .label {
+  width: 40px;
+  height: 18px;
+  background: #0B2577;
+  display: inline-block;
+}
+
+.trade-chart .legend .legend-item:nth-child(2) .label {
+  width: 40px;
+  height: 5px;
+  background: #2F6CE9;
+  display: inline-block;
+}
+
+.Capitalization .legend {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  font-size: 16px;
+  justify-content: center;
+  margin-top: 15px;
+  font-family: 'Roboto';
+}
+
+.Capitalization .legend .legend-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+
+}
+
+.Capitalization .legend .legend-item:nth-child(1) .label {
+  width: 40px;
+  height: 18px;
+  background: #0B2577;
+  display: inline-block;
+}
+
+.Capitalization .legend .legend-item:nth-child(2) .label {
+  width: 12px;
+  height: 12px;
+  background: #2F6CE9;
+  display: inline-block;
+  border-radius: 50%;
+}
+
+
+.legend .legend-item .title {
+  color: #000000 !important;
+  font-family: Roboto;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 27px !important;
+  opacity: .9;
+}
+
+@media (min-width:1024px) {
+
+  .source {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 4px 10px;
+    background-color: var(--blueTheme);
+    color: white;
+    font-size: 12px;
+    font-style: italic;
+  }
+
+}
+
+@media (max-width:1023px) {
+
+  .source {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 4px 10px;
+    background-color: var(--blueTheme);
+    color: white;
+    font-size: 12px;
+    font-style: italic;
+    /* transform: translateY(50%) */
+  }
+
+  .trade-chart .legend {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    font-size: 12px;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .trade-chart .legend .legend-item:nth-child(1) .label {
+    width: 30px;
+    height: 8px;
+    background: #0B2577;
+    display: inline-block;
+  }
+
+  .trade-chart .legend .legend-item:nth-child(2) .label {
+    width: 30px;
+    height: 2px;
+    background: #2F6CE9;
+    display: inline-block;
+  }
+
+  .Capitalization .legend {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    font-size: 12px;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .Capitalization .legend .legend-item:nth-child(1) .label {
+    width: 30px;
+    height: 8px;
+    background: #0B2577;
+    display: inline-block;
+  }
+
+  .Capitalization .legend .legend-item:nth-child(2) .label {
+    width: 10px;
+    height: 10px;
+    background: #2F6CE9;
+    display: inline-block;
+    border-radius: 50%;
+  }
+}
+
+@media (max-width:768px) {
+  .trade-chart .legend {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    font-size: 7.7px;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  .trade-chart .legend .legend-item:nth-child(1) .label {
+    width: 30px;
+    height: 8px;
+    background: #0B2577;
+    display: inline-block;
+  }
+
+  .trade-chart .legend .legend-item:nth-child(2) .label {
+    width: 30px;
+    height: 2px;
+    background: #2F6CE9;
+    display: inline-block;
+  }
+
+  .Capitalization .legend {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    font-size: 7.7px;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .Capitalization .legend .legend-item:nth-child(1) .label {
+    width: 30px;
+    height: 8px;
+    background: #0B2577;
+    display: inline-block;
+  }
+
+  .Capitalization .legend .legend-item:nth-child(2) .label {
+    width: 7px;
+    height: 7px;
+    background: #2F6CE9;
+    display: inline-block;
+    border-radius: 50%;
+  }
+
+  .Capitalization {
+    padding-bottom: 40px !important;
+  }
+
+  .source {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 4px 10px;
+    background-color: var(--blueTheme);
+    color: white;
+    font-size: 8px;
+    font-style: italic;
+  }
+
+  .slider-area-why-vietnam .source {
+    bottom: unset;
+    right: unset;
+    left: 0;
+    top: 0;
+  }
+
+  .slide-image-vietnam {
+    width: 100%;
+    height: 100% !important;
+    padding-top: 20px;
+
+  }
+
+  .legend .legend-item .title {
+    font-size: 8px !important;
+    font-weight: 500 !important;
+    line-height: 16px !important;
+  }
+
+  .favorable-destination .small-title {
+    text-align: center;
+    font-family: Roboto;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    line-height: 21px !important;
+  }
+
+}
+
+.source:before {
+  content: 'Source: '
+}
+
+.slider-area-why-vietnam .swiper-slide-duplicate {
+  /* height: 0px !important; */
+}
+
+.slider-area-why-vietnam .swiper-wrapper {
+  display: flex !important;
+
+}
+
+.slider-area-why-vietnam .container .custom-pagination span {
+  width: 14px;
+  height: 14px;
+
+  /* TIM-logo */
+
+  background: #0b2577;
+  opacity: 0.7;
+  margin: 0 !important;
+}
+
+.slider-area-why-vietnam .container .custom-pagination .swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+/*------------------TAB-------------------*/
+.tab-area-why-vietnam .react-tabs__tab-list {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr;
+  margin: 0px;
+
+  bottom: 60px;
+  z-index: 10;
+}
+
+.sticky-bar {
+  position: sticky !important;
+  top: 100% !important;
+  transform: translateY(calc(-100% - 0px));
+}
+
+.tab-area-why-vietnam .react-tabs__tab-panel {
+  margin-bottom: 200px;
+}
+
+.tab-area-why-vietnam .react-tabs {
+  padding-bottom: 100px;
+}
+
+.tab-area-why-vietnam .react-tabs__tab-list li {
+  text-align: center;
+  font-family: Roboto;
+  font-size: 35px;
+  font-weight: 500;
+  line-height: 53px;
+  letter-spacing: 0em;
+  border: 1px solid var(--blueTheme);
+  color: var(--blueTheme);
+  border-radius: 0px;
+  background-color: white;
+}
+
+.tab-area-why-vietnam .react-tabs__tab-list li.react-tabs__tab--selected {
+  color: white;
+  background-color: var(--blueTheme);
+  border: 1px solid var(--blueTheme);
+}
+
+/*-------------MACRO ECONOMY-----------------*/
+
+.rising-from-ashes {
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+
+.rising-from-ashes .title {
+  font-family: Roboto;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 56px;
+  letter-spacing: 0em;
+  text-transform: none;
+}
+
+.rising-from-ashes .children {
+  text-align: left;
+}
+
+.rising-from-ashes .children p:not(:last-child) {
+  margin-bottom: 16px !important;
+}
+
+.major-city {
+  font-family: Roboto;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 36px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: var(--blueTheme);
+  margin-bottom: 12px;
+}
+
+.major-city-charts {
+  display: grid;
+  grid-template-columns: 514px 1fr;
+  grid-template-rows: auto auto;
+  gap: 30px;
+  margin-bottom: 120px;
+}
+
+.chart-area-major-city {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+}
+
+.chart-area-major-city .map {
+  height: 100%;
+  width: 100%;
+}
+
+.chart-area-major-city .map .leaflet-marker-icon {
+  object-fit: contain;
+}
+
+.chart-area-major-city .map .leaflet-container {
+  height: 100%;
+  width: 100%;
+}
+
+.vietnamese-income,
+.GDP {
+  padding: 20px;
+  /* border: 1px solid var(--blueTheme); */
+  grid-column: 2 / 3;
+}
+
+.image-chart .text {
+  text-align: center;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 27px;
+  letter-spacing: 0em;
+  color: var(--blueTheme) !important;
+  margin-bottom: 34px;
+}
+
+.chart-area-major-city>span {
+  height: 100% !important;
+  width: 100% !important;
+}
+
+.image-chart>span {
+  width: 100% !important;
+}
+
+.major-city-charts img {
+  object-fit: cover;
+}
+
+/*--------POPULOUS CONTRIES------------*/
+
+.populous-countries .small-title-section {
+  margin-bottom: 40px;
+}
+
+.populous-countries .small-title-section .title {
+  font-family: Roboto;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 56px;
+  letter-spacing: 0em;
+  text-transform: none;
+  /* text-align: left; */
+}
+
+.populous-countries .images-area {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 30px;
+  row-gap: 40px;
+  margin-bottom: 40px;
+}
+
+.populous-countries .images-area .item {
+  padding: 20px 13px 24px 13px;
+  /* border: 1px solid var(--blueTheme); */
+}
+
+.trade-chart .text {
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 27px;
+  letter-spacing: 0em;
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--blueTheme)
+}
+
+.trade-chart {
+  /* border: 1px solid var(--blueTheme); */
+  padding: 30px;
+  margin-bottom: 120px;
+  position: relative;
+}
+
+.trade-chart .chart-trade {
+  height: 569px;
+}
+
+.favorable-destination .text {
+  margin-bottom: 46px;
+}
+
+.favorable-destination {
+  /* border: 1px solid var(--blueTheme); */
+  padding: 35px 23px 65px 23px;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.favorable-destination .content-area {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: fit-content fit-content;
+  column-gap: 37px;
+  row-gap: 104px;
+}
+
+.favorable-destination .content-area .image {
+  grid-column: 2 / 3;
+  grid-row: 1 / 3;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.grid-2 .chart-image-item {
+  height: 100%;
+}
+
+.grid-2 .chart-image-item:nth-child(2) .text {
+  /* margin-bottom: 0px; */
+}
+
+/*--------------------*/
+
+.tab-area-why-vietnam .react-tabs__tab-panel {
+  margin-bottom: 200px !important;
+}
+
+.tab-area-why-vietnam .react-tabs {
+  padding-bottom: 60px !important;
+}
+
+.growth-engine {
+  padding: 16px !important;
+  margin-top: 20px !important;
+  margin-bottom: 40px !important;
+  position: relative;
+}
+
+.growth-engine .growth-image>span {
+  width: 100% !important;
+}
+
+.population {
+  display: grid;
+  grid-template-columns: 406px 1fr;
+  gap: 06px;
+  margin-top: 35px;
+}
+
+.population .column-1 .image>span {
+  text-align: center;
+  width: 324px !important;
+  height: 226px !important;
+}
+
+.population .column-1 .image {
+  height: fit-content !important;
+  /* display: flex !important; */
+  margin-bottom: 10px;
+  text-align: -webkit-center;
+}
+
+.population .column-1 .text {
+  text-align: center;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 27px;
+  letter-spacing: 0em;
+  color: var(--blueTheme);
+  margin-bottom: 46px;
+}
+
+.population .column-2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 44px;
+}
+
+.population .column-2 .icon-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.population .column-2 .icon-box .icon>span {
+  height: 42px !important;
+}
+
+.population .column-2 .icon-box .title {
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 27px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #0B2577;
+}
+
+/*-----------------CAPITAL MARKET----------------------*/
+
+.frontier {
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+
+.frontier .title {
+  font-family: Roboto;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 56px;
+  letter-spacing: 0em;
+  text-transform: none;
+}
+
+.frontier .children {
+  text-align: left;
+}
+
+.frontier .children p:not(:last-child) {
+  margin-bottom: 16px !important;
+}
+
+.vnindex {
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.securityChart {
+  padding: 41px 41px 27px 41px;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.securityChart .the-chart {
+  height: 486px;
+}
+
+.securityChart .text {
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 27px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: var(--blueTheme);
+  margin-bottom: 16px;
+}
+
+.chart-area-major-city .map .leaflet-pane {
+  z-index: 1 !important;
+
+}
+
+.chart-area-major-city .map .leaflet-control-zoom {
+  z-index: 1 !important
+}
+
+.chart-area-major-city .map .leaflet-top {
+  z-index: 1 !important
+}
+
+.chart-area-major-city .map .leaflet-bottom {
+  z-index: 1 !important
+}
+
+.growth-image-Mobile {
+  display: none;
+}
+
+.image__WHYVN {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+}
+
+.image__WHYVN {
+  padding: 41px 41px 27px 41px !important;
+}
+
+/* .image__WHYVN_border {
+  border: 1px solid #0b2577 !important;
+  margin: 40px;
+
+} */
+
+@media (max-width: 768px) {
+
+  .image__WHYVN>span {
+    /* width: 100% !important; */
+    height: 268px !important;
+    object-fit: cover !important;
+  }
+
+  .image__WHYVN {
+    padding: 16px 5px 19px 5px !important;
+  }
+
+  .text__Populous_Countries p {
+    text-align: left;
+  }
+
+  .growth-image-PC {
+    display: none;
+  }
+
+  .growth-image-Mobile {
+    display: block;
+  }
+
+  .why-vietnam {
+    margin-top: 24px;
+    margin-bottom: 72px;
+  }
+
+  .why-vietnam .children {
+    text-align: left !important;
+  }
+
+  .why-vietnam .title {
+    margin: 0px;
+  }
+
+  .bannerTable {
+    box-shadow: 0px 2px 50px 0px rgba(0, 0, 0, 0.08);
+  }
+
+  .bannerTable {
+    margin-bottom: 16px;
+  }
+
+  .slider-area-why-vietnam .container .custom-pagination {
+    margin-bottom: 42px;
+
+    gap: 6px;
+  }
+
+  .slider-area-why-vietnam .container .custom-pagination span {
+    width: 8px;
+    height: 8px;
+  }
+
+  .chart-area-major-city .map {
+    height: 552px;
+    width: 100%;
+  }
+
+  /*------------------TAB-------------------*/
+
+  .tab-area-why-vietnam .react-tabs__tab-list {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    margin: 0px;
+    /* position: sticky;
+        top: 100% !important;
+        transform: translateY(calc(-100% - 0px)); */
+    z-index: 10;
+  }
+
+  .tab-area-why-vietnam .react-tabs__tab-list li {
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: center;
+    border: 1px solid var(--blueTheme);
+    color: var(--blueTheme);
+    border-radius: 0px;
+    background-color: white;
+  }
+
+  .tab-area-why-vietnam .react-tabs__tab-list li.react-tabs__tab--selected {
+    color: white;
+    background-color: var(--blueTheme);
+    border: 1px solid var(--blueTheme);
+  }
+
+  /*-------------MACRO ECONOMY-----------------*/
+
+  .rising-from-ashes {
+    margin-top: 32px;
+    margin-bottom: 30px;
+  }
+
+  .rising-from-ashes .container {
+    padding: 0px !important;
+  }
+
+  .rising-from-ashes .title {
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 36px;
+    letter-spacing: 0em;
+    text-align: left;
+
+    text-transform: none;
+  }
+
+  .rising-from-ashes .children {
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0em;
+
+
+    text-align: left;
+  }
+
+  .rising-from-ashes .children p:not(:last-child) {
+    margin-bottom: 16px !important;
+  }
+
+  .major-city {
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 36px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: var(--blueTheme);
+    margin-bottom: 12px;
+  }
+
+  .major-city-charts {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 30px;
+    margin-bottom: 60px;
+
+  }
+
+  .chart-area-major-city {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+  }
+
+  /* .chart-area-major-city .map{
+    height: 100%;
+    width: 100%;
+} */
+  .chart-area-major-city .map .leaflet-marker-icon {
+    object-fit: contain;
+
+  }
+
+  .chart-area-major-city .map .leaflet-pane {
+    z-index: 1 !important;
+
+  }
+
+  .chart-area-major-city .map .leaflet-control-zoom {
+    z-index: 1 !important
+  }
+
+  .chart-area-major-city .map .leaflet-top {
+    z-index: 1 !important
+  }
+
+
+
+  .chart-area-major-city .map .leaflet-control-zoom {
+    z-index: 1
+  }
+
+  .chart-area-major-city .map .leaflet-top {
+    z-index: 1
+  }
+
+  .chart-area-major-city .map .leaflet-container {
+    height: 100%;
+    width: 100%;
+  }
+
+  .vietnamese-income,
+  .GDP {
+    padding: 20px;
+    /* border: 1px solid var(--blueTheme); */
+    grid-column: unset;
+  }
+
+  .image-chart .text {
+    text-align: center;
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+    letter-spacing: 0em;
+    color: var(--blueTheme) !important;
+    margin-bottom: 34px;
+  }
+
+  .chart-area-major-city>span {
+    height: 100% !important;
+    width: 100% !important;
+  }
+
+  .image-chart>span {
+    width: 100% !important;
+  }
+
+  .major-city-charts img {
+    object-fit: cover;
+  }
+
+  /*--------POPULOUS CONTRIES------------*/
+
+  .populous-countries .small-title-section {
+    margin-bottom: 72px;
+  }
+
+  .populous-countries .container {
+    padding: 0px !important;
+  }
+
+  .populous-countries .container .title {
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 36px;
+    letter-spacing: 0em;
+    text-align: left;
+    text-transform: none;
+  }
+
+  .populous-countries .container .children {
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+
+  .populous-countries .images-area {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    row-gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  .populous-countries .images-area .item {
+    padding: 20px 13px 24px 13px;
+    /* border: 1px solid var(--blueTheme); */
+  }
+
+  .trade-chart .text {
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+    letter-spacing: 0em;
+
+
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--blueTheme);
+  }
+
+  .trade-chart {
+    /* border: 1px solid var(--blueTheme); */
+    padding: 10px;
+    margin-bottom: 72px;
+  }
+
+
+  .trade-chart .chart-trade {
+    height: 193px;
+  }
+
+  .favorable-destination .text {
+    margin-bottom: 24px;
+  }
+
+  .favorable-destination {
+    /* border: 1px solid var(--blueTheme); */
+    padding: 0px 0px 24px 0;
+    margin-bottom: 40px;
+  }
+
+  .favorable-destination .content-area {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: fit-content fit-content;
+    column-gap: 10px;
+    row-gap: 10px;
+  }
+
+  .favorable-destination .content-area .image {
+    grid-column: unset;
+    grid-row: unset;
+  }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 120px;
+    margin-top: 30px;
+  }
+
+  /*--------------------*/
+
+  .growth-engine {
+    padding: 41px 21px 49px 45px;
+    margin-bottom: 0px !important;
+  }
+
+  .growth-engine .growth-image>span {
+    width: 100% !important;
+  }
+
+
+
+  .tab-area-why-vietnam .react-tabs__tab-panel {
+    margin-bottom: 90px !important;
+  }
+
+  .tab-area-why-vietnam .react-tabs {
+    padding-bottom: 10px !important;
+  }
+
+  .population {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 40px;
+    margin-top: 35px;
+  }
+
+  .image {}
+
+  .population .column-1 .image {
+    height: fit-content !important;
+    /* display: flex !important; */
+    margin-bottom: 10px;
+
+  }
+
+  .population .column-1 .text {
+    text-align: center;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+    letter-spacing: 0em;
+    color: var(--blueTheme);
+    margin-bottom: 20px;
+  }
+
+  .population .column-2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .population .column-2 .icon-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .population .column-2 .icon-box .icon {
+    height: unset !important;
+    width: 24px;
+  }
+
+  .population .column-2 .icon-box .title {
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: center;
+    text-transform: none;
+  }
+
+  /*-----------------CAPITAL MARKET----------------------*/
+
+  .frontier {
+    margin-top: 32px;
+    margin-bottom: 42px;
+  }
+
+  .frontier .container {
+    padding: 0px !important;
+  }
+
+  .frontier .title {
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 36px;
+    letter-spacing: 0em;
+    text-align: left;
+    text-transform: none;
+  }
+
+  .frontier .children {
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0em;
+
+    text-align: left;
+  }
+
+  .frontier .children p:not(:last-child) {
+    margin-bottom: 12px !important;
+  }
+
+  .vnindex {
+    margin-bottom: 40px;
+  }
+
+  .securityChart {
+    padding: 16px 5px 19px 5px;
+    margin-bottom: 40px;
+  }
+
+  .securityChart .the-chart {
+    height: 268px;
+  }
+
+  .securityChart .text {
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: center;
+
+    color: var(--blueTheme);
+    margin-bottom: 16px;
+  }
+
+  .population .column-1 .image>span {
+    width: 100% !important;
+    height: auto !important;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .rising-from-ashes>.container {
+    padding: 0px !important;
+  }
+
+  .frontier>.container {
+    padding: 0px !important;
+  }
+
+  .major-city-charts {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .populous-countries .small-title-section .children {
+    text-align: left;
+  }
+
+  .populous-countries .small-title-section .container {
+    padding: 0px !important;
+    width: unset !important;
+  }
+
+  .favorable-destination .content-area .image {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+    margin: auto;
+  }
+
+  .population {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 6px;
+    gap: 6px;
+    margin-top: 35px;
+  }
+
+  .population .column-2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    padding-bottom: 30px;
+  }
+}

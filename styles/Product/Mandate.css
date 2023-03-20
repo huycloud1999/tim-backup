@@ -1,0 +1,602 @@
+.mandates_one_image {
+    margin-top: 144px;
+}
+
+.mandates__ {
+    margin-top: 120px;
+    background-image: url(../../public/imgs/Frame.png);
+    background-size: 100% !important;
+    background-repeat: no-repeat;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.mandates_one_image>span {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+
+}
+
+.mandates___image {
+    width: 100% !important;
+    object-fit: cover;
+}
+
+
+.mandates_one h2 {
+    font-family: 'Roboto';
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 56px;
+    letter-spacing: 0em;
+    text-align: center;
+    text-transform: uppercase;
+    color: #0B2577;
+    margin: 0 0 24px 0;
+}
+
+.mandates_one p {
+    font-family: 'Roboto';
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #2B2B2B;
+    margin-bottom: 80px;
+}
+
+.mandates__sup {
+    margin-bottom: 100px !important;
+}
+
+.mandates_one_content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    Width: 1200px;
+    Height: auto;
+}
+
+.mandates_one_content_block {
+    border: 1px solid rgba(43, 43, 43, 0.6);
+    height: auto;
+}
+
+.mandates_one_content_block p {
+    margin-bottom: 40px !important;
+
+}
+
+.mandates_one_content_block:first-child {
+    border-left: none;
+    border-right: none;
+}
+
+.mandates_one_content_block:last-child {
+    border-left: none;
+    border-right: none;
+}
+
+.mandates_one_content_block:nth-child(3),
+.mandates_one_content_block:nth-child(4) {
+    border-left: none;
+
+}
+
+.mandates_one_content_block h4 {
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 31px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #0B2577;
+    margin-top: 16px;
+}
+
+.mandates_one_content_block p {
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #000000;
+    width: 214px;
+    margin: 8px auto;
+
+}
+
+.mandates_one_content_block {
+    text-align: center !important;
+}
+
+.image_mandate {
+    margin: 40px 0 12px 0;
+    /* align-items: center !important; */
+
+}
+
+.image_mandate>span {
+    width: 62px !important;
+    height: 62px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.mandates_one_content_block h4 {
+    text-align: center;
+    margin: 0;
+}
+
+.table {
+    table-layout: fixed;
+    border-spacing: 0;
+    width: 100%;
+
+}
+
+.table_mandate,
+th,
+td {
+    border: .3px solid rgba(43, 43, 43, 0.6);
+    ;
+}
+
+
+.mandates_tow_content table tr th {
+    background: #0B2577;
+    height: 70px;
+    color: #fff;
+}
+
+.mandates_one_content_block,
+.mandates_tow_content table tr td {
+    background: #fff;
+}
+
+.table tr td {
+    padding: 15px;
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #2B2B2B;
+}
+
+.mandates_total {
+    margin: 100px 0 116px 0;
+}
+
+.manDate_Investment {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 33px;
+}
+
+
+.manDate_image>span {
+    width: 100% !important;
+    height: 715px !important;
+    object-fit: cover !important;
+}
+
+.manDate_text h3 {
+    font-family: 'Roboto';
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 56px;
+    letter-spacing: 0em;
+    text-align: left;
+    text-transform: uppercase;
+    color: #0B2577;
+    margin: 0 0 41px 0;
+
+}
+
+.accordion {
+    max-width: 100%;
+}
+
+.accordion {
+    position: relative;
+}
+
+.contentBx {
+    display: flex;
+}
+
+.accordion .contentBx {
+    position: relative;
+    padding: 16px 0 16px 0;
+    background: #fff;
+    color: #000000;
+    border: 1px solid rgba(43, 43, 43, 0.6);
+    cursor: pointer;
+    font-weight: bold;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+
+}
+
+.accordion:last-child {
+    border-bottom: 1px solid rgba(43, 43, 43, 0.6);
+}
+
+.content {
+    max-height: 0;
+    overflow: hidden;
+    transition: all .7s cubic-bezier(0, 1, 0, 1);
+}
+
+.content.show {
+    /* margin-top: 16px; */
+    height: auto;
+    max-height: 999px;
+    transition: all .7s cubic-bezier(1, 0, 1, 0);
+    /* margin-bottom: 15px; */
+}
+
+
+.content .show .label {
+    font-weight: 700;
+
+}
+
+
+.accordion_id {
+    text-align: center;
+}
+
+.accordion_id p {
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    color: #75D0C8;
+    border: 1px solid #75D0C8;
+    margin: 0;
+    padding: 3px;
+}
+
+.accordion_id {
+    margin-right: 24px;
+}
+
+.accordion_id.show p {
+    background: #75D0C8;
+    color: #fff;
+}
+
+.label.showlabel {
+    font-family: 'Roboto';
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 26px;
+    letter-spacing: 0em;
+    text-align: left;
+
+}
+
+.label {
+    font-family: 'Roboto';
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #0B2577;
+
+}
+
+.content {
+    font-family: 'Roboto';
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #2B2B2B;
+
+}
+
+.content__accordion {
+    margin: auto 0;
+}
+
+.content div {
+    margin: 8px 0 8px 0;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    color: #2B2B2B;
+}
+
+.content p {
+    margin: 8px 0 8px 0;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    color: #2B2B2B;
+    
+}
+
+.manDate_Investment_content {
+    margin-top: 120px
+}
+
+@media screen and (max-width: 768px) {
+    .mandates_total {
+        margin: 0;
+    }
+
+    .mandates_one h2 {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 31px;
+    }
+
+    .accordion .contentBx {
+        padding: 16px 0 16px 0;
+    }
+
+    .content p {
+        font-family: 'SVN-Gilroy';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 21px;
+        margin-bottom: 0 !important;
+    }
+
+    .mandates__ {
+        margin-top: 72px !important;
+    }
+
+    .content div {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 21px;
+    }
+
+    .content.show {
+        margin-bottom: 0 !important;
+    }
+
+    .content div {
+        margin: 0 !important;
+    }
+
+    .mandates_one p {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 21px;
+        text-align: left;
+        color: #2B2B2B;
+        margin-bottom: 40px;
+    }
+
+    .manDate_Investment {
+        gap: 72px;
+    }
+
+    .mandates_one_content {
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 0 !important;
+        background: #fff;
+    }
+
+    .mandates_one_content_block {
+        border-left: none;
+        border-right: none;
+        border-bottom: none;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .mandates_one_content_block_mobile {
+        padding: 24px 0 24px 65px;
+    }
+
+    .mandates_one_content_block_mobile p {
+        width: 100%;
+        margin: 6px 0 0px 0 !important;
+    }
+
+    .mandates_one_content_block:first-child {
+        border-top: none;
+    }
+
+    .mandates_one_content_block:last-child {
+        border-bottom: 1px solid #2B2B2B;
+    }
+
+    .mandates_one_content_block h4 {
+        text-align: left;
+    }
+
+    .image_mandate {
+        margin: 32px 0px 12px;
+        width: 0px;
+    }
+
+    .image_mandate>span {
+        width: 46px !important;
+        height: 46px !important;
+        margin-left: 0 !important;
+    }
+
+    .table_mobile {
+        margin-left: 24px;
+        margin-right: 24px;
+
+    }
+
+
+
+    .manDate_Investment_content {
+        margin: 71px 0;
+    }
+
+    .manDate_text h3 {
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 31px;
+        letter-spacing: 0em;
+        text-align: left;
+        text-transform: uppercase;
+        color: #0B2577;
+        margin-bottom: 24px;
+    }
+
+    .manDate_Investment {
+        display: flex;
+        flex-direction: column;
+        flex-direction: column-reverse
+    }
+
+    .label {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 21px;
+        color: #0B2577;
+    }
+
+    .label.showlabel {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 21px;
+        color: #0B2577;
+    }
+
+    .content {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 27px;
+        color: #2B2B2B;
+    }
+
+    .accordion_id p {
+        width: 32px;
+        height: 32px;
+        font-size: 18px;
+        padding: 2px 0;
+    }
+
+    .table {
+        table-layout: fixed;
+        width: 100%;
+    }
+
+    .mandates_tow_content {
+        padding: 0 !important;
+    }
+
+    .mandates_tow_content table tr th {
+        background: #0B2577;
+        height: 70px;
+        color: #fff;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .table tr td {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 18px;
+        color: #000000;
+        padding: 32px 8px;
+        text-align: left;
+        vertical-align: baseline;
+    }
+
+    .mandates__ {
+        background-image: none;
+    }
+
+    .mandates__sup {
+        background-image: url(../../public/imgs/Frame3.png);
+        background-size: 100% !important;
+        background-repeat: no-repeat;
+        background-position: bottom;
+        padding-bottom: 100px;
+        margin-bottom: 0;
+        width: 100% !important;
+        height: 100% !important;
+        margin: 0 !important;
+    }
+
+    .manDate_image>span {
+        width: 100% !important;
+        height: 399px !important;
+    }
+
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .mandates_one_content_block {
+        display: flex;
+        width: 44%;
+        margin: 1rem;
+    }
+
+    .mandates_one_content_block p,
+    .mandates_one_content_block h4 {
+        text-align: left;
+    }
+
+    .mandates_one_content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0 !important;
+    }
+
+    .mandates_one_content_block {
+        border-left: none;
+        border-right: none;
+        padding: 16px 0;
+        background: #fff;
+    }
+
+    .image_mandate {
+        margin-top: 0px;
+    }
+
+    .mandates__sup {
+        background-image: url(../../public/imgs/Frame3.png);
+        background-size: 100% !important;
+        background-repeat: no-repeat;
+        background-position: bottom;
+        padding-bottom: 100px;
+        margin-bottom: 0;
+        width: 100% !important;
+        height: 100% !important;
+        margin: 0 !important;
+    }
+
+    .manDate_Investment {
+        display: flex;
+        flex-direction: column-reverse
+    }
+
+    .manDate_image>span {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover;
+    }
+}

@@ -1,0 +1,410 @@
+.firm_history {
+  margin: 40px;
+}
+
+.firmHistory_title {
+  margin-bottom: 0 !important;
+}
+
+.firm_history_text h4 {
+  margin: 116px auto 0 auto;
+  font-family: "Roboto";
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 56px;
+  letter-spacing: 0em;
+  text-align: center;
+  text-transform: uppercase;
+  color: #0b2577;
+  width: 867px;
+}
+
+.firm_history_text p {
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #2b2b2b;
+  width: 995px;
+  margin: 24px auto 30px auto;
+}
+
+/* --------------------pannel-------------------- */
+.tabList_firm {
+  margin: auto;
+  margin-bottom: 21px;
+  position: relative;
+  display: grid;
+  grid-auto-columns: 20%;
+  grid-auto-flow: column;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  padding: 0px;
+  cursor: pointer;
+  /* margin-right: 64px;
+  margin-left: 64px; */
+  padding-bottom: 27px;
+}
+
+.tabList_firm li {
+  list-style: none;
+}
+
+.tab_firm {
+  position: relative;
+  /* margin-right: 72.5px; */
+  /* margin-left: 72.5px; */
+}
+
+.firm_history .line {
+  height: 2px;
+  background-color: rgba(43, 43, 43, 0.4);
+
+  position: relative;
+  z-index: 0;
+  position: absolute;
+  /* width: 100%; */
+  bottom: 22px;
+}
+
+
+
+.progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  /* width: 200px; */
+  background-color: var(--lightBlueTheme);
+  z-index: 1;
+  transition: 0.5s;
+}
+
+.tab_firm .react-tabs__tab {
+  font-family: Roboto;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 45px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: rgba(43, 43, 43, 1);
+  border: 0px;
+  transition: 0.5s;
+}
+
+.tab_firm .react-tabs__tab--selected {
+  color: var(--blueTheme);
+  /* transform: scale(1.1); */
+  font-family: Roboto;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 45px;
+  letter-spacing: 0em;
+}
+
+.box_history {
+  margin-top: 8px;
+  position: absolute;
+  border-top: 15px solid #75d0c8;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 15px solid transparent;
+  width: 0;
+  height: 0;
+  transition: 0.5s;
+  transform: translateX(-50%);
+  /* top:3 */
+}
+
+.tabList_firm::-webkit-scrollbar {
+  display: none;
+}
+
+.tabList_firm::-webkit-scrollbar-track {
+  background: transparent;
+  height: 1px;
+}
+
+.tabList_firm::-webkit-scrollbar-thumb {
+  height: 1px;
+}
+
+.tabList_firm::-webkit-resizer {
+  width: 1px;
+  height: 1px;
+}
+
+.tab_firm ul li {
+  border: none;
+}
+
+/* -------------------------------------------- */
+.tab {
+  /* margin-right:72.5px;
+    margin-left:72.5px; */
+  margin-top: 34px;
+  height: 555px;
+  background: #ffff;
+  box-shadow: 0px 1px 50px rgba(0, 0, 0, 0.06);
+
+  /* margin: auto; */
+}
+
+.tab_panel {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+.panel_img {
+  width: 100%;
+  width: 100%;
+  margin: 56px 40px 56px 40px;
+  object-fit: cover;
+}
+
+.panel_img>span {
+  object-fit: cover !important;
+  width: 556px !important;
+  height: 463px !important;
+}
+
+.panel_text {
+  margin: 0;
+}
+
+.panel_text h3 {
+  font-family: "Roboto";
+  font-size: 70px;
+  font-weight: 400;
+  line-height: 45px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: var(--blueTheme);
+  margin: 78px 0 40px 0;
+}
+
+.panel_text p {
+  font-family: "Roboto";
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 45px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #2B2B2B;
+  margin-right: 30px;
+}
+
+.react-tabs__tab-panel .tab .tab_panel {
+  height: 100%;
+}
+
+@media (min-width: 1024px) {
+  .firm_history {
+    margin-bottom: 120px;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+
+  .line {
+    bottom: 25px !important;
+  }
+
+  .firmHistory_title .title br {
+    display: none;
+    font-size: 24px !important;
+  }
+
+  .firmHistory_title {
+    margin: 72px 0 24px 0 !important;
+  }
+
+  .firmHistory_title h4 {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 31px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #0b2577;
+  }
+
+  .firmHistory_title p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: center;
+    color: #2b2b2b;
+  }
+
+  .tab_firm,
+  .firm_history {
+    margin: 0;
+  }
+
+  .tab_firm .react-tabs__tab--selected {
+    font-weight: 600 !important;
+  }
+
+  .tab_panel {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tabList_firm .text {
+    text-align: center;
+  }
+
+  .panel_text p {
+    font-family: "Roboto";
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #2B2B2B;
+    text-align: left;
+  }
+
+  .panel_text h3 {
+    margin: 0;
+    font-family: "Roboto";
+    font-size: 30px;
+    font-weight: 600 !important;
+    line-height: 45px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #0b2577;
+  }
+
+  .tab {
+    height: auto;
+    padding: 0 24px;
+    margin: 24px 0 74px 0 !important;
+  }
+
+  .panel_img {
+    position: relative;
+    margin: 97px 0 16px 0;
+  }
+
+  .panel_img>span {
+    object-fit: contain;
+    width: 100% !important;
+    height: 360px !important;
+
+
+  }
+
+  .panel_img img {
+    object-fit: cover;
+  }
+
+  .panel_text h3 {
+    position: absolute;
+    top: 36px;
+  }
+
+  .panel_text p {
+    font-family: 'Roboto';
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #2B2B2B;
+    margin: 0 0 40px 0;
+  }
+
+  .tabList_firm {
+    grid-auto-columns: calc(100% /3);
+    gap: 0px;
+    margin: 0px;
+    padding-bottom: 30px;
+  }
+
+  .tabList_firm li {
+    font-family: Roboto;
+    font-size: 24px !important;
+    font-weight: 400 !important;
+    line-height: 36px !important;
+    letter-spacing: 0em !important;
+    text-align: left;
+
+  }
+
+  .box_history {
+    border-top: 15px solid #75d0c8;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid transparent;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1224px) {
+  .firm_history {
+    margin: 0px;
+    margin-bottom: 72px;
+
+  }
+
+  .tab_firm {
+    margin: 0px;
+  }
+
+  .tab_panel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    padding: 20px;
+  }
+
+  .panel_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .panel_text p {
+    font-size: 18px;
+  }
+
+  .tab_panel .panel_img {
+    margin: 0px;
+
+  }
+
+  .tab_panel .panel_img>span {
+    height: 100% !important;
+    width: 100% !important;
+    object-fit: cover !important;
+
+  }
+
+  .panel_text h3 {
+    margin: 0;
+  }
+
+  .react-tabs__tab-panel .tab {
+    height: fit-content;
+  }
+
+  .panel_text p {
+    font-size: 25px;
+    line-height: 34px !important;
+  }
+
+  .firmHistory_title .title br {
+    display: none;
+  }
+
+  .small-title-section .title {
+    margin-bottom: 50px !important;
+
+  }
+
+
+}

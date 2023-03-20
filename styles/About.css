@@ -1,0 +1,435 @@
+.about__description_one {
+  margin: 0;
+  margin: 56px 0 16px 0;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: 0em;
+  text-align: left;
+
+}
+
+.out_Team__image p {
+  text-align: left;
+}
+
+.about_description {
+  margin: 60px 0 20px;
+}
+
+.about_description span {
+  color: var(--blueTheme)
+}
+
+
+.about_description,
+.about_description_2 {
+  /* padding-top: 16px !important; */
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 1.5em;
+  opacity: 1;
+  position: relative;
+  text-align: left;
+}
+
+.btn_load {
+  display: none;
+}
+
+.about {
+  margin: 134px 0 0px 0;
+}
+
+.about_tow {
+  background: rgba(181, 180, 169, 0.1);
+  /* background: blueviolet; */
+}
+
+.about_tow_content {
+  display: grid;
+  grid-template-columns: 483px 1fr;
+  padding-top: 80px;
+}
+
+
+
+.about_img>span {
+  Width: 483px !important;
+  Height: 411px !important;
+  top: 71px;
+  left: 0px;
+}
+
+
+.about_title h3 {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 56px;
+  text-transform: uppercase;
+  color: var(--blueTheme);
+  margin: 0;
+}
+
+.about__description ul li p,
+.about_title p {
+  /* margin: 16px; */
+}
+
+/* about_title p {
+    padding: 16px 0;
+} */
+
+ul {
+  margin: 0;
+  list-style-type: none;
+}
+
+li {
+  position: relative;
+}
+
+.about__description ul li p {
+  margin: 16px;
+}
+
+.about__description_text li::before {
+  content: "";
+  height: 7px;
+  width: 7px;
+  background: var(--blueTheme);
+  display: inline-block;
+  border-radius: 50%;
+  position: absolute;
+  align-items: center;
+  left: -1.5rem;
+  margin: auto;
+  top: 0.7rem;
+}
+
+.about__description ul li p {
+  margin: 16px 0 16px 0;
+}
+
+.about__description ul li p,
+.about_title p {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 29px;
+  color: #2B2B2B;
+}
+
+.about_countDown {
+  padding: 0;
+  margin: 0;
+}
+
+.about_countdown_grid {
+  width: 78%;
+  margin: auto !important;
+  padding-bottom: 95px;
+}
+
+.about_countdown_grid .countdown-area {
+  justify-content: center !important;
+  height: 60px;
+
+}
+
+.about_countDown_text .additional-info {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #2B2B2B;
+}
+
+/* .about_countDown_content .countdown .additional-info{
+    line-height: 24px !important;
+} */
+
+.about_text {
+  position: relative;
+  margin: auto 30px;
+}
+
+.tim_about {
+  position: absolute;
+  right: 0px;
+  top: 0rem;
+}
+
+.about_countDown {
+  background: transparent;
+}
+
+#check {
+  display: none;
+}
+
+/* .about_countDown_mobile {
+    display: none
+} */
+
+@media screen and (max-width: 768px) {
+
+  .about_countdown_grid,
+  .about_countDown_content,
+  .about_img,
+  .about_countDown_pc {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+
+  .about_description {
+    margin: 24px 0 20px;
+  }
+
+  .about_countDown_content {
+    display: flex !important;
+    justify-content: space-between !important;
+    flex-wrap: wrap;
+  }
+
+
+  .about_countDown_text .additional-info {
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .about_countDown_content .countdown:nth-child(2) {
+    order: 3 !important;
+    padding: 0 50px;
+  }
+
+  .out_Team__image {
+    margin: 24px 0 0 0 !important;
+  }
+
+  .out_Team__image p {
+    text-align: left;
+    text-align: center;
+  }
+
+  .btn_load {
+    display: block;
+    margin-top: 40px;
+    text-align: center;
+  }
+
+  .btn_load a {
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 15px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #2B2B2B;
+    width: 142px;
+    height: auto;
+    padding: 15px 21px;
+    background: #fff;
+    outline: none;
+    border: 1px solid #2B2B2B;
+    gap: 16px;
+  }
+
+  .about {
+    margin: 80px 0 0 0 !important;
+  }
+
+  .about_img {
+    margin-bottom: 72px !important;
+    padding-bottom: 72px !important;
+  }
+
+  .about_description {
+    text-align: left !important;
+  }
+
+  .about_description {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    /* color: #2B2B2B; */
+    text-align: left !important;
+  }
+
+  .about_description_2 {
+    display: none;
+    transition: .9s linear;
+    opacity: 1 !important;
+  }
+
+  .about_tow_content {
+    display: flex !important;
+    flex-direction: column;
+    flex-direction: column-reverse;
+  }
+
+  .tim_about {
+    position: absolute;
+    right: 0 !important;
+    top: 0 !important;
+    width: 39% !important;
+  }
+
+  .about_text {
+    margin: 40px 0 0px 0;
+    order: 1;
+  }
+
+  .about_title h3 {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 31px;
+    text-transform: uppercase;
+    color: #0B2577;
+  }
+
+  .about__description ul li p,
+  .about_title p {
+    font-weight: 400;
+    font-size: 14px;
+    color: #2B2B2B;
+  }
+
+  .about_img>span {
+    Width: 100% !important;
+    Height: 100% !important;
+    top: 71px !important;
+    left: 0px;
+  }
+
+
+  #check {
+    display: none;
+  }
+
+  label {
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  #check:checked~.about_description_2 {
+    display: block;
+    font-weight: 400;
+    font-size: 14px;
+    color: #2B2B2B;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    /* color: #2B2B2B; */
+    text-align: left !important;
+    /* opacity: 1; */
+  }
+
+  #check:checked~label {
+    /* display: hidden; */
+    display: none;
+  }
+
+  #check:checked~label::after {
+    content: "";
+    display: block;
+    visibility: visible;
+  }
+
+  .about_countDown_mobile {
+    display: block;
+    padding: 0 !important;
+  }
+
+  .about_countdown_grid_mobile {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .about_countdown_grid {
+    width: 100% !important;
+  }
+
+
+  .about_description,
+  .about_description_2 {
+    opacity: 1;
+  }
+
+  .about_countDown_content {
+    padding: 0 24px 60px 24px !important;
+  }
+}
+
+.about_img img {
+  object-fit: cover;
+}
+
+@media screen and (min-width: 769px) and (max-width: 1224px) {
+  .about {
+    display: hidden;
+  }
+
+  .about {
+    height: auto;
+    margin-top: 60px;
+  }
+
+  .about_tow_content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .about_text {
+    margin: 100px 0 0 0;
+  }
+
+  .about_text {
+    position: relative;
+  }
+
+  .tim_about {
+    position: absolute;
+    top: 15px;
+    right: 0;
+  }
+
+  .about_countdown_grid_mobile {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .about_countdown_grid {
+    width: 100% !important;
+  }
+
+
+  .about_img>span {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+  }
+
+  .about_description,
+  .about_description_2 {
+    font-size: 19px;
+    line-height: 1.5em;
+  }
+
+  .about_img {
+    height: 70vh;
+  }
+}

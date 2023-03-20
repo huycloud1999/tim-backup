@@ -1,0 +1,197 @@
+.out_Team_title {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 70px;
+  line-height: 91px;
+  color: var(--blueTheme);
+  bottom: 1.5rem;
+  margin: 220px 0 24px 0;
+  text-transform: uppercase;
+}
+.out_Team{
+  margin-top: 0px;
+}
+
+.proHr {
+  border: none;
+  border-top: 1px solid rgba(43, 43, 43, 0.6);
+  width: 100%;
+  margin-bottom: 2.5rem;
+}
+
+.out___Team_manage___title {
+  padding-bottom: 39px;
+}
+
+.out_Team_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ourTeam_title {
+  text-align: center !important;
+}
+
+.out_Team_description {
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #2b2b2b;
+  opacity: 0.8;
+  margin: 36px 0 0 0;
+}
+
+
+.out_Team_manage_title {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 56px;
+  text-transform: uppercase;
+  color: #0b2577;
+  margin: 0;
+  margin: 100px 0 0px 0;
+}
+
+.out___Team_manage___title {
+  margin: 0;
+}
+
+.manage_container {
+  background: #ffffff;
+  box-shadow: 0px 1px 50px rgba(0, 0, 0, 0.06);
+}
+
+.team {
+  font-size: 30rem;
+}
+
+.out_Team_manage_content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 29px;
+}
+
+.certoffering.out_Team__image p {
+  text-align: left;
+}
+
+.certoffering.out_Team__image p {
+  font-size: 20px;
+}
+
+.out_Team__image {
+  margin-top: 40px !important;
+}
+
+.title-imgNation2,
+.title-imgNation {
+  display: flex;
+}
+
+
+
+.out_Team_manage_title img {
+  width: 50px !important;
+  height: auto !important;
+  object-fit: cover;
+}
+
+.out_Team_tim{
+  margin-bottom: 120px;
+}
+
+@media screen and (max-width: 768px) {
+  .out_Team_manage_title img {
+    width: 27px !important;
+    height: auto !important;
+    object-fit: cover;
+  }
+
+
+  .out_Team_tim{
+    margin-bottom: 0px;
+  }
+
+  .out_Team_manage_content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .out___Team_manage___title {
+    padding-bottom: 24px;
+  }
+
+  /* .out_Team_manage_title {
+    margin: 72px 0 0 0 !important;
+  } */
+
+  .out_Team_manage {
+    margin-bottom: 72px !important;
+  }
+
+  .out_Team__image p {
+    font-family: "Roboto";
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #2b2b2b;
+    opacity: 0.8;
+  }
+
+  .out_Team_manage {
+    margin-top: 72px !important;
+  }
+
+  .out_Team_manage p {
+    font-family: "Roboto";
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 31px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+
+  .certoffering.out_Team__image p {
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+
+  .certoffering.out_Team__image p span {
+    font-family: Roboto;
+    font-size: 14px !important;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: center;
+  }
+
+
+
+}
+
+@media screen and (min-width: 769px) and (max-width: 1224px) {
+  .out_Team_tim {
+    margin-bottom: 40px;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .out_Team_manage_content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

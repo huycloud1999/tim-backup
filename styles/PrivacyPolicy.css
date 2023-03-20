@@ -1,0 +1,211 @@
+.privacy_policy_title {
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 50px;
+    line-height: 91px;
+    color: #0B2577;
+    margin: 220px 0 70px 0;
+    text-transform: uppercase;
+}
+
+.content_privacy_policy {
+    margin-bottom: 120px;
+    font-size: 20px;
+    overflow-wrap: break-word !important;
+}
+.content_privacy_policy h2{
+    font-size: 1.5em
+}
+.content_privacy_policy h2 span{
+    font-size: inherit !important
+}
+
+.content_privacy_policy a {
+    font-weight: 500;
+    color: #0B2577;
+}
+
+.content_privacy_policy ul {
+    padding: 0;
+}
+
+
+
+
+/*----------Content Style-----------*/
+
+
+
+.content_privacy_policy {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 21px;
+    line-height: 35px;
+    /* color: #000000; */
+    margin-top: 0;
+    text-align: left;
+  }
+  
+  .content_privacy_policy p:not(:last-child){
+    margin-bottom: 1em;
+  }
+  .content_privacy_policy img{
+    width: 100%;
+    height: auto;
+  }
+  
+  .content_privacy_policy h4{
+    font-size: 1.3em;
+    margin-bottom: 0.5em;
+    margin-top: 1em;
+  }
+  
+  .content_privacy_policy h3{
+    font-size: 1.8em;
+    margin-bottom: 0.6em;
+    margin-top: 1.3em;
+  
+  }
+  .content_privacy_policy h1{
+    font-size: 2.4em;
+    margin-bottom: 1.0em;
+    margin-top: 1.8em;
+  }
+  
+  .content_privacy_policy h2{
+    font-size: 1.5em;
+    margin-bottom: 0.6em;
+    margin-top: 1.3em;
+  
+  }
+  
+  .content_privacy_policy a{
+    color:blue;
+    text-decoration: underline;
+    transition: 0.2s;
+    border-radius: 5px;
+  }
+  .content_privacy_policy a:hover{
+    color: white;
+    padding: 0px 6px;
+    background: rgb(58,69,180);
+  background: linear-gradient(90deg, rgba(58,69,180,1) 0%, rgba(175,136,201,1) 100%);
+  }
+  .content_privacy_policy ul{
+    font-size: 1em;
+    margin-bottom: 1em;
+  }
+  .content_privacy_policy ul li{
+    font-size: 1em;
+    line-height: 1.5em;
+  }
+  .content_privacy_policy ol{
+    font-size: 1em;
+    margin-bottom: 1em;
+  }
+  .content_privacy_policy ol li{
+    font-size: 1em;
+    line-height: 1.5em;
+  }
+  .content_privacy_policy ul li:not(:last-child){
+    margin-bottom: 0.7em;
+  }
+  .content_privacy_policy ol li:not(:last-child){
+    margin-bottom: 0.7em;
+  }
+  .content_privacy_policy table, td, th {
+    border: 1px solid;
+  }
+  
+  .content_privacy_policy table {
+    font-size: 0.8em;
+    line-height: 1.2em;
+    border-collapse: collapse;
+    text-align: unset;
+    margin-bottom: 1em;
+    margin-top: 1em;
+  }
+  .content_privacy_policy table td {
+    padding:15px
+  }
+  .content_privacy_policy iframe {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border: none;
+    border-radius: 30px;
+   
+  }
+  
+  
+  .content_privacy_policy h4:first-child{
+    margin-top: 0px;
+  }
+  .content_privacy_policy h3:first-child{
+    margin-top: 0px;
+  }
+  
+  .content_privacy_policy h1:first-child{
+    margin-top: 0px;
+  }
+  .content_privacy_policy h2:first-child{
+    margin-top: 0px;
+  }
+  
+  /*----------End Content Style-----------*/
+  
+  
+
+@media screen and (max-width: 768px) {
+    .privacy_policy_title {
+        font-size: 30px;
+        margin: 128px 0 40px 0;
+
+    }
+
+    .content_privacy_policy ul {
+        padding: 0;
+    }
+
+    .content_privacy_policy p {
+        width: 100% !important;
+        font-size: 15px;
+        text-align: left;
+    }
+
+    .content_privacy_policy ul li a {
+        width: 100% !important;
+    }
+
+    .content_privacy_policy ul li span {
+        font-size: 15px !important;
+    }
+
+.content_privacy_policy h2 {
+    font-size: 1.1em;
+    line-height: 1.5em;
+}
+.content_privacy_policy {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.5em;
+    /* color: #000000; */
+    margin-top: 0;
+    text-align: left;
+  }
+  .privacy_policy_title{
+    line-height: 1em;
+  }
+
+  /* .content_privacy_policy h2{
+    font-size: 1.2em ;
+    margin-bottom: 0.6em;
+    margin-top: 1.3em;
+  
+  } */
+
+}

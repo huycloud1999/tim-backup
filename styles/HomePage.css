@@ -1,0 +1,543 @@
+.about-us-countdown {
+    background-color: rgba(181, 180, 169, 0.1);
+    padding: 147px 0px 156px 0px;
+    margin-bottom: 120px
+}
+
+
+.info-area .heading {
+    font-family: Roboto;
+    font-size: 40px !important;
+    font-weight: 600;
+    line-height: 56px !important;
+    letter-spacing: 0em;
+    text-align: left;
+    color: var(--blueTheme);
+    text-transform: uppercase;
+
+}
+
+/* .what-we-do .container .description p{
+    opacity: ;
+} */
+.about-us-countdown .info-area {
+    display: grid;
+    grid-template-columns: 689px 1fr;
+    column-gap: 32px;
+}
+
+
+.about-us-countdown .info-area .description .text {
+    font-family: Roboto;
+    font-size: 21px;
+    font-weight: 300;
+    line-height: 1.5em;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-bottom: 19px;
+
+}
+
+.about-us-countdown .countdown-grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 116px;
+}
+
+
+.monthly-highlights {
+    margin-bottom: 120px
+}
+
+.monthly-highlights .container {
+    display: grid;
+    grid-template-columns: 1fr 585px;
+}
+
+.monthly-highlights .info {
+    background-color: var(--blueTheme);
+    padding: 79px 49px 125px 53px
+}
+
+.monthly-highlights .info .heading {
+    font-family: Roboto;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 50px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: var(--lightBlueTheme);
+
+}
+
+.monthly-highlights .info .description {
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 29px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: white;
+    margin-top: 25px;
+}
+
+.monthly-highlights .info .description br {
+    display: block;
+    /* makes it have a width */
+    content: "";
+    /* clears default height */
+    margin-top: 16px;
+}
+
+
+.monthly-highlights .container .image>span {
+    height: 100% !important;
+}
+
+.monthly-highlights .container .image img {
+    transition: .4s;
+    object-fit: cover;
+}
+
+.monthly-highlights .container .image:hover img {
+    transform: scale(1.1);
+}
+
+.what-we-do {
+    margin-bottom: 120px
+}
+
+.what-we-do .container {
+    display: grid;
+    grid-template-columns: 271px 1fr;
+    column-gap: 139px;
+}
+
+.what-we-do .container .heading {
+    font-family: Roboto;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 56px;
+    letter-spacing: 0em;
+    text-align: left;
+    text-transform: uppercase;
+    color: var(--blueTheme)
+}
+
+.what-we-do .container .description {
+    font-family: Roboto;
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 1.45em;
+    letter-spacing: 0em;
+    text-align: left;
+
+    color: rgba(43, 43, 43, 1)
+}
+
+.what-we-do .container .description .text p {
+    margin: 0px !important
+}
+
+.what-we-do .container .description .text p:not(:last-child) {
+    margin-bottom: 16px !important;
+}
+
+.what-we-do .container .description .gradient-text {
+    color: var(--blueTheme);
+    margin-top: 16px;
+    /* color: rgba(47, 108, 233, 1); */
+    font-family: Roboto;
+    font-size: 21px;
+    font-weight: 500;
+    line-height: 1.45em;
+    letter-spacing: 0em;
+    text-align: left;
+
+
+}
+
+.text-animation {
+    background-image: url("../public/imgs/opacitybackground.png");
+    /* height: 100vh; */
+    padding-top: 120px;
+    padding-bottom: 120px;
+    display: flex;
+    flex-direction: column;
+    background-size: cover;
+    justify-content: center;
+    background-size: cover;
+}
+
+.text-animation .text-container {
+    padding: 0px 164px;
+    font-family: Roboto;
+    font-size: 35px;
+    font-weight: 400;
+    line-height: 53px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    font-style: italic;
+
+
+
+
+}
+
+.text-animation .author {
+    font-family: Roboto;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 36px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: var(--blueTheme);
+    width: fit-content;
+    margin-left: auto;
+    margin-top: 79px
+}
+
+.text-animation .text-container .text {
+    position: relative;
+    font-kerning: none !important;
+    width: 100%
+}
+
+.text-animation .text-container .text .ani-text .wrapper-text {
+    color: var(--blueTheme);
+    /* background-color: red; */
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transition: 0.3s;
+    /* height: 60px; */
+}
+.text-animation .text-container .text .ani-text .wrapper-text:after{
+    content: '';
+    width: 100%;
+    height: 30px;
+
+    /* background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%); */
+    z-index: 2;
+    display: block;
+    bottom: 0;
+    position: absolute;
+
+}
+
+.clonetext {
+    color: rgba(0, 0, 0, 0.2) !important;
+    position: absolute;
+
+    top: 0;
+    z-index: 1;
+
+}
+
+@media (max-width:1223px){
+    .about-us-countdown .info-area {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        column-gap: 32px;
+    }
+    .about-us-countdown .info-area br{
+        display: none;
+    }
+    .monthly-highlights .container{
+        grid-template-columns: 1fr 1fr;
+    }
+    .monthly-highlights .info .description{
+        font-size: 18px;
+        line-height: 1.5em;
+    }
+    .about-us-countdown .info-area .description .text{
+        font-size: 19px;
+        line-height: 1.5em;
+    }
+    .monthly-highlights .info .heading{
+        font-size: 37px;
+        line-height: 1.25em;
+    }
+}
+
+@media (max-width:768px) {
+    .what-we-do {
+        margin-bottom: 50px
+    }
+
+    .what-we-do .text {
+        width: unset !important
+    }
+
+    .what-we-do .container {
+        grid-template-columns: 1fr;
+    }
+
+    .what-we-do .container .heading {
+        font-family: Roboto;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 31px;
+        letter-spacing: 0em;
+        text-align: center;
+        margin-bottom: 31px;
+
+    }
+
+    .what-we-do .container .description {
+        font-family: Roboto;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 27px;
+        letter-spacing: 0em;
+        text-align: left;
+
+    }
+
+    .what-we-do .gradient-text {
+        font-family: Roboto !important;
+        font-size: 18px !important;
+        font-weight: 400 !important;
+        line-height: 27px !important;
+        letter-spacing: 0em !important;
+        text-align: left;
+
+    }
+
+
+    .text-animation br {
+        display: none;
+    }
+
+    .text-animation {
+        background-position: center;
+    }
+
+    .text-animation .text-container {
+        padding: 0px !important;
+        font-family: Roboto;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 30px;
+        letter-spacing: 0em;
+        text-align: left;
+
+        color: rgba(0, 0, 0, 0.2);
+        z-index: 100
+    }
+
+    .text-animation .text {
+        width: unset;
+    }
+
+    .text-animation .author {
+        font-family: Roboto;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 36px;
+        letter-spacing: 0em;
+        text-align: left;
+        margin-top: 40px;
+
+
+    }
+
+    .about-us-countdown {
+        padding: 72px 0px 72px 0px;
+        margin-bottom: 72px
+    }
+
+
+    .info-area .heading {
+        font-family: Roboto;
+        font-size: 24px !important;
+        font-weight: 600 !important;
+        line-height: 31px !important;
+        letter-spacing: 0em;
+        text-align: left;
+
+
+
+    }
+
+    .about-us-countdown .info-area {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 55px;
+    }
+
+
+    .about-us-countdown .info-area .description .text {
+        font-family: Roboto;
+        font-size: 14px !important;
+        font-weight: 400 !important;
+        line-height: 21px !important;
+        letter-spacing: 0em;
+        text-align: left;
+        width: unset !important;
+        margin-bottom: 0px;
+
+    }
+
+    .about-us-countdown .countdown-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 40px;
+        column-gap: 16px;
+        margin-bottom: 32px
+    }
+
+    .about-us-countdown .countdown-grid br {
+        display: none;
+    }
+
+
+
+    .monthly-highlights {
+        margin-bottom: 72px
+    }
+
+    .monthly-highlights .container {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 0px;
+    }
+
+    .monthly-highlights .info {
+        background-color: var(--blueTheme);
+        padding: 24px 16px 57px 16px
+    }
+
+    .monthly-highlights .info .heading {
+        font-family: Roboto;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 30px;
+        letter-spacing: 0em;
+        text-align: left;
+
+        color: var(--lightBlueTheme);
+
+    }
+
+    .monthly-highlights .info .description {
+        font-family: Roboto;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 21px;
+        letter-spacing: 0em;
+        text-align: left;
+
+        margin-top: 25px;
+    }
+
+    .monthly-highlights .container .image {
+        display: flex;
+    }
+
+    .monthly-highlights .container .image>span {
+        height: 302px !important;
+    }
+
+    .monthly-highlights .container .image img {
+        transition: .4s;
+        object-fit: cover;
+    }
+
+    .monthly-highlights .container .image:hover img {
+        transform: scale(1.1);
+    }
+
+    .monthly-highlights .info .description br {
+        display: block;
+        /* makes it have a width */
+        content: "";
+        /* clears default height */
+        margin-top: 8px;
+    }
+    .text-animation{
+        padding-top: 72px;
+        padding-bottom: 72px;
+    }
+    .what-we-do .container .description .gradient-text{
+        text-align: left;
+    }
+
+}
+
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .what-we-do .container {
+        gap: 30px;
+        grid-template-columns: 1fr;
+    }
+
+    .what-we-do .heading {
+        text-align: center !important;
+    }
+
+    .what-we-do .description {
+        font-size: 20px !important;
+        line-height: 29px !important;
+    }
+
+    .text-container {
+        padding: 0px 45px !important;
+    }
+
+    .text-container br {
+        display: none;
+    }
+
+    .about-us-countdown {
+        padding: 70px 0px;
+        margin-bottom: 35px;
+    }
+
+    .about-us-countdown .info-area {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .about-us-countdown .info-area .description .text {
+        margin-bottom: 25px;
+    }
+
+    .about-us-countdown .countdown-grid {
+        margin-top: 50px;
+
+
+    }
+
+    .monthly-highlights .container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .monthly-highlights .container .info {
+        padding: 40px;
+    }
+
+    .monthly-highlights .info .description br {
+        display: block;
+        /* makes it have a width */
+        content: "";
+        /* clears default height */
+        margin-top: 16px;
+    }
+    .text-animation .text-container{
+        font-size: 24px;
+        line-height: 34px;
+    }
+    .text-animation .author{
+        margin-top: 30px;
+        font-size: 24px;
+        line-height: 34px;
+    }
+    .text-animation{
+        padding-top: 72px;
+        padding-bottom: 72px;
+    }
+}

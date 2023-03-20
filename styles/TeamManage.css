@@ -1,0 +1,341 @@
+.out_Team_tim .swiper {
+  height: 500px !important;
+  display: grid;
+  padding-top: 35px;
+}
+
+.out_Team_tim .swiper .swiper-pagination {
+  display: flex;
+  bottom: 21px;
+  padding-left: 120px;
+}
+
+.out_Team_tim .swiper .swiper-pagination-bullet {
+  border-radius: 0;
+  width: 80%;
+  height: 4px;
+  background: #0B2577;
+}
+
+.out_Team_tim .swiper .swiper-button-next,
+.out_Team_tim .swiper .swiper-button-prev {
+  top: 95% !important;
+  height: 40px;
+  width: 40px;
+  background: #BDBDBD;
+  color: #2b2b2b;
+}
+
+.out_Team_tim .swiper .swiper-button-next:after,
+.out_Team_tim .swiper .swiper-button-prev:after {
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.out_Team_tim .swiper .swiper-button-next:hover,
+.out_Team_tim .swiper .swiper-button-prev:hover {
+  background: #0B2577;
+}
+
+
+.out_Team_tim .swiper .swiper-button-prev {
+  left: 0;
+}
+
+.out_Team_tim .swiper .swiper-button-next {
+  left: 58px;
+}
+
+.team_manage_container {
+  background: #ffffff;
+  box-shadow: 0px 1px 50px rgba(0, 0, 0, 0.06);
+  text-align: center;
+  font-family: "Roboto";
+  position: relative;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  color: #2b2b2b;
+  /* cursor: pointer; */
+}
+
+.team_manage_content {
+  position: relative;
+  cursor: pointer;
+}
+
+.hover_User {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100% !important;
+  margin: auto;
+  opacity: 0;
+}
+
+.hover_User>span {
+  height: 100% !important;
+}
+
+.hover_User>span img {
+  object-fit: cover !important;
+}
+
+.team_manage_container .hover_User {
+  transition: 0s linear;
+
+}
+
+@media (min-width: 1024px) {
+
+
+  .team_manage_container:hover .hover_User {
+    opacity: 1;
+  }
+
+  .team_manage_container:hover .user__image_manage {
+    opacity: 0;
+  }
+
+}
+
+.user_img_manage .user__image_manage {
+  transition: 0 linear;
+  opacity: 1;
+}
+
+.user_img_manage {
+  position: absolute;
+  bottom: 0;
+  margin: auto;
+  width: 100%;
+  height: 100% !important;
+}
+
+.user_img_manage .hover_User {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.user_img_manage .user__image_manage {
+  height: 100% !important;
+  display: flex;
+  justify-content: center;
+}
+
+.user_img_manage .user__image_manage>span {
+  margin-top: auto !important;
+  height: calc(100% - 0px) !important;
+  width: 100% !important;
+}
+
+.user_img_manage .user__image_manage>span img {
+  object-fit: contain !important;
+}
+
+.bg_img {
+  height: fit-content;
+  display: flex !important;
+}
+
+.team_manage_name,
+.team_manage_des {
+  margin: 0;
+  padding: 0;
+}
+
+.team_manage_content__des {
+  height: auto;
+}
+
+.team_manage_content__des h3 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  text-transform: uppercase;
+  color: #2b2b2b;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 240px;
+  text-overflow: ellipsis;
+  text-align: center !important;
+  margin: 16px auto 2px;
+}
+
+.team_manage_content__des p {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #2b2b2b;
+  /* margin: 0px 0 17px 0; */
+  /* overflow: hidden;
+  white-space: nowrap;
+  width: 180px;
+  text-overflow: ellipsis; */
+  text-align: center !important;
+  margin: 0px auto;
+  padding: 0 15px;
+}
+
+.team_manage_content__des h5 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #2b2b2b;
+  margin: 0 0 17px 0 !important;
+}
+
+@media (hover: none) {
+
+
+  .team_manage_container:hover .hover_User {
+    pointer-events: none;
+  }
+
+
+}
+
+@media screen and (max-width: 768px) {
+
+  .disabled {
+    pointer-events: none;
+  }
+
+
+  .out_Team_tim .swiper {
+    height: 350px !important;
+    display: grid;
+    padding-top: 35px;
+  }
+
+  /* .out_Team_tim .swiper .swiper-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+  } */
+
+  .team_manage_content__des h3 {
+    font-family: "Roboto";
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-transform: uppercase;
+    color: #2b2b2b;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 150px;
+    text-overflow: ellipsis;
+    text-align: center !important;
+    margin: 8px auto 3px;
+    padding: 0 7px;
+  }
+
+  .team_manage_content__des p {
+    font-family: "Roboto";
+    font-size: 12.5px;
+    font-weight: 500;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-transform: uppercase;
+    color: #2b2b2b;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 120px;
+    text-overflow: ellipsis;
+    text-align: center !important;
+    margin: 0px auto;
+    padding: 0 !important;
+  }
+
+  .team_manage_content__des h5 {
+    font-size: 10px;
+    line-height: 21px;
+    padding: 0 7px;
+    text-align: center;
+    margin: 0 0 10px 0 !important;
+  }
+
+  .team_manage_content__des {
+    height: auto;
+  }
+
+  .hover_User {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100% !important;
+    margin: auto;
+    opacity: 0;
+  }
+
+  .team_manage_content {
+    width: 100%;
+  }
+
+  .bg_img {
+    height: fit-content;
+    display: flex;
+  }
+
+  .user__image_manage {
+    height: 100% !important;
+    object-fit: contain !important;
+  }
+
+  .user__image_manage img {
+    object-fit: contain;
+  }
+
+  .user__image_manage>span {
+    margin-top: 20px !important;
+    height: calc(100% - 20px) !important;
+  }
+
+  .user_img_manage {
+    height: 100%;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .team_manage_content {
+    width: 100%;
+  }
+
+  .bg_img {
+    height: fit-content;
+    display: flex;
+  }
+
+  .user__image_manage {
+    height: 100% !important;
+    object-fit: contain !important;
+  }
+
+  .user__image_manage img {
+    object-fit: contain;
+  }
+
+  .user__image_manage>span {
+    margin-top: 20px !important;
+    height: calc(100% - 20px) !important;
+  }
+
+  .user_img_manage {
+    height: 100%;
+  }
+}

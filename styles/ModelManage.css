@@ -1,0 +1,256 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: center;
+  background-color: rgba(0, 0, 0, 0.65);
+  z-index: 100;
+}
+
+.model {
+  position: absolute;
+  display: grid;
+  grid-template-columns: 328px 1fr;
+  width: 865px;
+  /* height: 351px; */
+  background: #ffffff;
+  top: 30% !important;
+  transform: translateX(-50%) !important;
+}
+
+.exit {
+  position: absolute;
+  right: 31px;
+  top: 31px;
+  cursor: pointer;
+}
+
+.exit {
+  height: 20px;
+  width: 20px;
+}
+
+.modal_img {
+  width: 100% !important;
+  height: 395px !important;
+  padding: 43px 24px 42px 42px;
+}
+.modal_img > span {
+  width: 100% !important;
+  max-height: 100% !important;
+  object-fit: contain !important;
+  background-image: url("../public/imgs/background1.png") !important;
+  background-size: contain !important;
+  background-position: bottom !important;
+  background-repeat: no-repeat !important;
+  /* margin: 42px 24px 42px 42px; */
+}
+.modal_img img {
+  object-fit: cover !important;
+}
+.model_text {
+  margin: 42px 55px auto 0;
+}
+.hover_User {
+}
+
+.model_text h3 {
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 35px;
+  line-height: 52px;
+  letter-spacing: 0em;
+  text-align: left;
+  text-transform: uppercase;
+  color: #2b2b2b;
+  margin: 0;
+}
+
+.model_text > p {
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 27px;
+  letter-spacing: 0em;
+  text-align: left;
+  text-transform: uppercase;
+  color: #2b2b2b;
+  margin: 0 0 8px 0;
+}
+
+.model_text span {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+  color: #2b2b2b;
+}
+
+@media screen and (max-width: 768px) {
+  .model {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    max-height: calc(100vh - 40px);
+    overflow-y: scroll;
+    background: #ffffff;
+    margin: auto;
+    left: 50% !important;
+    right: 50% !important;
+    padding: 15px 15px 15px 15px;
+    margin-top: 0px !important;
+    /* transform: translate(-50%,-50%) !important; */
+  }
+
+  .modelManage {
+    margin: 0 30px;
+  }
+
+  .modal_img {
+    margin: 0;
+    padding: 0px !important;
+    height: 300px !important;
+    width: 100% !important;
+  }
+
+  .modal_img > span {
+    width: 100% !important;
+    max-height: 100% !important;
+    object-fit: contain !important;
+  }
+
+  .modal_img img {
+    object-fit: cover !important;
+  }
+
+  .exit {
+    position: absolute;
+    right: 15px;
+    top: 8px;
+  }
+
+  .exit {
+    height: 15px;
+    width: 15px;
+  }
+
+  .model_text {
+    width: 100%;
+  }
+
+  .model_text h3 {
+    font-size: 16px;
+  }
+
+  .model_text p {
+    font-size: 13px;
+  }
+
+  .model_text span {
+    font-size: 13px;
+    line-height: 10px !important;
+  }
+  .model_text span p {
+    line-height: 18px !important;
+    font-weight: 400 !important;
+  }
+
+  .model_text {
+    margin: auto;
+  }
+
+  .model_text {
+    margin-bottom: 12px !important;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .model {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+    background: #ffffff;
+    margin: auto;
+    left: 50% !important;
+    right: 50% !important;
+    padding: 15px 15px 15px 15px;
+    /* margin-top: 30%; */
+  }
+
+  .modal_img {
+    margin: 0;
+    padding-top: 15px;
+  }
+
+  .modal_img > span {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .modal_img img {
+    object-fit: cover !important;
+  }
+
+  .exit {
+    display: none;
+  }
+
+  .model_text {
+    width: 230px;
+  }
+  .model_text h3 {
+    font-size: 12px;
+    line-height: 10px;
+    margin-top: 8px;
+  }
+
+  .model_text {
+    margin: auto;
+  }
+
+  .p {
+    font-size: 11px;
+  }
+
+  .model_text .model_text {
+    margin-bottom: 10px !important;
+  }
+
+  .model_text span {
+    font-size: 10px !important;
+    line-height: 10px;
+  }
+
+  .model_text p {
+    font-size: 12px !important;
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .model {
+    position: absolute;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    width: 865px;
+    /* height: 351px; */
+    background: #ffffff;
+    top: 30% !important;
+    transform: translateX(-50%) !important;
+  }
+  .modal_img {
+    width: 100% !important;
+    height: 100% !important;
+    padding: 15px;
+  }
+}

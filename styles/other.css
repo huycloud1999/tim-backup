@@ -1,0 +1,170 @@
+.title_other {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 56px;
+    text-transform: uppercase;
+    color: #0B2577;
+    text-align: center;
+    width: 900px;
+    margin: 120px auto 80px;
+}
+
+.other_text {
+    font-family: 'Roboto';
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #2B2B2B;
+    /* opacity: 0.8; */
+    margin-bottom: 70px;
+}
+
+.other_content {
+    margin-bottom: 80px;
+    color: #2B2B2B;
+    line-height: 28px;
+}
+
+.content__o {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.other_text {
+    margin: auto 0 auto 55px;
+}
+
+.other_text h2 {
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 36px;
+    letter-spacing: 0em;
+    text-transform: uppercase;
+    color: #0B2577;
+    text-align: left;
+    margin: 24px 0;
+
+}
+
+.other_text p {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    color: #2B2B2B;
+    text-align: left;
+    margin: 16px 0;
+
+}
+
+.img_damcEmergingMarket {
+    width: 585px;
+    height: 456px;
+
+}
+
+.img_damcEmergingMarket>span {
+    object-fit: cover;
+    width: 585px !important;
+    height: 456px !important;
+}
+
+.content__tow {
+    margin: 120px 0;
+}
+
+.content__tow_text {
+    margin: auto 70px auto 0;
+}
+
+@media screen and (max-width: 320px) {
+    /* .img_damcEmergingMarket>span {
+        width: 320px !important;
+    }
+
+    .other_text p {
+        width: 100%;
+    } */
+}
+
+@media screen and (max-width: 768px) {
+    .content__o {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .title_other {
+        width: 100%;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 31px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #0B2577;
+        margin: 72px 0 60px 0;
+    }
+
+    .otther {
+        margin: 72px 0 !important;
+    }
+
+    .img_damcEmergingMarket {
+        width: 100% !important;
+        height: 255px !important;
+
+    }
+
+    .img_damcEmergingMarket>span {
+        object-fit: cover;
+        width: 100% !important;
+        height: 255px !important;
+    }
+
+    .other_text p {
+        width: 327px !important;
+
+    }
+
+    .other_text {
+        margin: 0;
+    }
+
+    .other_text h2 {
+        font-size: 16px;
+        margin: 24px 0 16px 0;
+        width: 100% !important;
+    }
+
+    .other_content {
+        margin-bottom: 30px !important;
+    }
+
+    .other_text p {
+        font-size: 14px;
+        line-height: 21px;
+        width: 100% !important;
+    }
+
+    .content__tow {
+        margin: 72px 0;
+        display: flex;
+        flex-direction: column-reverse;
+
+    }
+
+    .other_text {
+        font-size: 14px;
+        line-height: 21px;
+        text-align: center;
+        color: #2B2B2B;
+        opacity: 0.8;
+    }
+}

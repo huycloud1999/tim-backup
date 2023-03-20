@@ -1,0 +1,119 @@
+.video-area .video-react {
+    width: 100% !important;
+    overflow: hidden;
+    padding: 0px !important;
+    height: 100%;
+}
+
+.video-area video {
+    background-size: cover !important;
+    width: 100%;
+    height: 562px !important;
+    object-fit: cover;
+}
+
+.video-area video[poster] {
+    background-size: cover !important;
+    object-position: center center;
+
+}
+
+.video-area .video-react-control-bar-auto-hide {
+    display: none;
+}
+
+.video-area {
+    position: relative;
+    height: 100% !important;
+    overflow: hidden;
+}
+
+.video-area button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: none;
+    /* transform */
+}
+
+.video-area .button-trigger-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.video-area .button-trigger-play>span {
+    width: 135px !important
+}
+
+.video-area .button-trigger-play:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+@media (min-width:1024px) {
+    .video-area {
+        /* height: calc(100vh - 100px) !important; */
+        height: 100% !important;
+        margin-bottom: 120px !important;
+    }
+}
+
+@media (max-width:768px) {
+
+
+    .video-react {
+        height: 100%;
+    }
+
+    .video-area video {
+        object-fit: cover !important;
+        height: 100% !important
+    }
+
+    .video-area {
+        position: relative;
+        height: 205px;
+        overflow: hidden;
+        padding-bottom: 50px;
+    }
+
+    .video-area button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: none;
+        /* transform */
+    }
+
+    .video-area .button-trigger-play {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        cursor: pointer;
+        transition: .2s;
+    }
+
+    .video-area .button-trigger-play>span {
+        width: 40px !important
+    }
+
+    .video-area .button-trigger-play:hover {
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+
+
+}
+
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+
+    .video-area {
+        height: 505px !important;
+    }
+}

@@ -1,0 +1,402 @@
+.CertificateOffering_des {
+  font-family: "Roboto";
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 1.5em;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #2b2b2b;
+}
+
+.CertificateOffering_Link {
+  display: flex;
+  justify-content: space-between;
+  margin: 72px 0;
+}
+
+.link_Timvt {
+  display: flex;
+  height: 79px;
+  width: 600px;
+  border-radius: 0px;
+  border: 1px solid #0b2577;
+  text-align: center;
+  margin: auto;
+  cursor: pointer;
+  border-right: none;
+  background: #fff;
+}
+
+.link_Timvt a {
+  font-family: "Roboto";
+  font-size: 35px;
+  font-weight: 500;
+  line-height: 53px;
+  letter-spacing: 0em;
+  color: #0b2577;
+  margin: auto;
+  line-height: 14px;
+  text-transform: uppercase;
+}
+
+.link_other:hover,
+.link_Timvt:hover {
+  background: #0b2577;
+}
+
+.link_other:hover a,
+.link_Timvt:hover a {
+  color: #fff;
+}
+
+.CertificateOffering_image_link {
+  display: flex;
+  gap: 16px;
+}
+
+.CertificateOffering_image > span {
+  margin: auto;
+}
+
+.Certificate__image {
+  text-align: center;
+  margin: auto 0 !important;
+}
+
+.link_other {
+  display: flex;
+  height: 79px;
+  width: 600px;
+  border-radius: 0px;
+  border: 1px solid #0b2577;
+  text-align: center;
+  cursor: pointer;
+  background: #fff;
+}
+
+.link_other a {
+  font-family: "Roboto";
+  font-size: 35px;
+  font-weight: 500;
+  line-height: 53px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #0b2577;
+  margin: auto;
+  line-height: 14px;
+  text-transform: uppercase;
+}
+
+.CertificateOffering_table h3 {
+  font-family: "Roboto";
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 31px;
+  letter-spacing: 0em;
+  text-align: left;
+  text-transform: uppercase;
+  color: #0b2577;
+  margin: 72px 0 30px 0;
+  text-align: center;
+}
+
+.image_bottom > span {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain;
+}
+
+.CertificateOffering_table {
+  /* background-image: url(../public/imgs/Frame_2.png); */
+  background-size: 100%;
+  object-fit: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  padding-bottom: 128px;
+}
+
+.CertificateOffering_TIM_VN h3 {
+  font-family: "Roboto";
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 31px;
+  letter-spacing: 0em;
+  text-align: left;
+  text-transform: uppercase;
+  color: #0b2577;
+  text-align: center;
+}
+
+.TIM_content_1 {
+  text-align: center;
+  margin: 40px 0 72px 0;
+}
+
+.title_TIM_content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 846px;
+  margin: auto;
+}
+
+.description_TIM_content p {
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 27px;
+  letter-spacing: 0em;
+  text-transform: uppercase;
+  color: #2b2b2b;
+  margin-bottom: 7px;
+}
+
+.description_TIM_content span {
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 27px;
+  letter-spacing: 0em;
+  color: #0b2577;
+}
+.description_TIM_content,
+.TIM_content_Image {
+  position: relative;
+}
+
+.TIM_content_1_Image {
+  position: absolute;
+  margin-left: 75px;
+  margin-right: 75px !important;
+  top: 68px !important;
+  transform: translateY(-200px);
+  width: 62px !important;
+  height: 62px !important;
+  bottom: 0 !important;
+}
+
+.Certificate__Offering {
+  margin-bottom: 50px !important;
+}
+
+.TIM_content_mobile {
+  display: none;
+}
+@media (max-width: 320px) {
+  .TIM_content_1_Image_mobile {
+    width: 35px !important;
+    height: 35px !important;
+  }
+  .TIM_content_1_Image_mobile > span {
+    position: absolute;
+    position: absolute;
+    top: 30% !important;
+    right: 50% !important;
+  }
+
+  .description_TIM_content_mobile p {
+    font-size: 12px !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  .Certificate__Offering p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: center;
+    color: #2b2b2b;
+    opacity: 0.8;
+  }
+
+  .Certificate__Offering {
+    margin-top: 72px !important;
+  }
+
+  .small-title-section .title {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 31px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #0b2577;
+  }
+
+  .CertificateOffering_TIM_VN h3 {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #0b2577;
+    margin-bottom: 24px;
+  }
+
+  .TIM_content {
+    display: none;
+  }
+
+  .link_other a,
+  .link_Timvt a {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 25px;
+  }
+
+  .link_Timvt,
+  .link_other {
+    height: 45px;
+  }
+  .certificateOffering_table_Tab {
+    padding-bottom: 120px !important;
+  }
+  .link_other link {
+    height: 54px !important;
+  }
+
+  .CertificateOffering_table h3 {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #0b2577;
+    margin: 72px 0 24px 0;
+  }
+
+  .CertificateOffering_table {
+    background-image: url(../public/imgs/Frame_3.png);
+    width: 100vw !important;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    padding-bottom: 72px;
+  }
+
+  .CertificateOffering_image {
+    width: 15px;
+    line-height: 27px;
+  }
+
+  .TIM_content_mobile {
+    text-align: center;
+    display: block;
+  }
+
+  .title_TIM_content_mobile {
+    display: flex;
+    text-align: center;
+  }
+
+  .description_TIM_content_mobile {
+    margin: auto;
+  }
+
+  .description_TIM_content_mobile p {
+    font-family: "Roboto";
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: left;
+    text-transform: uppercase;
+    color: #2b2b2b;
+  }
+
+  .description_TIM_content_mobile span {
+    font-family: "Roboto";
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #0b2577;
+  }
+
+  .CertificateOffering_TIM_VN_mobile {
+    padding: 0 !important;
+  }
+
+  .title_TIM_content_mobile {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: auto;
+  }
+
+  .TIM_content__mobile_1:first-child {
+    margin-bottom: -30px;
+  }
+
+  .description_TIM_content_mobile {
+    position: relative;
+    margin-bottom: 72px;
+  }
+
+  .TIM_content_1_Image_mobile {
+    position: absolute;
+    top: -100% !important;
+    transform: translate(-50%, -50%);
+    left: 50% !important;
+    width: 45px !important;
+    height: 45px !important;
+  }
+
+  .description_TIM_content_mobile p {
+    margin: 21px 0 8px 0;
+  }
+
+  .table_CertificateOffering {
+    table-layout: fixed;
+    border-spacing: 0;
+    width: 100%;
+  }
+
+  .CertificateOffering_Link {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    /* margin: 50px 0 72px 0; */
+    z-index: 100;
+  }
+
+  .table__Certificate thead tr th {
+    padding: 5px !important;
+  }
+
+  .table__Certificate tr th:last-child {
+    width: 40% !important;
+    padding: 4px !important;
+  }
+
+  .table__Certificate tbody tr td:nth-child(1),
+  .table__Certificate tbody tr td:nth-child(2) {
+    text-align: center;
+  }
+  .table__Certificate tr td::nth-child(3) {
+    text-align: right !important;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .description_TIM_content {
+    position: relative;
+  }
+
+  .TIM_content_1_Image {
+    position: absolute;
+    margin-left: 50px;
+    top: 68px !important;
+    transform: translateY(-170px);
+    width: 57px !important;
+    height: 57px !important;
+    bottom: 0 !important;
+  }
+
+  .title_TIM_content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+    margin: auto;
+  }
+
+  .mandates_tow {
+    padding: 0 !important;
+  }
+}

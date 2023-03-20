@@ -1,0 +1,249 @@
+.banner {
+    margin-bottom: 120px
+}
+
+.banner .slider-item .image>span {
+    width: 100% !important;
+    display: block !important;
+    height: 100% !important;
+}
+
+.banner img {
+    object-fit: cover !important;
+}
+
+.banner .slider-item {
+    position: relative;
+    height: 70vh;
+}
+
+.banner .slider-item .image {
+    height: 100%;
+}
+
+.banner .slider-item .content-box .border-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 100% !important;
+}
+
+.banner .slider-item .content-box .border-container img {
+    object-fit: unset !important;
+}
+
+.banner .slider-item .content-box .border-container>span {
+    height: 100% !important;
+}
+
+.banner .slider-item .content-box {
+    position: absolute;
+    z-index: 1;
+    width: 311px;
+    padding: 32px 29px 16px 31px;
+    /* bottom: 5vh; */
+    bottom: 18px;
+    /* left: calc((100vw - 1200px)/2 + 100px); */
+
+    left: 250px;
+
+
+}
+
+.content-detail {
+    margin-left: 0px;
+}
+
+
+
+.title {
+    font-family: Roboto;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.25em;
+    letter-spacing: 0em;
+    text-align: left;
+    /* color: white; */
+    margin-bottom: .5em;
+    /* text-transform: uppercase; */
+    /* color: #0B2577; */
+    margin: 0;
+
+}
+
+.banner .slider-item .content-box .title {
+    color: #fff;
+}
+
+.banner .slider-item .content-box .description {
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 25px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: white;
+    margin-top: 0px
+}
+
+.banner .slider-item .content-box .symbol {
+    position: absolute;
+    top: -56px;
+    width: 182px;
+    left: -118px;
+}
+
+.banner .slider-item .content-box .arrow {
+    position: absolute;
+    top: 0px;
+    cursor: pointer;
+    right: 0px;
+    padding: 16px;
+    background-color: var(--blueTheme);
+}
+
+.banner .slider-item .content-box .arrow span {
+    transition: .2s;
+
+}
+
+/* .banner .slider-item .content-box .arrow:hover > span{
+    transform: rotate(45deg);
+} */
+
+.banner-wrapper {
+    position: relative;
+}
+
+.banner-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 7px;
+    bottom: unset !important;
+    top: 100%;
+    transform: translateY(calc(-23px - 100%)) !important;
+
+
+}
+
+.banner-pagination .swiper-pagination-bullet {
+    width: 14px;
+    height: 14px;
+    background-color: rgba(255, 255, 255, 0.8);
+    opacity: 1;
+    margin: 0px !important;
+    transition: 0.2s;
+}
+
+.banner-pagination .swiper-pagination-bullet-active {
+    width: 16px;
+    height: 16px;
+    background-color: rgba(255, 255, 255, 1);
+
+}
+
+@media (max-width:768px) {
+    .banner {
+        margin-bottom: 72px;
+    }
+
+    .banner .slider-item {
+        /* height: 812px !important; */
+        height: 60vh !important;
+    }
+
+    .banner .container {
+        padding: 0px !important;
+    }
+
+    .banner .slider-item .content-box .border-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        height: 100% !important;
+    }
+
+    .banner .slider-item .content-box {
+        width: unset !important;
+        left: unset !important;
+        right: 24px !important;
+        margin-left: 120px;
+        /* padding: 35px 20px !important; */
+        padding: 6vw 8vw !important;
+        bottom: 6vh !important;
+    }
+
+    .banner .slider-item .content-box .description {
+        font-family: Roboto;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 21px;
+        letter-spacing: 0em;
+        text-align: left;
+
+
+    }
+
+    .banner .slider-item .content-box .title {
+        font-family: Roboto;
+        font-size: 23px !important;
+        font-weight: 700 !important;
+        line-height: 1.25em !important;
+        margin-bottom: 10px !important;
+        letter-spacing: 0em;
+        text-align: left;
+
+
+    }
+
+
+
+    .banner .symbol {
+        left: -98px !important;
+        top: -55px !important
+    }
+
+    .banner .symbol>span {
+        width: 156px !important;
+
+    }
+
+    .banner-wrapper {
+        padding: 0 !important;
+    }
+}
+
+
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .banner {
+        margin-bottom: 72px;
+    }
+
+    .banner .slider-item {
+        height: 812px !important;
+    }
+
+    .banner .container {
+        padding: 0px !important;
+    }
+
+    .banner .slider-item .content-box .border-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        height: 100% !important;
+    }
+
+    .banner .slider-item .content-box {
+        left: 240px;
+    }
+
+    .banner .slider-item .content-box {
+        bottom: 10vh !important;
+    }
+
+}

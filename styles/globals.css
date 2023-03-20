@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200;300;400;500;600;700;800&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* @font-face {
+  font-family: Roboto;
+  src: url(../public/fonts/Roboto\ Thin.otf);
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url(../public/fonts/Roboto\ Regular.otf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url(../public/fonts/Roboto\ Medium.otf);
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url(../public/fonts/Roboto\ Medium.otf);
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url(../public/fonts/Roboto\ Bold.otf);
+  font-weight: 700;
+} */
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  /* font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
+  font-family: Roboto;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --blueTheme: rgba(11, 37, 119, 1);
+  --lightBlueTheme: rgba(117, 208, 199, 1);
+  --mediumBlueTheme: rgba(47, 108, 233, 1);
+}
+
+.container {
+  margin: 0px !important;
+  margin-right: auto !important;
+  margin-left: auto !important;
+  width: 1200px !important;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    margin: 0px !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+    width: 100% !important;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1224px) {
+  .container {
+    margin: 0px !important;
+    padding-left: 35px !important;
+    padding-right: 35px !important;
+    width: 100% !important;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.button-global {
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 17px;
+  letter-spacing: 0em;
+  text-align: left;
+  border: 1px solid rgba(43, 43, 43, 1);
+  padding: 19px 21px;
+  display: flex;
+  width: fit-content;
+}
+
+.button-global > span {
+  width: 14px !important;
+  transform: translateY(3px);
+  margin-left: 10px !important;
+  transition: 0.2s;
+}
+
+.button-global:hover {
+  color: var(--lightBlueTheme);
+  border-color: var(--lightBlueTheme) !important;
+}
+
+.big-title {
+  font-family: Roboto;
+  font-size: 50px;
+  font-weight: 500;
+  line-height: 60px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: var(--blueTheme);
+}
+
+span.blue {
+  color: var(--blueTheme);
+}
+
+.small-title {
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 27px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: var(--blueTheme);
+}
+
+.border-blue {
+  /* border: 1px solid var(--blueTheme); */
+}
+
+.blueButton {
+  margin-top: 40px;
+  background-color: var(--lightBlueTheme);
+
+  color: white !important;
+  border: 0px !important;
+}
+
+@media (min-width: 1000px) {
+  .hideOnDesktop {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .hideOnMobile {
+    display: none;
+  }
+  .button-global {
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 15px;
+    letter-spacing: 0em;
+    text-align: left;
+    border: 1px solid rgba(43, 43, 43, 1);
+    padding: 15px 20px;
+    width: fit-content;
+  }
+
+  .button-global > span {
+    width: 14px !important;
+    transform: translateY(3px);
+    margin-left: 10px !important;
+    transition: 0.2s;
+  }
+
+  /* .button-global:hover>span {
+    transform: rotate(45deg);
+  } */
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .hideOnTablet {
+    display: none;
+  }
+}
+.image-container {
+  width: 100%;
+  position: relative;
+}
+.image-container > span:nth-of-type(1) {
+  height: 100%;
+  position: relative !important;
+}
+.image-item {
+  width: 100% !important;
+  position: relative !important;
+  height: unset !important;
+}
+
+.isLoading{
+  animation: 2s infinite loading;
+}
+.isLoadingSlow{
+  animation: 1s infinite loading;
+}
+
+@keyframes loading {
+  0%   {opacity: 0.2;}
+  25%   {opacity: 0.4;}
+  50%   {opacity: 0.6;}
+  75%   {opacity: 0.4;}
+  100%  {opacity: 0.2;}
+}
+
+.loading-section{
+  position: fixed;
+  z-index: 9;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255,255,255,0.8);
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  backdrop-filter: blur(0px);
+}
+
+.loading-section img{
+  width: 50px !important;
+  height: auto !important;
+}

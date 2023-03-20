@@ -1,0 +1,54 @@
+.chart-image-item{
+    position: relative;
+}
+.chart-image-item .item{
+    padding: 20px 13px 24px 13px;
+    /* border: 1px solid var(--blueTheme); */
+    height: 100%;
+}
+
+.chart-image-item .item .text{
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--blueTheme) ;
+    
+}
+
+.chart-image-item .image>span{
+    width: 100% !important;
+    height: auto !important;
+}
+
+
+
+@media (max-width:768px){
+    .chart-image-item .item{
+        padding: 20px 13px 24px 13px;
+        /* border: 1px solid var(--blueTheme); */
+        height: 100%;
+    }
+    
+    .chart-image-item .item .text{
+        font-family: Roboto;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 21px;
+        letter-spacing: 0em;
+        text-align: center;
+        margin-bottom: 30px;
+        color: var(--blueTheme);
+        
+    }
+    
+    .chart-image-item .image>span{
+        width: 100% !important;
+        height: auto !important;
+    }
+    
+
+}

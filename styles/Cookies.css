@@ -1,0 +1,36 @@
+.CookieConsent>div:first-child{
+    font-family: Roboto;
+    color:black;
+    font-size:14px;
+    flex: unset !important;
+    text-align: left;
+}
+
+.CookieConsent{
+    background: white !important;
+}
+.CookieConsent{
+    justify-content: right !important;
+    height: fit-content;
+    padding: 20px 20px;
+}
+@media (max-width:768px){
+    .CookieConsent>div:first-child{
+        margin: 0px !important
+    }
+    .CookieConsent>div:nth-child(2){
+        margin: 0px !important;
+        margin-right: auto !important;
+        margin-left: auto !important;
+        display: block;
+    }
+    .CookieConsent>div:nth-child(2)>button{
+        margin: 0px !important;
+    }
+    .CookieConsent{
+        justify-content: right !important;
+        height: fit-content;
+        padding: 10px;
+    }
+
+}
