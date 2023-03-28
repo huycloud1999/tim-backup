@@ -5,8 +5,8 @@ const nextConfig = {
   swcMinify: false,
 
   images: {
-    domains: ["cms.okhub.vn"],
-   
+    domains: ["cms.okhub.vn", "cms.timvest.ch"],
+
   },
   env: {
     HOSTNAME_CMS: "https://cms.okhub.vn/graphql",
