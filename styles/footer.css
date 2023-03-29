@@ -13,8 +13,8 @@ ul li {
 }
 
 .img__footer {
-  width: 78px !important;
-  height: 78px !important;
+  width: 70px !important;
+  height: 70px !important;
 }
 
 .image_TIM {
@@ -34,7 +34,7 @@ ul li {
 }
 
 .colum_2_link__PC {
-  width: 150px !important;
+  /* width: 150px !important; */
 }
 
 
@@ -170,7 +170,12 @@ ul li {
 
 .colum_new {
   width: 100%;
-  margin-top: 120px !important;
+  /* margin-top: 120px !important; */
+  padding-top: 29px;
+}
+
+.colum_2 p {
+  margin: 0;
 }
 
 .colum_2 {
@@ -379,7 +384,7 @@ ul li {
     font-size: 12px;
   }
 
-  .sup_footer_2{
+  .sup_footer_2 {
     justify-content: space-between;
     gap: 0 !important;
   }
@@ -402,11 +407,11 @@ ul li {
   }
 
   .colum_2 {
-    margin-top: 30px !important;
+    /* margin-top: 30px !important; */
   }
 
   .colum__2__title {
-    margin-bottom: 26px;
+    /* margin-bottom: 26px; */
   }
 
   .colum_1 input {

@@ -77,7 +77,7 @@ function OurApproach(props) {
                       <Image src={value.file.file.sourceUrl ||value.file.image.sourceUrl} alt="Rectangle" layout="fill" className="image-item" />
                     </div>
                     <div className="hover_approach_materials">
-                      <a download={value.name} target='blank' href={value.file.file.mediaItemUrl} className="hover_approach_button">
+                      <a download={value.name} target='_blank' href={value.file.file.mediaItemUrl} className="hover_approach_button">
                         <Image src={download} alt="image" />
                         <p>Click here download</p>
                       </a>

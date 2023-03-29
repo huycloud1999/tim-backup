@@ -7,7 +7,7 @@
     padding-bottom: 24px;
     /* border-bottom: 1px solid rgba(43, 43, 43, 0.6); */
     margin-bottom: 40px;
-    color: #0B2577;
+    color: #000080;
     font-size: 50px;
     font-weight: 500;
     line-height: 60px;
@@ -41,6 +41,6 @@
         letter-spacing: 0em;
         text-align: left;
         text-transform: uppercase;
-        color: #0B2577;
+        color: #000080;
     }
 }

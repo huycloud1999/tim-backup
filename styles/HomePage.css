@@ -122,7 +122,8 @@
     letter-spacing: 0em;
     text-align: left;
     text-transform: uppercase;
-    color: var(--blueTheme)
+    color: #000080;
+    /* var(--blueTheme) */
 }
 
 .what-we-do .container .description {
@@ -215,7 +216,8 @@
     transition: 0.3s;
     /* height: 60px; */
 }
-.text-animation .text-container .text .ani-text .wrapper-text:after{
+
+.text-animation .text-container .text .ani-text .wrapper-text:after {
     content: '';
     width: 100%;
     height: 30px;
@@ -237,27 +239,32 @@
 
 }
 
-@media (max-width:1223px){
+@media (max-width:1223px) {
     .about-us-countdown .info-area {
         display: grid;
         grid-template-columns: 1.2fr 1fr;
         column-gap: 32px;
     }
-    .about-us-countdown .info-area br{
+
+    .about-us-countdown .info-area br {
         display: none;
     }
-    .monthly-highlights .container{
+
+    .monthly-highlights .container {
         grid-template-columns: 1fr 1fr;
     }
-    .monthly-highlights .info .description{
+
+    .monthly-highlights .info .description {
         font-size: 18px;
         line-height: 1.5em;
     }
-    .about-us-countdown .info-area .description .text{
+
+    .about-us-countdown .info-area .description .text {
         font-size: 19px;
         line-height: 1.5em;
     }
-    .monthly-highlights .info .heading{
+
+    .monthly-highlights .info .heading {
         font-size: 37px;
         line-height: 1.25em;
     }
@@ -458,11 +465,13 @@
         /* clears default height */
         margin-top: 8px;
     }
-    .text-animation{
+
+    .text-animation {
         padding-top: 72px;
         padding-bottom: 72px;
     }
-    .what-we-do .container .description .gradient-text{
+
+    .what-we-do .container .description .gradient-text {
         text-align: left;
     }
 
@@ -527,16 +536,19 @@
         /* clears default height */
         margin-top: 16px;
     }
-    .text-animation .text-container{
+
+    .text-animation .text-container {
         font-size: 24px;
         line-height: 34px;
     }
-    .text-animation .author{
+
+    .text-animation .author {
         margin-top: 30px;
         font-size: 24px;
         line-height: 34px;
     }
-    .text-animation{
+
+    .text-animation {
         padding-top: 72px;
         padding-bottom: 72px;
     }

@@ -43,7 +43,7 @@ function Solutions(props) {
       document.querySelector('.property-solution').style.gridTemplateColumns = `repeat(${document.querySelectorAll('.property-solution li').length},1fr)`
 
     }
-    
+
   })
 
   const handleClick = (id) => {

@@ -124,7 +124,7 @@ export const NewHeader = () => {
                 </ul>
               </div>
               <Link href='/why-vietnam' className="menu-parent"><a className={"menu-parent " + (router.asPath == '/why-vietnam' ? 'active' : '')}>Why Vietnam</a></Link>
-              <Link href='/solution' className="menu-parent"><a className={"menu-parent " + (router.asPath == '/solution' ? 'active' : '')}>Products</a></Link>
+              <Link href='/products' className="menu-parent"><a className={"menu-parent " + (router.asPath == '/products' ? 'active' : '')}>Products</a></Link>
               <Link href='/news' className="menu-parent"><a className={"menu-parent " + (router.asPath == '/news' ? 'active' : '')}>News & Insights</a></Link>
               <Link href='/get-in-touch' className="menu-parent"><a className={"menu-parent " + (router.asPath == '/get-in-touch' ? 'active' : '')}>Get in touch</a></Link>
             </div>

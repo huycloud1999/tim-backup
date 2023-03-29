@@ -31,7 +31,7 @@ export const PostLoop = ({
 
   return (
     <div className="loop-post">
-      <Link prefetch={false} href={`/news/${slug}`}>
+      <Link prefetch={false} href={`/${slug}`}>
         <a className="image image-container">
           <Image
             src={image}
@@ -40,13 +40,13 @@ export const PostLoop = ({
             objectFit="cover"
             className="image"
             placeholder="blur"
-                      blurDataURL="https://cms.okhub.vn/wp-content/uploads/2023/01/1x1-0b25777f.png"
+            blurDataURL="https://cms.okhub.vn/wp-content/uploads/2023/01/1x1-0b25777f.png"
           />
         </a>
       </Link>
 
       <div className="column1">
-        <Link prefetch={false} href={`/news/${slug}`} className="title">
+        <Link prefetch={false} href={`/${slug}`} className="title">
           <a className="title">
 
             <div dangerouslySetInnerHTML={{ __html: title }}></div>
@@ -64,7 +64,7 @@ export const PostLoop = ({
             })
           }</div>
           <div className="date" >
-            {[month,' ' ,day,', ' , year].join('')}
+            {[month, ' ', day, ', ', year].join('')}
           </div>
         </div>
       </div>
@@ -74,7 +74,7 @@ export const PostLoop = ({
           className="description"
           dangerouslySetInnerHTML={{ __html: description }}
         ></div>
-        <Link prefetch={false} href={`/news/${slug}`}>
+        <Link prefetch={false} href={`/${slug}`}>
           <a className="read-more">
             Read News
             <Image src={arrow} alt="arrow" />
