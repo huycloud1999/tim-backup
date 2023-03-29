@@ -100,6 +100,7 @@ export default function Footer({ data }) {
                   <Link
                     href="https://www.google.com/maps/place/Blegistrasse+5,+6340+Baar,+Th%E1%BB%A5y+S%C4%A9/@47.2162384,8.5645895,14.92z/data=!4m5!3m4!1s0x479aa95ccf9b4bdd:0x9ddd1530b535c88b!8m2!3d47.2160405!4d8.5718913?hl=vi-VN"
                     target="_blank"
+                    rel="noreferrer"
                   >
                     <Image
                       src={data.columsContact.location.img.sourceUrl}
@@ -113,6 +114,7 @@ export default function Footer({ data }) {
                   <Link
                     href="https://www.google.com/maps/place/Blegistrasse+5,+6340+Baar,+Th%E1%BB%A5y+S%C4%A9/@47.2160405,8.5697026,17z/data=!3m1!4b1!4m5!3m4!1s0x479aa95ccf9b4bdd:0x9ddd1530b535c88b!8m2!3d47.2160405!4d8.5718913?hl=vi-VN"
                     target="_blank"
+                    rel="noreferrer"
                   >
                     <a>
                       <span
@@ -182,6 +184,7 @@ export default function Footer({ data }) {
                   <Link
                     href="https://www.google.com/maps/place/Lim+Tower+2/@10.7746647,106.6860731,17z/data=!3m1!4b1!4m5!3m4!1s0x31752f24b4d0c969:0xa41578db6e3db2c1!8m2!3d10.7745812!4d106.6881928?hl=vi-VN"
                     target="_blank"
+                    rel="noreferrer"
                   >
                     <Image
                       src={data.timVietnamJsc.location.img.sourceUrl}
@@ -195,6 +198,7 @@ export default function Footer({ data }) {
                   <Link
                     href="https://www.google.com/maps/place/Lim+Tower+2/@10.7746647,106.6860731,17z/data=!3m1!4b1!4m5!3m4!1s0x31752f24b4d0c969:0xa41578db6e3db2c1!8m2!3d10.7745812!4d106.6881928?hl=vi-VN"
                     target="_blank"
+                    rel="noreferrer"
                   >
                     <a>
                       <span
@@ -215,24 +219,24 @@ export default function Footer({ data }) {
               <p>{data.turicumInvestment.turicumInvestment}</p>
               <div className="sup_footer_2">
                 <Link href="https://www.linkedin.com/company/turicum-investment-management-ag/?viewAsMember=true">
-                  <a target={"_blank"}>{data?.turicumInvestment?.linkedin}</a>
+                  <a target={"_blank"} rel="noreferrer">{data?.turicumInvestment?.linkedin}</a>
                 </Link>
                 <Link
                   href={data?.turicumInvestment?.finsapolicyfile?.link || ""}
                 >
-                  <a target={"_blank"}>
+                  <a target={"_blank"} rel="noreferrer">
                     {data?.turicumInvestment?.finsaPolicy}
                   </a>
                 </Link>
                 <Link
                   href={data?.turicumInvestment?.privacyPolicyFile?.link || ""}
                 >
-                  <a target={"_blank"}>
+                  <a target={"_blank"} rel="noreferrer">
                     {data?.turicumInvestment?.privacyPolicy}
                   </a>
                 </Link>
                 <Link href={data?.turicumInvestment?.termOfUseFile?.link || ""}>
-                  <a target={"_blank"}>{data?.turicumInvestment?.termOfUse}</a>
+                  <a target={"_blank"} rel="noreferrer">{data?.turicumInvestment?.termOfUse}</a>
                 </Link>
               </div>
             </div>

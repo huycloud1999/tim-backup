@@ -4,7 +4,7 @@ import downloadButton from '../public/imgs/download.svg'
 export const DocumentLoop = ({ title, image, file }) => {
     return (
         <div className="document-loop">
-            <a download={title} target='_blank' href={file} >
+            <a download={title} target='_blank' rel="noreferrer" href={file} >
 
                 <div className="thumbnail-area">
                     <div className="image-container feature-image">

@@ -13,7 +13,7 @@ export const DocumentListLoop = ({ title, image, file, date }) => {
     return (
         <>
 
-            <a download={title} target='_blank' href={file}>
+            <a download={title} target='_blank' rel="noreferrer" href={file}>
                 <div className="document-list-loop">
                     <div className="image-container column-1">
                         <Image src={factsheet} alt={title} layout="fill" className='image-item' />
