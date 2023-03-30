@@ -11,6 +11,12 @@ import Modal from "react-modal";
 import { useState } from "react";
 
 export default function Footer({ data }) {
+  const [email, setEmail] = useState('')
+  const [loading, setLoading] = useState(false)
+
+  const onChange = (e) => {
+    setEmail(e.target.value)
+  }
   // console.log(data);
   const [modalIsOpen, setIsOpen] = useState(false);
   const customStyles = {
@@ -35,14 +41,32 @@ export default function Footer({ data }) {
   function closeModal() {
     setIsOpen(false);
   }
-  function clearInput() {
-    document.querySelectorAll(".icon_input input").forEach((element, index) => {
-      element.value = "";
+
+  const sendContactForm = async (data) =>
+    fetch("/api/subscribe", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+    }).then((res) => {
+      console.log("🚀 ~ file: get-in-touch.js:38 ~ GetInTouch ~ res:", res)
+      // if (!res.ok) throw new Error("Failed to send message");
+      // return res.json();
     });
-  }
-  const submitEmail = (event) => {
+  const submitEmail = async (event) => {
     event.preventDefault();
-    openModal();
+    try {
+      setLoading(true)
+      const res = await sendContactForm({
+        email: email,
+      })
+      setEmail('')
+      setLoading(false)
+      openModal();
+    } catch (error) {
+
+    }
+
+
   };
   return (
     <div className="footer ">
@@ -79,8 +103,10 @@ export default function Footer({ data }) {
                   name="email"
                   placeholder="Enter email for regular investment updates"
                   required
+                  value={email}
+                  onChange={onChange}
                 />
-                <button type="submit" className="icon_footer">
+                <button type="submit" className="icon_footer" disabled={loading}>
                   <Image src={Arrow} alt="imgs" className="input_arrow" />
                 </button>
               </form>

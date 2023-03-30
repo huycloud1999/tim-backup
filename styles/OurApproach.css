@@ -30,6 +30,7 @@
     text-align: left;
     color: #2B2B2B;
     margin: 0;
+    padding-top: 5px;
 }
 
 .description_approach_text p:not(:last-child) {
@@ -461,6 +462,7 @@
         height: 610px;
         object-fit: cover;
     }
+
     .approach_market_content {
         padding: 0 !important;
     }
@@ -537,7 +539,8 @@
         padding-right: 15px !important;
 
     }
-    .description_approach_text p{
+
+    .description_approach_text p {
         font-size: 18px;
         line-height: 1.5em;
     }

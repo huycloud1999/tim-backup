@@ -148,7 +148,7 @@ function Solutions(props) {
                     <div className="title-heading">TIMVT</div>
                     <div className="text-area" dangerouslySetInnerHTML={{ __html: assetManagement.textArea2 }}>
                     </div>
-                    <Link href={'/solution/factsheets'} >
+                    <Link href={'/products/factsheets'} >
                       <div className="button-download factsheet">
 
                         <div className="text">{documents.title1}</div>

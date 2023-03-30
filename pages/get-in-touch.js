@@ -11,6 +11,14 @@ import Link from "next/link";
 export default function GetInTouch(props) {
   // console.log(props.options)
   const [modalIsOpen, setIsOpen] = useState(false);
+  const [loading, setLoading] = useState(false)
+  const [data, setData] = useState({
+    name: '',
+    email: '',
+    company: '',
+    message: '',
+    subject: ''
+  })
 
   const { getInTouch: getInTouch } = props.options;
   const customStyles = {
@@ -23,10 +31,40 @@ export default function GetInTouch(props) {
       transform: "translate(-50%, -50%)",
     },
   };
+  const sendContactForm = async (data) =>
+    fetch("/api/contact", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+    }).then((res) => {
+      console.log("🚀 ~ file: get-in-touch.js:38 ~ GetInTouch ~ res:", res)
+      // if (!res.ok) throw new Error("Failed to send message");
+      return res.json();
+    });
 
-  const handleSubmit = (e) => {
-    // console.log(e)
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    // validate
+
+    try {
+      setLoading(true)
+      const rs = await sendContactForm(data)
+      setLoading(false)
+      clearInput();
+      // alert('Your email has send successfully!')
+      openModal();
+    } catch (error) {
+      console.error("🚀 ~ file: get-in-touch.js:50 ~ handleSubmit ~ error:", error)
+
+    }
   };
+  const onChange = (e) => {
+    const { name, value } = e.target
+    setData({
+      ...data,
+      [name]: value
+    })
+  }
 
   function openModal() {
     setIsOpen(true);
@@ -40,12 +78,13 @@ export default function GetInTouch(props) {
     setIsOpen(false);
   }
   function clearInput() {
-    document.querySelector(".contact-form textarea").value = "";
-    document
-      .querySelectorAll(".contact-form input")
-      .forEach((element, index) => {
-        element.value = "";
-      });
+    setData({
+      name: '',
+      email: '',
+      company: '',
+      message: '',
+      subject: ''
+    })
   }
   const submitContact = async (event) => {
     event.preventDefault();
@@ -76,36 +115,43 @@ export default function GetInTouch(props) {
             <div className="column1">
               <div className="form-contact">
                 <form
-                  action=""
                   className="contact-form"
-                  onSubmit={submitContact}
+                  onSubmit={handleSubmit}
                 >
                   <input
                     type="text"
                     name="name"
                     id="name"
+                    value={data.name}
                     placeholder="Name"
                     required
+                    onChange={onChange}
                   />
                   <input
                     type="text"
                     name="company"
                     id="company"
+                    value={data.company}
                     placeholder="Company"
+                    onChange={onChange}
                   />
                   <input
                     type="email"
                     name="email"
                     id="email"
+                    value={data.email}
                     placeholder="Email"
                     required
+                    onChange={onChange}
                   />
                   <input
                     type="text"
                     name="subject"
                     id="subject"
+                    value={data.subject}
                     placeholder="Subject"
                     required
+                    onChange={onChange}
                   />
                   <textarea
                     name="message"
@@ -113,8 +159,11 @@ export default function GetInTouch(props) {
                     cols="30"
                     rows="10"
                     placeholder="Message"
+                    value={data.message}
+                    required
+                    onChange={onChange}
                   ></textarea>
-                  <button type="submit" className="btn-mobile">
+                  <button type="submit" className="btn-mobile" disabled={loading}>
                     Send now
                     <div className="btn-btn-mobile">
                       {" "}
