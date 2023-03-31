@@ -15,7 +15,7 @@
   letter-spacing: 0em;
   text-align: center;
   text-transform: uppercase;
-  color: #0b2577;
+  color: #000080;
   width: 867px;
 }
 
@@ -229,7 +229,7 @@
     line-height: 31px;
     text-align: center;
     text-transform: uppercase;
-    color: #0b2577;
+    color: #000080;
   }
 
   .firmHistory_title p {
@@ -277,7 +277,7 @@
     line-height: 45px;
     letter-spacing: 0em;
     text-align: left;
-    color: #0b2577;
+    color: #000080;
   }
 
   .tab {

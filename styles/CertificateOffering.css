@@ -19,7 +19,7 @@
   height: 79px;
   width: 600px;
   border-radius: 0px;
-  border: 1px solid #0b2577;
+  border: 1px solid #000080;
   text-align: center;
   margin: auto;
   cursor: pointer;
@@ -33,7 +33,7 @@
   font-weight: 500;
   line-height: 53px;
   letter-spacing: 0em;
-  color: #0b2577;
+  color: #000080;
   margin: auto;
   line-height: 14px;
   text-transform: uppercase;
@@ -41,7 +41,7 @@
 
 .link_other:hover,
 .link_Timvt:hover {
-  background: #0b2577;
+  background: #000080;
 }
 
 .link_other:hover a,
@@ -54,7 +54,7 @@
   gap: 16px;
 }
 
-.CertificateOffering_image > span {
+.CertificateOffering_image>span {
   margin: auto;
 }
 
@@ -68,7 +68,7 @@
   height: 79px;
   width: 600px;
   border-radius: 0px;
-  border: 1px solid #0b2577;
+  border: 1px solid #000080;
   text-align: center;
   cursor: pointer;
   background: #fff;
@@ -81,7 +81,7 @@
   line-height: 53px;
   letter-spacing: 0em;
   text-align: left;
-  color: #0b2577;
+  color: #000080;
   margin: auto;
   line-height: 14px;
   text-transform: uppercase;
@@ -95,12 +95,12 @@
   letter-spacing: 0em;
   text-align: left;
   text-transform: uppercase;
-  color: #0b2577;
+  color: #000080;
   margin: 72px 0 30px 0;
   text-align: center;
 }
 
-.image_bottom > span {
+.image_bottom>span {
   width: 100% !important;
   height: 100% !important;
   object-fit: contain;
@@ -123,7 +123,7 @@
   letter-spacing: 0em;
   text-align: left;
   text-transform: uppercase;
-  color: #0b2577;
+  color: #000080;
   text-align: center;
 }
 
@@ -156,8 +156,9 @@
   font-weight: 600;
   line-height: 27px;
   letter-spacing: 0em;
-  color: #0b2577;
+  color: #000080;
 }
+
 .description_TIM_content,
 .TIM_content_Image {
   position: relative;
@@ -181,12 +182,14 @@
 .TIM_content_mobile {
   display: none;
 }
+
 @media (max-width: 320px) {
   .TIM_content_1_Image_mobile {
     width: 35px !important;
     height: 35px !important;
   }
-  .TIM_content_1_Image_mobile > span {
+
+  .TIM_content_1_Image_mobile>span {
     position: absolute;
     position: absolute;
     top: 30% !important;
@@ -197,6 +200,7 @@
     font-size: 12px !important;
   }
 }
+
 @media screen and (max-width: 768px) {
   .Certificate__Offering p {
     font-weight: 400;
@@ -217,7 +221,7 @@
     line-height: 31px;
     text-align: center;
     text-transform: uppercase;
-    color: #0b2577;
+    color: #000080;
   }
 
   .CertificateOffering_TIM_VN h3 {
@@ -226,7 +230,7 @@
     line-height: 24px;
     text-align: center;
     text-transform: uppercase;
-    color: #0b2577;
+    color: #000080;
     margin-bottom: 24px;
   }
 
@@ -245,9 +249,11 @@
   .link_other {
     height: 45px;
   }
+
   .certificateOffering_table_Tab {
     padding-bottom: 120px !important;
   }
+
   .link_other link {
     height: 54px !important;
   }
@@ -258,7 +264,7 @@
     line-height: 24px;
     text-align: center;
     text-transform: uppercase;
-    color: #0b2577;
+    color: #000080;
     margin: 72px 0 24px 0;
   }
 
@@ -307,7 +313,7 @@
     line-height: 21px;
     letter-spacing: 0em;
     text-align: left;
-    color: #0b2577;
+    color: #000080;
   }
 
   .CertificateOffering_TIM_VN_mobile {
@@ -369,6 +375,7 @@
   .table__Certificate tbody tr td:nth-child(2) {
     text-align: center;
   }
+
   .table__Certificate tr td::nth-child(3) {
     text-align: right !important;
   }

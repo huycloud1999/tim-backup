@@ -319,10 +319,10 @@
         cursor: pointer;
     }
 
-    
+
 
     .link-getInTouch ul {
-        padding: 24px 0 0  0;
+        padding: 24px 0 0 0;
         margin-bottom: 24px;
     }
 
@@ -340,7 +340,7 @@
         letter-spacing: 0em;
         text-align: left;
         text-transform: uppercase;
-        color: #0B2577;
+        color: #000080;
     }
 
     .main-get-in-touch .sub-column .divider {
@@ -375,14 +375,14 @@
         font-weight: 500;
         font-size: 24px;
         line-height: 36px;
-        color: #0B2577;
+        color: #000080;
     }
 
     .sub-column1 .heading {
         font-weight: 500;
         font-size: 16px;
         line-height: 24px;
-        color: #0B2577;
+        color: #000080;
     }
 
     .sub-column1 .sub-heading {
@@ -391,7 +391,8 @@
         line-height: 21px;
         color: #2B2B2B;
     }
-    .main-get-in-touch .sub-column .sub-heading{
+
+    .main-get-in-touch .sub-column .sub-heading {
         padding-bottom: 16px;
     }
 

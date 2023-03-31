@@ -13,7 +13,7 @@
     letter-spacing: 0em;
     text-align: left;
     text-transform: uppercase;
-    color: #0B2577;
+    color: #000080;
     margin: 0;
 }
 
@@ -58,7 +58,7 @@
     line-height: 56px;
     letter-spacing: 0em;
     text-align: left;
-    color: #0B2577;
+    color: #000080;
     margin: 28px 0 28px 0;
     text-transform: uppercase;
 }
@@ -120,7 +120,7 @@
     line-height: 56px;
     letter-spacing: 0em;
     text-transform: uppercase;
-    color: #0B2577;
+    color: #000080;
     text-align: center;
     margin: auto;
     max-width: 483px;
@@ -189,7 +189,7 @@
     line-height: 29px;
     letter-spacing: 0em;
     text-align: center;
-    color: #0B2577;
+    color: #000080;
 }
 
 .hover_approach_materials {
@@ -274,7 +274,7 @@
         line-height: 31px;
         text-align: left;
         text-transform: uppercase;
-        color: #0B2577;
+        color: #000080;
         /* margin: 0 20px 0 20px; */
     }
 
@@ -307,7 +307,7 @@
         line-height: 36px;
         text-align: left;
         text-transform: uppercase;
-        color: #0B2577;
+        color: #000080;
         padding: 0 24px;
         margin: auto;
     }
@@ -362,7 +362,7 @@
         line-height: 36px;
         text-align: center;
         text-transform: uppercase;
-        color: #0B2577;
+        color: #000080;
     }
 
     .approach_materials_content {
@@ -397,7 +397,7 @@
         font-size: 16px;
         line-height: 24px;
         text-align: center;
-        color: #0B2577;
+        color: #000080;
     }
 
     .materials_content_document_image>.image-container>span {
@@ -473,7 +473,7 @@
         line-height: 36px;
         text-align: center;
         text-transform: uppercase;
-        color: #0B2577;
+        color: #000080;
         padding: 0 30px;
         margin: 0px;
     }

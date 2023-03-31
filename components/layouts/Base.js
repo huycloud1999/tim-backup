@@ -113,7 +113,7 @@ export const Base = (props) => {
           expires={1}
           buttonStyle={{
             fontFamily: "Roboto",
-            background: "#0B2577",
+            background: "#000080",
             margin: "0px 5px 0px 0px",
             color: "rgb(255, 255, 255)",
             marginRight: "20px",
@@ -122,7 +122,7 @@ export const Base = (props) => {
           onAccept={handleClick}
         >
           <Cookies
-            content={props?.dataCookie?.cookie?.cookie?.cookieContentMain} 
+            content={props?.dataCookie?.cookie?.cookie?.cookieContentMain}
           />
         </CookisConsent>
       )}

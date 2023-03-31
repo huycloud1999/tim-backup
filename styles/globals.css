@@ -46,7 +46,7 @@ body {
 }
 
 :root {
-  --blueTheme: rgba(11, 37, 119, 1);
+  --blueTheme: #000080;
   --lightBlueTheme: rgba(117, 208, 199, 1);
   --mediumBlueTheme: rgba(47, 108, 233, 1);
 }
@@ -98,7 +98,7 @@ a {
   width: fit-content;
 }
 
-.button-global > span {
+.button-global>span {
   width: 14px !important;
   transform: translateY(3px);
   margin-left: 10px !important;
@@ -151,10 +151,12 @@ span.blue {
     display: none;
   }
 }
+
 @media (max-width: 768px) {
   .hideOnMobile {
     display: none;
   }
+
   .button-global {
     font-family: Roboto;
     font-size: 14px;
@@ -167,7 +169,7 @@ span.blue {
     width: fit-content;
   }
 
-  .button-global > span {
+  .button-global>span {
     width: 14px !important;
     transform: translateY(3px);
     margin-left: 10px !important;
@@ -184,41 +186,59 @@ span.blue {
     display: none;
   }
 }
+
 .image-container {
   width: 100%;
   position: relative;
 }
-.image-container > span:nth-of-type(1) {
+
+.image-container>span:nth-of-type(1) {
   height: 100%;
   position: relative !important;
 }
+
 .image-item {
   width: 100% !important;
   position: relative !important;
   height: unset !important;
 }
 
-.isLoading{
+.isLoading {
   animation: 2s infinite loading;
 }
-.isLoadingSlow{
+
+.isLoadingSlow {
   animation: 1s infinite loading;
 }
 
 @keyframes loading {
-  0%   {opacity: 0.2;}
-  25%   {opacity: 0.4;}
-  50%   {opacity: 0.6;}
-  75%   {opacity: 0.4;}
-  100%  {opacity: 0.2;}
+  0% {
+    opacity: 0.2;
+  }
+
+  25% {
+    opacity: 0.4;
+  }
+
+  50% {
+    opacity: 0.6;
+  }
+
+  75% {
+    opacity: 0.4;
+  }
+
+  100% {
+    opacity: 0.2;
+  }
 }
 
-.loading-section{
+.loading-section {
   position: fixed;
   z-index: 9;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(255,255,255,0.8);
+  background-color: rgba(255, 255, 255, 0.8);
   /* background-color: red; */
   display: flex;
   align-items: center;
@@ -227,7 +247,7 @@ span.blue {
   backdrop-filter: blur(0px);
 }
 
-.loading-section img{
+.loading-section img {
   width: 50px !important;
   height: auto !important;
 }

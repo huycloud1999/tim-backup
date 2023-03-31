@@ -7,7 +7,7 @@ ul li {
 }
 
 .footer {
-  background: #0B2577;
+  background: #000080;
   position: relative;
   /* height: 472px; */
 }
@@ -85,7 +85,7 @@ ul li {
 
 .icon_input button,
 .icon_input input {
-  background: #0B2577;
+  background: #000080;
   height: 40px;
   color: #FFFFFF;
   border: none;

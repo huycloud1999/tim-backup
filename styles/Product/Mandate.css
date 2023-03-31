@@ -32,7 +32,7 @@
     letter-spacing: 0em;
     text-align: center;
     text-transform: uppercase;
-    color: #0B2577;
+    color: #000080;
     margin: 0 0 24px 0;
 }
 
@@ -91,7 +91,7 @@
     line-height: 31px;
     letter-spacing: 0em;
     text-align: left;
-    color: #0B2577;
+    color: #000080;
     margin-top: 16px;
 }
 
@@ -146,7 +146,7 @@ td {
 
 
 .mandates_tow_content table tr th {
-    background: #0B2577;
+    background: #000080;
     height: 70px;
     color: #fff;
 }
@@ -192,7 +192,7 @@ td {
     letter-spacing: 0em;
     text-align: left;
     text-transform: uppercase;
-    color: #0B2577;
+    color: #000080;
     margin: 0 0 41px 0;
 
 }
@@ -291,7 +291,7 @@ td {
     line-height: 26px;
     letter-spacing: 0em;
     text-align: left;
-    color: #0B2577;
+    color: #000080;
 
 }
 
@@ -328,7 +328,7 @@ td {
     font-size: 18px;
     line-height: 27px;
     color: #2B2B2B;
-    
+
 }
 
 .manDate_Investment_content {
@@ -456,7 +456,7 @@ td {
         letter-spacing: 0em;
         text-align: left;
         text-transform: uppercase;
-        color: #0B2577;
+        color: #000080;
         margin-bottom: 24px;
     }
 
@@ -470,14 +470,14 @@ td {
         font-weight: 400;
         font-size: 14px;
         line-height: 21px;
-        color: #0B2577;
+        color: #000080;
     }
 
     .label.showlabel {
         font-weight: 700;
         font-size: 14px;
         line-height: 21px;
-        color: #0B2577;
+        color: #000080;
     }
 
     .content {
@@ -506,7 +506,7 @@ td {
     }
 
     .mandates_tow_content table tr th {
-        background: #0B2577;
+        background: #000080;
         height: 70px;
         color: #fff;
         font-weight: 400;

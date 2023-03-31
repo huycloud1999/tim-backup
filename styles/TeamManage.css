@@ -14,7 +14,7 @@
   border-radius: 0;
   width: 80%;
   height: 4px;
-  background: #0B2577;
+  background: #000080;
 }
 
 .out_Team_tim .swiper .swiper-button-next,
@@ -34,7 +34,7 @@
 
 .out_Team_tim .swiper .swiper-button-next:hover,
 .out_Team_tim .swiper .swiper-button-prev:hover {
-  background: #0B2577;
+  background: #000080;
 }
 
 
