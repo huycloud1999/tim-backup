@@ -170,7 +170,7 @@ export default function SingleNew(props) {
       <PostGrid
         heading={
           <div>
-            related <br /> News & Insights
+            related News & Insights
           </div>
         }
         data={props.AllNew}
