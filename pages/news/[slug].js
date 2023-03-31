@@ -40,16 +40,16 @@ import Link from "next/link";
 
 export default function SingleNew(props) {
   const [newDetail, setNewDetail] = useState(props.NewDetail);
-  const [link,setLink] =useState('')
+  const [link, setLink] = useState('')
 
   var ROOT_URL = process.env.HOSTNAME_DEMO;
 
-  useEffect(()=>{
+  useEffect(() => {
     setLink(window.location.href)
   })
 
 
-  
+
   const convertDate = (date) => {
     if (date) {
       var newDate = new Date(date);
@@ -66,46 +66,46 @@ export default function SingleNew(props) {
 
   return (
     <>
-      {props.NewDetail && 
-      <NextSeo
-        title={props.NewDetail ? props.NewDetail.title : 'TIM'}
-        description={props.NewDetail.slug || ''}
-        openGraph={{
-          url: link,
-          title: props.NewDetail.title,
-          description: props.NewDetail.excerpt,
-          images: [
-            {
-              url: props.NewDetail.featuredImage.node.sourceUrl,
-              width: 800,
-              height: 600,
-      
-            },
-          
-          ],
-          siteName: 'TIM',
-        }}
-      />
-      }
-      {props.NewDetail && 
-      <ArticleJsonLd
-        url={link}
-        title={props.NewDetail.title}
-        images={[
-          props.NewDetail.featuredImage.node.sourceUrl
-        ]}
-        datePublished={props.NewDetail.date}
+      {props.NewDetail &&
+        <NextSeo
+          title={props.NewDetail ? props.NewDetail.title : 'TIM'}
+          description={props.NewDetail.slug || ''}
+          openGraph={{
+            url: link,
+            title: props.NewDetail.title,
+            description: props.NewDetail.excerpt,
+            images: [
+              {
+                url: props.NewDetail.featuredImage.node.sourceUrl,
+                width: 800,
+                height: 600,
 
-      
-        description={props.NewDetail.slug}
-        isAccessibleForFree={true}
-      />
+              },
+
+            ],
+            siteName: 'TIM',
+          }}
+        />
       }
-     
+      {props.NewDetail &&
+        <ArticleJsonLd
+          url={link}
+          title={props.NewDetail.title}
+          images={[
+            props.NewDetail.featuredImage.node.sourceUrl
+          ]}
+          datePublished={props.NewDetail.date}
+
+
+          description={props.NewDetail.slug}
+          isAccessibleForFree={true}
+        />
+      }
+
       {props.NewDetail && (
 
-        
-        
+
+
         <div className="post-content-area">
           <div className="container">
             {/* <Link href="/news"> */}
@@ -170,12 +170,12 @@ export default function SingleNew(props) {
       <PostGrid
         heading={
           <div>
-            related <br /> News & Insights
+            related News & Insights
           </div>
         }
         data={props.AllNew}
       />
-     
+
     </>
   );
 }
@@ -187,13 +187,13 @@ export async function getStaticPaths() {
   }));
 
 
-  
+
   return {
     paths,
     fallback: 'blocking',
   };
 }
-export async function getStaticProps ({ params }) {
+export async function getStaticProps({ params }) {
 
   const res = await show(params.slug);
   const categories = res.data?.data.post.categories.nodes.map(
@@ -206,7 +206,7 @@ export async function getStaticProps ({ params }) {
       NewDetail: res.data?.data.post || null,
       AllNew: allNew4?.data?.data?.posts?.nodes || null,
     },
-    revalidate:1
-   
+    revalidate: 1
+
   };
 }
