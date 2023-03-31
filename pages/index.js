@@ -57,7 +57,7 @@ export default function Home(props) {
   //     tl.scrollTrigger.kill()
   //     tl.kill()
   //   }
-    
+
   // })
 
 
@@ -88,9 +88,9 @@ export default function Home(props) {
             </div>
             <div className="description">
               <div className="text">{CountDown.sectionDescription}</div>
-             
-                <Button className={"hideOnMobile"} link='/who-we-are/our-team' />
-              
+
+              <Button className={"hideOnMobile"} link='/who-we-are/our-team' />
+
             </div>
           </div>
 
@@ -119,7 +119,7 @@ export default function Home(props) {
             <div className="description" dangerouslySetInnerHTML={{ __html: props.HightLights.excerpt }}>
 
             </div>
-            <Button className="blueButton" link={`/news/${props.HightLights.slug}`} />
+            <Button className="blueButton" link={`/${props.HightLights.slug}`} />
           </div>
           <div className="image-container image">
             <Image src={props.HightLights.featuredImage.node.mediaItemUrl} alt="monthly-hightlight-image" layout="fill" className="image-item" />

@@ -15,11 +15,11 @@ export const PostLoop1 = ({ image, title, category, date, description, slug }) =
 
         <div className="loop-post1">
             <div className="column1">
-                <Link href={`/news/${slug}`}>
+                <Link href={`/${slug}`}>
 
                     <a className="image-container image">
-                        <Image  placeholder="blur"
-                      blurDataURL="https://cms.okhub.vn/wp-content/uploads/2023/01/1x1-0b25777f.png" src={image} alt='image' layout="fill" className="image-item" />
+                        <Image placeholder="blur"
+                            blurDataURL="https://cms.okhub.vn/wp-content/uploads/2023/01/1x1-0b25777f.png" src={image} alt='image' layout="fill" className="image-item" />
                     </a>
                 </Link>
                 <div className="category">
@@ -35,13 +35,13 @@ export const PostLoop1 = ({ image, title, category, date, description, slug }) =
 
             <div className="column2">
                 <div className="property">
-                    <Link href={`/news/${slug}`}>
+                    <Link href={`/${slug}`}>
 
                         <a className="title">{title}</a>
                     </Link>
-                    <div className="date">   {[month,' ' ,day,', ' , year].join('')}</div>
+                    <div className="date">   {[month, ' ', day, ', ', year].join('')}</div>
                     <div className="description" dangerouslySetInnerHTML={{ __html: description }}></div>
-                    <Button className="blueButton" text="Read News" link={`/news/${slug}`} />
+                    <Button className="blueButton" text="Read News" link={`/${slug}`} />
                 </div>
             </div>
 
