@@ -14,9 +14,9 @@ export default function Otther(props) {
   // console.log(props.other);
   return (
     <>
-      <HeroSection title={props.other.HeroSection.title} 
+      <HeroSection title={props.other.HeroSection.title}
       // image={props.other.HeroSection.image.mediaItemUrl}
-       />
+      />
       <div className="container">
         <h2 className="title_other">{props.other.other.titleOther.title}</h2>
         <p className="other_text">{props?.other?.other?.titleOther?.description}</p>
@@ -58,7 +58,7 @@ export default function Otther(props) {
 
       </div>
       <div className="back_new back_new_TIMVT container">
-        <Link href="/solution/certificate-offering">
+        <Link href="/products/certificate-offering">
           <a >
             <div className="back_new_TIMVT_content">
               <div className="chevrons_icon chevrons_icon_TIMVT">

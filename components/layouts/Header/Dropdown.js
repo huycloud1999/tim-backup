@@ -107,12 +107,12 @@ export const Dropdown = ({ data, functionOnClick }) => {
               </div>
               <div className="menu-item">
                 <div className="parent-link">
-                <Link href="/solution">
+                  <Link href="/products">
                     <a onClick={functionOnClick}>
-                    {data.menu.product.titleProduct}
+                      {data.menu.product.titleProduct}
                     </a>
                   </Link>
-                  
+
 
                   {/* <ul className="sub-menu">
                     <div className="sub-menu-item">
@@ -120,21 +120,21 @@ export const Dropdown = ({ data, functionOnClick }) => {
 
                       <div className="sub_child_menu sub_child_menu_remove">
                         <div className="child_sub-menu-item child___sub">
-                          <Link href="/solution/TIMVT">
+                          <Link href="/products/TIMVT">
                             <a className="sub-itemlink" onClick={functionOnClick}>
                               {data.menu.product.product.certificateOffering.timvt}
                             </a>
                           </Link>
                         </div>
                         <div className="sub-menu-item child___sub">
-                          <Link href="/solution/mandate">
+                          <Link href="/products/mandate">
                             <a className="sub-itemlink" onClick={functionOnClick}>
                               {data.menu.product.product.mandates}
                             </a>
                           </Link>
                         </div>
                         <div className="child_sub-menu-item child___sub">
-                          <Link href="/solution/other">
+                          <Link href="/products/other">
                             <a className="sub-itemlink" onClick={functionOnClick}>
                               {data.menu.product.product.certificateOffering.other}
                             </a>
