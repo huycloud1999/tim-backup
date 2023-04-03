@@ -206,6 +206,12 @@
     display: inline-block;
     border-radius: 50%;
   }
+
+  .slide-image-vietnam {
+    width: 100%;
+    height: 100% !important;
+    padding-bottom: 17px;
+  }
 }
 
 @media (max-width:768px) {
@@ -273,18 +279,17 @@
     font-style: italic;
   }
 
-  .slider-area-why-vietnam .source {
+  /* .slider-area-why-vietnam .source {
     bottom: unset;
     right: unset;
     left: 0;
     top: 0;
-  }
+  } */
 
   .slide-image-vietnam {
     width: 100%;
     height: 100% !important;
-    padding-top: 20px;
-
+    padding-bottom: 17px;
   }
 
   .legend .legend-item .title {
