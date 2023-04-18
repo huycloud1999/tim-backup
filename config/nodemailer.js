@@ -7,7 +7,7 @@ const pass = process.env.MAIL_PASSWORD//'cwwrhcmrhlqflhpe'//process.env.EMAIL_PA
 export const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-        user: 'cms.dropup@gmail.com',
+        user: email,
         pass,
     },
 });
