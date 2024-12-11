@@ -25,6 +25,9 @@ import { getSolutions } from "../../store/action/product/solutions";
 import arrow_down from "../../public/imgs/arrow_down.svg";
 
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import { NextSeo } from "next-seo";
+import generateMetaData from "../api/generateMetaData";
+import MetaSEO from "../../components/Seo";
 
 function Solutions(props) {
   gsap.registerPlugin(ScrollTrigger);
@@ -65,6 +68,7 @@ function Solutions(props) {
 
   return (
     <>
+      <MetaSEO dataSEO={props.dataSEO} slug={props.slug} />
       <div>
         <HeroSection
           title={heroSection.title}
@@ -255,7 +259,7 @@ export default Solutions;
 
 export async function getStaticProps({ params }) {
   const [results, res] = await Promise.all([getSolutions()]);
-
+  const dataSEO = await generateMetaData("/solutions/");
   return {
     props: {
       heroSection: results.data.data.page.HeroSection,
@@ -264,6 +268,8 @@ export async function getStaticProps({ params }) {
       assetManagement: results.data.data.page.Solutions.assetManagement,
       otherProducts: results.data.data.page.Solutions.otherProducts,
       documents: results.data.data.page.Solutions.documents,
+      dataSEO: dataSEO?.json,
+      slug: "products",
     },
     revalidate: 1,
   };

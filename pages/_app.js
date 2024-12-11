@@ -36,20 +36,17 @@ import "../styles/Search.css";
 import "../styles/Cookies.css";
 import "../styles/PrivacyPolicy.css";
 import "../styles/LinkTab.css";
-import "../styles/PopUp.css"
-import "../styles/Solutions.css"
-import "../styles/NewHeader.css"
+import "../styles/PopUp.css";
+import "../styles/Solutions.css";
+import "../styles/NewHeader.css";
 
+import "../styles/FactSheets.css";
 
-import '../styles/FactSheets.css'
-
-
-import loadingImage from '../public/imgs/loading.svg'
-import { motion, AnimatePresence } from "framer-motion"
-import { useRouter } from 'next/router';
+import loadingImage from "../public/imgs/loading.svg";
+import { motion, AnimatePresence } from "framer-motion";
+import { useRouter } from "next/router";
 import { useState } from "react";
 import { useEffect } from "react";
-
 
 import { getAllComfooter } from "../store/action/comFooter";
 import { getAllHeader } from "../store/action/comHeader";
@@ -57,69 +54,52 @@ import { getCookie } from "../store/action/Cookie";
 import Image from "next/image";
 
 function MyApp({ Component, pageProps, footerData, headerData, cookie }) {
-  
   const Layout = Component.Layout ? Component.Layout : Base;
-  const router = useRouter()
-  const [loading, isLoading] = useState(false)
+  const router = useRouter();
+  const [loading, isLoading] = useState(false);
   const variants = {
-    hidden: { opacity: 0},
-    enter: { opacity: 1},
-    exit: { opacity: 0},
-}
+    hidden: { opacity: 0 },
+    enter: { opacity: 1 },
+    exit: { opacity: 0 },
+  };
 
-
-
-  useEffect(()=>{
-
-    router.events.on('routeChangeStart', (url, { shallow }) => {
-  
-      if (router.asPath != url){
-        isLoading(true)
-        
+  useEffect(() => {
+    router.events.on("routeChangeStart", (url, { shallow }) => {
+      if (router.asPath != url) {
+        isLoading(true);
       }
     });
-    router.events.on('routeChangeComplete', (url, { shallow }) => {
-
-      isLoading(false)
-  
+    router.events.on("routeChangeComplete", (url, { shallow }) => {
+      isLoading(false);
     });
-
-    
-  },[])
-
+  }, []);
 
   return (
     <>
       <Layout data={footerData} dataHeader={headerData} dataCookie={cookie}>
-      <AnimatePresence mode="wait" initial={false}>
-        <motion.div 
-        key={router.route}
-        variants={variants} // Pass the variant object into Framer Motion 
-        initial="hidden" // Set the initial state to variants.hidden
-        animate="enter" // Animated state to variants.enter
-        exit="exit" 
-      
-        >
-        {
-        loading && (
-        <motion.div 
-        key={'loading-section'}
-        className="loading-section"
-        initial={{opacity:0}}
-        animate={{opacity:1}}
-        exit={{opacity:0}}
-        // onAnimationComplete={handleComplete}
+        <AnimatePresence mode="wait" initial={false}>
+          <motion.div
+            key={router.route}
+            variants={variants} // Pass the variant object into Framer Motion
+            initial="hidden" // Set the initial state to variants.hidden
+            animate="enter" // Animated state to variants.enter
+            exit="exit"
+          >
+            {loading && (
+              <motion.div
+                key={"loading-section"}
+                className="loading-section"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                // onAnimationComplete={handleComplete}
+              >
+                <Image src={loadingImage} alt="" />
+              </motion.div>
+            )}
 
-        >
-          <Image src={loadingImage} alt='' />
-        </motion.div>
-
-        )
-      }
-
-
-        <Component {...pageProps} />
-        </motion.div>
+            <Component {...pageProps} />
+          </motion.div>
         </AnimatePresence>
       </Layout>
     </>
@@ -139,5 +119,3 @@ MyApp.getInitialProps = async (appContext) => {
     cookie: resNew2?.data?.data?.page,
   };
 };
-
-

@@ -18,6 +18,9 @@ import banner from "../../public/imgs/background23.png";
 import { MacroEconomy } from "../../components/Why Vietnam/MacroEconomy";
 import { CapitalMarket } from "../../components/Why Vietnam/CapitalMarket";
 import { getWhyVietNam } from "../../store/action/why-vietnam";
+import { NextSeo } from "next-seo";
+import MetaSEO from "../../components/Seo";
+import generateMetaData from "../api/generateMetaData";
 
 SwiperCore.use([Autoplay, Pagination]);
 
@@ -59,7 +62,6 @@ export default function WhyVietnam(props) {
   };
 
   useEffect(() => {
-
     var divTab = document.querySelector(".react-tabs");
     var tabNavigation = document.querySelector(".react-tabs__tab-list");
     window.addEventListener("scroll", function () {
@@ -77,39 +79,38 @@ export default function WhyVietnam(props) {
     });
 
     return () => {
-      window.removeEventListener("scroll", function () { });
+      window.removeEventListener("scroll", function () {});
     };
   });
 
-
   useEffect(() => {
-
-    var maxHeight = 0
-    var imageItems = document.querySelectorAll('.slide-image-vietnam');
+    var maxHeight = 0;
+    var imageItems = document.querySelectorAll(".slide-image-vietnam");
     imageItems.forEach((element, index) => {
-      if (element.clientWidth / 585 * 361 > maxHeight) { maxHeight = element.clientWidth / 585 * 361 }
-
-
+      if ((element.clientWidth / 585) * 361 > maxHeight) {
+        maxHeight = (element.clientWidth / 585) * 361;
+      }
     });
 
-    document.querySelector('.slider-area-why-vietnam .swiper-wrapper').style.maxHeight = `${maxHeight}px`
-    const mediaQuery = window.matchMedia('(max-width: 768px)')
+    document.querySelector(
+      ".slider-area-why-vietnam .swiper-wrapper"
+    ).style.maxHeight = `${maxHeight}px`;
+    const mediaQuery = window.matchMedia("(max-width: 768px)");
     // Check if the media query is true
     if (mediaQuery.matches) {
-
-      document.querySelector('.slider-area-why-vietnam .swiper-wrapper').style.maxHeight = `${maxHeight + 20}px`
+      document.querySelector(
+        ".slider-area-why-vietnam .swiper-wrapper"
+      ).style.maxHeight = `${maxHeight + 20}px`;
     }
-
-
-  })
-
+  });
 
   return (
     <>
+      <MetaSEO dataSEO={props.dataSEO} slug={props.slug} />
       {/* <Header/> */}
       <HeroSection
         title={herosection.title}
-      // image={herosection.image.sourceUrl}
+        // image={herosection.image.sourceUrl}
       />
 
       <SmallTitle className={"why-vietnam"}>
@@ -150,7 +151,9 @@ export default function WhyVietnam(props) {
                       blurDataURL="https://cms.okhub.vn/wp-content/uploads/2023/01/1x1-0b25777f.png"
                       className="image-item"
                     />
-                    <div className="source">{index == 0 ? 'GSO, TIM' : 'Bloomberg, VSD, MOF, TIM'}</div>
+                    <div className="source">
+                      {index == 0 ? "GSO, TIM" : "Bloomberg, VSD, MOF, TIM"}
+                    </div>
                   </div>
                 </SwiperSlide>
               );
@@ -185,12 +188,15 @@ export default function WhyVietnam(props) {
 
 export async function getStaticProps({ params }) {
   const WhyVietnam = await getWhyVietNam();
+  const dataSEO = await generateMetaData("/why-vietnam/");
   return {
     props: {
       HeroSection: WhyVietnam.data.data.page.HeroSection,
       WhyVietnam: WhyVietnam.data.data.page.WhyVietnam,
       CapitalMarket: WhyVietnam.data.data.page.capitalMarket,
       MacroEconomy: WhyVietnam.data.data.page.macroEconomy,
+      dataSEO: dataSEO.json,
+      slug: "why-vietnam",
     },
     revalidate: 1,
   };
