@@ -94,7 +94,7 @@ export const Base = (props) => {
       <Head>
         <meta
           name="google-site-verification"
-          content="nAMFxiWgtBEpsIBv8a0_pbOrRTmxQwIA3xfTpV8Nv9A"
+          content="bxPZB9Ibym1G2ypnbsQaP_xTlMUxPX_CLmQhRHgRDkQ"
         />
         <link rel="icon" href="/imgs/Group-1.png" />
       </Head>
