@@ -19,29 +19,28 @@ import ModelTIM from "../../components/Loops/ModelTIM";
 import LinkTab from "../../components/LinkTab";
 import vn from "../../public/imgs/vietnam.svg";
 import thuysy from "../../public/imgs/zurich.svg";
-
+import MetaSEO from "../../components/Seo";
+import generateMetaData from "../api/generateMetaData";
 
 // SwiperCore.use([Autoplay, Pagination])
 
 export default function OurTeam(props) {
-  const swiperRef = useRef(null)
+  const swiperRef = useRef(null);
   const { HeroSection: herosection, TIMJSC, TIMAG, content } = props;
   const [showModal, setShowModal] = useState(false);
   const [dataTim, setDataTim] = useState({});
 
-
   const clickModel = (data) => {
-    setShowModal(true)
-    setDataTim(data)
-  }
-
-
+    setShowModal(true);
+    setDataTim(data);
+  };
 
   return (
     <>
-      <HeroSection title={herosection?.title}
-      //  image={herosection.image.sourceUrl} 
-
+      <MetaSEO dataSEO={props.dataSEO} slug={props.slug} />
+      <HeroSection
+        title={herosection?.title}
+        //  image={herosection.image.sourceUrl}
       />
       <SmallTitle className={"certoffering out_Team__image "}>
         {content}
@@ -52,22 +51,26 @@ export default function OurTeam(props) {
             <div className="title-imgNation">
               <p className="out_Team_manage_title out___Team_manage___title">
                 {TIMAG[0].positionCategory.nodes[0].name} &nbsp;
-                <Image src={thuysy} alt='img' className="imgourTeamnation" />
+                <Image src={thuysy} alt="img" className="imgourTeamnation" />
               </p>
-
             </div>
             <div className="out_Team_manage_content">
               {TIMAG.map((value, index) => {
-
                 return (
-                  <TeamManage key={value.id} data={value} showModal={setShowModal} clickModel={clickModel} />
-                )
+                  <TeamManage
+                    key={value.id}
+                    data={value}
+                    showModal={setShowModal}
+                    clickModel={clickModel}
+                  />
+                );
               })}
             </div>
             <div className="out_Team_tim">
               <div className="title-imgNation2">
-                <p className="out_Team_manage_title">{TIMJSC[0].positionCategory.nodes[0].name} &nbsp;
-                  <Image src={vn} alt='img' className="imgourTeamnation" />
+                <p className="out_Team_manage_title">
+                  {TIMJSC[0].positionCategory.nodes[0].name} &nbsp;
+                  <Image src={vn} alt="img" className="imgourTeamnation" />
                 </p>
               </div>
               <div className="out_Team_manage_content">
@@ -83,7 +86,8 @@ export default function OurTeam(props) {
               </div>
               <div
                 onMouseEnter={() => swiperRef.current?.swiper?.autoplay.stop()}
-                onMouseLeave={() => swiperRef.current?.swiper?.autoplay.start()}>
+                onMouseLeave={() => swiperRef.current?.swiper?.autoplay.start()}
+              >
                 <Swiper
                   ref={swiperRef}
                   loop={true}
@@ -91,7 +95,6 @@ export default function OurTeam(props) {
                     delay: 2000,
                     disableOnInteraction: false,
                   }}
-
                   pagination={{
                     clickable: true,
                   }}
@@ -117,22 +120,28 @@ export default function OurTeam(props) {
                   modules={[Pagination, Navigation, Autoplay]}
                   className="ourTeam"
                 >
-                  {
-                    TIMJSC && TIMJSC.map((value, id) => {
+                  {TIMJSC &&
+                    TIMJSC.map((value, id) => {
                       // console.log(value.id)
                       return (
                         <>
-                          <SwiperSlide  >
-                            <TeamManage key={value.id} data={value} showModal={setShowModal} clickModel={clickModel} />
+                          <SwiperSlide>
+                            <TeamManage
+                              key={value.id}
+                              data={value}
+                              showModal={setShowModal}
+                              clickModel={clickModel}
+                            />
                           </SwiperSlide>
                         </>
-                      )
-                    })
-                  }
+                      );
+                    })}
                 </Swiper>
               </div>
 
-              {showModal && <ModelTIM data={dataTim} showModal={setShowModal} />}
+              {showModal && (
+                <ModelTIM data={dataTim} showModal={setShowModal} />
+              )}
             </div>
           </div>
         </div>
@@ -140,24 +149,25 @@ export default function OurTeam(props) {
         {/* <LinkTab /> */}
       </div>
     </>
-
   );
 }
 
-
-
 export async function getStaticProps({ params }) {
-
-  const [allDataTIMAG, res] = await Promise.all([getOurTeam('turicum-investment-managment-ag')]);
-  const [TIMJSC, res1] = await Promise.all([getOurTeam('tim-vn-jsc')]);
+  const [allDataTIMAG, res] = await Promise.all([
+    getOurTeam("turicum-investment-managment-ag"),
+  ]);
+  const [TIMJSC, res1] = await Promise.all([getOurTeam("tim-vn-jsc")]);
+  const dataSEO = await generateMetaData("/our-team/");
 
   return {
     props: {
       TIMAG: allDataTIMAG.data.data.ourTeams.nodes,
       TIMJSC: TIMJSC.data.data.ourTeams.nodes,
       HeroSection: allDataTIMAG.data.data.page.HeroSection,
-      content: allDataTIMAG.data.data.page.content
+      content: allDataTIMAG.data.data.page.content,
+      dataSEO: dataSEO.json,
+      slug: "who-we-are/our-team",
     },
-    revalidate: 1,
-  }
+    revalidate: 60,
+  };
 }

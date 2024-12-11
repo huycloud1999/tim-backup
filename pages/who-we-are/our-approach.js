@@ -7,38 +7,46 @@ import Rectangle1 from "../../public/imgs/Rectangle1.png";
 import Rectangle2 from "../../public/imgs/Rectangle2.png";
 import download from "../../public/imgs/Download.png";
 import { HeroSection } from "../../components/layouts/HeroSection";
-import { getOurApproach, getResearchMaterials } from "../../store/action/who-we-are/ourApproach";
+import {
+  getOurApproach,
+  getResearchMaterials,
+} from "../../store/action/who-we-are/ourApproach";
 import LinkTab from "../../components/LinkTab";
-
+import MetaSEO from "../../components/Seo";
+import generateMetaData from "../api/generateMetaData";
 
 function OurApproach(props) {
-  const { disciplinedBottomUpApproach, monitoringTheMarket, researchmaterialstitle } = props.OurApproach
+  const {
+    disciplinedBottomUpApproach,
+    monitoringTheMarket,
+    researchmaterialstitle,
+  } = props.OurApproach;
   // console.log(props.ResearchMaterial.documents);
   // console.log(props.OurApproach);
 
-
   return (
     <>
-      <HeroSection title={props.HeroSection.title}
-      //  image={props.HeroSection.image.sourceUrl}
+      <MetaSEO dataSEO={props.dataSEO} slug={props.slug} />
+      <HeroSection
+        title={props.HeroSection.title}
+        //  image={props.HeroSection.image.sourceUrl}
       />
       <div className="container ourApproach">
         <div className="description_approach">
           <div className="description_approach_title">
             <h3>{disciplinedBottomUpApproach.title}</h3>
           </div>
-          <div className="description_approach_text" dangerouslySetInnerHTML={{ __html: disciplinedBottomUpApproach.description }}>
-
-          </div>
+          <div
+            className="description_approach_text"
+            dangerouslySetInnerHTML={{
+              __html: disciplinedBottomUpApproach.description,
+            }}
+          ></div>
         </div>
       </div>
       <div className="approach_market">
         <div className="image___market">
-          <Image
-            src={market}
-            alt="Image"
-            className="image_approach_market"
-          />
+          <Image src={market} alt="Image" className="image_approach_market" />
         </div>
         <div className="container">
           <div className="approach_market_content">
@@ -47,19 +55,14 @@ function OurApproach(props) {
               {monitoringTheMarket.description}
             </p>
             <div className="approach_market_content_block container">
-              {
-                monitoringTheMarket.cardItem && monitoringTheMarket.cardItem.map((value, index) => {
+              {monitoringTheMarket.cardItem &&
+                monitoringTheMarket.cardItem.map((value, index) => {
                   return (
                     <div className="approach_market__block" key={index}>
-                      <p>
-                        {value.content}
-                      </p>
+                      <p>{value.content}</p>
                     </div>
-
-                  )
-                })
-              }
-
+                  );
+                })}
             </div>
           </div>
         </div>
@@ -101,21 +104,22 @@ function OurApproach(props) {
 
 export default OurApproach;
 
-
 export async function getStaticProps({ params }) {
-
   const [allData, res1] = await Promise.all([getOurApproach()]);
-  const [allResearchMaterials, res2] = await Promise.all([getResearchMaterials('', 0, 4, 'research-materials')]);
+  const [allResearchMaterials, res2] = await Promise.all([
+    getResearchMaterials("", 0, 4, "research-materials"),
+  ]);
+  const dataSEO = await generateMetaData("/our-approach/");
 
   return {
     props: {
       // AllNew: allNew?.data?.data?.posts?.nodes || null,
       HeroSection: allData.data.data.page.HeroSection,
       OurApproach: allData.data.data.page.ourApproach,
-      ResearchMaterial: allResearchMaterials.data.data
-
+      ResearchMaterial: allResearchMaterials.data.data,
+      dataSEO: dataSEO.json,
+      slug: "who-we-are/our-approach",
     },
-    revalidate: 1,
+    revalidate: 60,
   };
 }
-

@@ -18,6 +18,9 @@ import {
   getAllNews,
   getRelatedNews,
 } from "../../store/action/new";
+import generateMetaData from "../api/generateMetaData";
+import { NextSeo } from "next-seo";
+import MetaSEO from "../../components/Seo";
 
 export default function NewsPage(props) {
   const [dataNews, setDataNews] = useState(props.AllNewPagination);
@@ -189,8 +192,7 @@ export default function NewsPage(props) {
   } else yearString = year;
   return (
     <>
-      {/* <Header/> */}
-
+      <MetaSEO dataSEO={props.dataSEO} slug={props.slug} />
       <div className="post-grid-filter">
         <div className="container">
           <div className="heading-section">NEWS & INSIGHTS</div>
@@ -274,13 +276,16 @@ export async function getStaticProps({ params }) {
   const [catNew, res1] = await Promise.all([getAllCat()]);
 
   const [allNew2, res3] = await Promise.all([getAllNews(6)]);
+  const dataSEO = await generateMetaData("/news/");
 
   return {
     props: {
       Categories: catNew?.data?.data?.categories?.nodes || null,
       AllNewPagination: allNew2?.data?.data?.posts?.nodes || null,
       totalPost: allNew2?.data?.data?.posts?.pageInfo?.offsetPagination?.total,
+      dataSEO: dataSEO?.json,
+      slug: "news",
     },
-    revalidate: 1,
+    revalidate: 60,
   };
 }

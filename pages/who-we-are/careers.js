@@ -8,6 +8,8 @@ import Footer from "../../components/layouts/footer";
 import { getAllCareers } from "../../store/action/who-we-are/pageCareers";
 import LinkTab from "../../components/LinkTab";
 import { useEffect } from "react";
+import generateMetaData from "../api/generateMetaData";
+import MetaSEO from "../../components/Seo";
 
 export default function Careers(props) {
   const showText = useMemo(() => {
@@ -29,6 +31,7 @@ export default function Careers(props) {
 
   return (
     <>
+      <MetaSEO dataSEO={props.dataSEO} slug={props.slug} />
       <HeroSection
         title={props.careers?.HeroSection?.title}
         // image={props.careers.HeroSection.image.sourceUrl}
@@ -143,11 +146,13 @@ export default function Careers(props) {
 
 export async function getStaticProps() {
   const [resNew, res] = await Promise.all([getAllCareers()]);
-
+  const dataSEO = await generateMetaData("/careers/");
   return {
     props: {
       careers: resNew.data.data.page,
+      dataSEO: dataSEO.json,
+      slug: "who-we-are/careers",
     },
-    revalidate: 1,
+    revalidate: 60,
   };
 }
