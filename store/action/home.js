@@ -30,7 +30,7 @@ const Grapql = (query, token = "", session = "") => {
 export const getAllHomeInfo = () => {
   const query = `
   query NewQuery {
-    page(id: "trang-chu", idType: URI) {
+    page(id: "turicum-investment-management-ag", idType: URI) {
       Home {
         whatWeDo {
           blackText
@@ -108,6 +108,6 @@ export const getAllHomeInfo = () => {
   }
   }
   `;
-  
+
   return Grapql(query);
 };

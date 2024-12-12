@@ -170,7 +170,7 @@ export async function getStaticProps({ params }) {
   const [allNew, res1] = await Promise.all([getAllNews(3)]);
   const [allHomeInfo, res2] = await Promise.all([getAllHomeInfo()]);
 
-  const dataSEO = await generateMetaData("/trang-chu/");
+  const dataSEO = await generateMetaData("/turicum-investment-management-ag/");
 
   return {
     props: {
