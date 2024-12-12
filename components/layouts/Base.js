@@ -96,7 +96,7 @@ export const Base = (props) => {
           name="google-site-verification"
           content="bxPZB9Ibym1G2ypnbsQaP_xTlMUxPX_CLmQhRHgRDkQ"
         />
-        <link rel="icon" href="/imgs/Group-1.png" />
+        {/* <link rel="icon" href="/imgs/Group-1.png" /> */}
       </Head>
       {isMobile ? <Header data={props.dataHeader} /> : <NewHeader />}
       {props.children}
