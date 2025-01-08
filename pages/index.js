@@ -135,7 +135,7 @@ export default function Home(props) {
         </div>
 
         <div className="monthly-highlights">
-          <div className="container">
+          <div className="container container-spec">
             <div className="info">
               <div
                 className="heading"
