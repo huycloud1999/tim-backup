@@ -9,6 +9,7 @@ import { useEffect, useLayoutEffect, useState } from "react";
 import { PopUp } from "./PopUp";
 import { NewHeader } from "./Header/NewHeader";
 import { useRouter } from "next/router";
+import Script from "next/script";
 
 export const Base = (props) => {
   const router = useRouter();
@@ -96,8 +97,26 @@ export const Base = (props) => {
           name="google-site-verification"
           content="bxPZB9Ibym1G2ypnbsQaP_xTlMUxPX_CLmQhRHgRDkQ"
         />
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-5PDJ7VRW69"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-5PDJ7VRW69', {
+                page_path: window.location.pathname,
+              });
+            `,
+          }}
+        />
+
         {/* <link rel="icon" href="/imgs/Group-1.png" /> */}
       </Head>
+
       {isMobile ? <Header data={props.dataHeader} /> : <NewHeader />}
       {props.children}
       <Footer data={props.data} />
