@@ -65,47 +65,18 @@ function MyApp({ Component, pageProps, footerData, headerData, cookie }) {
   };
 
   useEffect(() => {
-    // const handleRouteChange = (url) => {
-    //   window.gtag("config", GA_TRACKING_ID, {
-    //     page_path: url,
-    //   });
-    //   isLoading(false);
-    // };
     router.events.on("routeChangeStart", (url, { shallow }) => {
       if (router.asPath != url) {
         isLoading(true);
       }
     });
-    // router.events.on("routeChangeComplete", handleRouteChange);
     router.events.on("routeChangeComplete", (url, { shallow }) => {
       isLoading(false);
     });
-
-    // return () => {
-    //   router.events.off("routeChangeComplete", handleRouteChange);
-    // };
   }, []);
 
   return (
     <>
-      {/* <Script
-        strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
-      />
-      <Script
-        id="gtag-init"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', '${GA_TRACKING_ID}', {
-            page_path: window.location.pathname,
-          });
-        `,
-        }}
-      /> */}
       <Layout data={footerData} dataHeader={headerData} dataCookie={cookie}>
         <AnimatePresence mode="wait" initial={false}>
           <motion.div
