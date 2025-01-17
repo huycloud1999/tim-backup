@@ -99,7 +99,7 @@ export const Base = (props) => {
         />
         <script
           async
-          src="https://www.googletagmanager.com/gtag/js?id=G-5PDJ7VRW69"
+          src="https://www.googletagmanager.com/gtag/js?id=G-RTXB9CZ164"
         ></script>
         <script
           dangerouslySetInnerHTML={{
@@ -107,7 +107,7 @@ export const Base = (props) => {
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'G-5PDJ7VRW69', {
+              gtag('config', 'G-RTXB9CZ164', {
                 page_path: window.location.pathname,
               });
             `,

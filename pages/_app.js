@@ -52,8 +52,6 @@ import { getAllComfooter } from "../store/action/comFooter";
 import { getAllHeader } from "../store/action/comHeader";
 import { getCookie } from "../store/action/Cookie";
 import Image from "next/image";
-import Script from "next/script";
-const GA_TRACKING_ID = "G-5PDJ7VRW69";
 function MyApp({ Component, pageProps, footerData, headerData, cookie }) {
   const Layout = Component.Layout ? Component.Layout : Base;
   const router = useRouter();
