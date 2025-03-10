@@ -35,6 +35,7 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { NextSeo } from "next-seo";
 import generateMetaData from "../api/generateMetaData";
 import MetaSEO from "../../components/Seo";
+import FactSheets from "./factsheets";
 
 function Solutions(props) {
   gsap.registerPlugin(ScrollTrigger);
@@ -330,12 +331,7 @@ function Solutions(props) {
                       }}
                     ></div>
                     {/* <Link href={"/products/factsheets"}>
-                      <div className="button-download factsheet">
-                        <div className="text">{documents.title1}</div>
-                        <div className="icon">
-                          <Image src={arrow_down} alt="downloadfile" />
-                        </div>
-                      </div>
+                      aaaa
                     </Link> */}
                     {/* <a download='Factsheet' target={'_blank'} rel="noreferrer" href={documents.file1.mediaItemUrl} className="button-download factsheet">
                                         <div className="text">{documents.title1}</div>
@@ -429,6 +425,7 @@ function Solutions(props) {
                         </div>
                     </div> */}
             </div>
+            <FactSheets />
           </TabPanel>
           {firstSection.property[2].visibility == "visible" && (
             <TabPanel>
