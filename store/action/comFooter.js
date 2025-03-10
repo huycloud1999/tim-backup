@@ -27,7 +27,6 @@ const Grapql = (query, token = "", session = "") => {
   }).catch((e) => console.log("e", process.env.NEXT_PUBLIC_HOSTNAMEA));
 };
 
-
 export const getAllComfooter = () => {
   const query = `
   query NewQuery {
@@ -44,6 +43,12 @@ export const getAllComfooter = () => {
           title
           email {
             email
+            img {
+              sourceUrl
+            }
+          }
+          linkedin {
+            linkedin
             img {
               sourceUrl
             }

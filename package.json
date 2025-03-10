@@ -34,6 +34,7 @@
     "react-tabs": "^5.1.0",
     "react-video": "^1.5.3",
     "react-visibility-sensor": "^5.1.1",
+    "recharts": "^2.15.1",
     "split-type": "^0.3.3",
     "splitting": "^1.0.6",
     "swiper": "^8.4.3",

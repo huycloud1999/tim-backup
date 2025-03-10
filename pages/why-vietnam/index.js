@@ -83,27 +83,27 @@ export default function WhyVietnam(props) {
     };
   });
 
-  useEffect(() => {
-    var maxHeight = 0;
-    var imageItems = document.querySelectorAll(".slide-image-vietnam");
-    imageItems.forEach((element, index) => {
-      if ((element.clientWidth / 585) * 361 > maxHeight) {
-        maxHeight = (element.clientWidth / 585) * 361;
-      }
-    });
+  // useEffect(() => {
+  //   var maxHeight = 0;
+  //   var imageItems = document.querySelectorAll(".slide-image-vietnam");
+  //   imageItems.forEach((element, index) => {
+  //     if ((element.clientWidth / 585) * 361 > maxHeight) {
+  //       maxHeight = (element.clientWidth / 585) * 361;
+  //     }
+  //   });
 
-    document.querySelector(
-      ".slider-area-why-vietnam .swiper-wrapper"
-    ).style.maxHeight = `${maxHeight}px`;
-    const mediaQuery = window.matchMedia("(max-width: 768px)");
-    // Check if the media query is true
-    if (mediaQuery.matches) {
-      document.querySelector(
-        ".slider-area-why-vietnam .swiper-wrapper"
-      ).style.maxHeight = `${maxHeight + 20}px`;
-    }
-  });
-
+  //   document.querySelector(
+  //     ".slider-area-why-vietnam .swiper-wrapper"
+  //   ).style.maxHeight = `${maxHeight}px`;
+  //   const mediaQuery = window.matchMedia("(max-width: 768px)");
+  //   // Check if the media query is true
+  //   if (mediaQuery.matches) {
+  //     document.querySelector(
+  //       ".slider-area-why-vietnam .swiper-wrapper"
+  //     ).style.maxHeight = `${maxHeight + 20}px`;
+  //   }
+  // });
+console.log(capitalMarket)
   return (
     <>
       <MetaSEO dataSEO={props.dataSEO} slug={props.slug} />
@@ -117,7 +117,7 @@ export default function WhyVietnam(props) {
         {whyvietnam.smallSubText}
       </SmallTitle>
 
-      <div className="slider-area-why-vietnam">
+      {/* <div className="slider-area-why-vietnam">
         <div
           className="container"
           onMouseEnter={() => swiperRef.current.swiper.autoplay.stop()}
@@ -161,7 +161,7 @@ export default function WhyVietnam(props) {
           </Swiper>
           <div className="swiper-pagination custom-pagination"></div>
         </div>
-      </div>
+      </div> */}
 
       <div className="tab-area-why-vietnam">
         <div className="container">

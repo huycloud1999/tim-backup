@@ -233,6 +233,34 @@ export default function NewsPage(props) {
               }
             />
           </div>
+          <div className="list-category">
+            {Categories &&
+              Categories.map((cat, index) => {
+                return (
+                  <div
+                    key={index}
+                    onClick={() => {
+                      setLoading(true);
+                      router.push({
+                        pathname: "/news",
+                        query: {
+                          year: year,
+                          category: cat.databaseId,
+                          page: 1,
+                        },
+                      });
+                    }}
+                    className={
+                      category.value == cat.databaseId
+                        ? "active item-category"
+                        : " item-category"
+                    }
+                  >
+                    {cat.name}
+                  </div>
+                );
+              })}
+          </div>
           <div className={"filter-results" + (isLoading ? " isLoading" : "")}>
             {dataNews.length > 0 && (
               <PostLoop1

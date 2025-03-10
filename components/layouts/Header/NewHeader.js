@@ -101,7 +101,7 @@ export const NewHeader = () => {
             <div className="menu-area">
               <Link href='/' className="menu-parent"><a className={"menu-parent " + (router.asPath == '/' ? 'active' : '')}>HOME</a></Link>
               <div className="menu-parent">
-                <div className="menu-text"> Who we are</div>
+                <div className="menu-text">Firm history</div>
                 <div className="dropdown-icon image-container">
                   <Image src={dropdown} alt='' className="image-item" />
                 </div>

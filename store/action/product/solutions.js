@@ -27,7 +27,6 @@ const Grapql = (query, token = "", session = "") => {
   }).catch((e) => console.log("e", process.env.NEXT_PUBLIC_HOSTNAMEA));
 };
 
-
 export const getSolutions = () => {
   const query = `
   query NewQuery {
@@ -59,6 +58,11 @@ export const getSolutions = () => {
               mediaItemUrl
             }
           }
+          tableChart {
+            caption
+            body
+            header
+          }
         }
         otherProducts {
           title
@@ -82,6 +86,11 @@ export const getSolutions = () => {
             body
             header
           }
+            tableChart {
+            caption
+            body
+            header
+          }
         }
         documents {
           title1
@@ -96,10 +105,6 @@ export const getSolutions = () => {
       }
     }
   }
-  `
+  `;
   return Grapql(query);
-}
-
-
-
-
+};

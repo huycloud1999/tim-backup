@@ -11,12 +11,12 @@ import Modal from "react-modal";
 import { useState } from "react";
 
 export default function Footer({ data }) {
-  const [email, setEmail] = useState('')
-  const [loading, setLoading] = useState(false)
+  const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const onChange = (e) => {
-    setEmail(e.target.value)
-  }
+    setEmail(e.target.value);
+  };
   // console.log(data);
   const [modalIsOpen, setIsOpen] = useState(false);
   const customStyles = {
@@ -46,27 +46,26 @@ export default function Footer({ data }) {
     fetch("/api/subscribe", {
       method: "POST",
       body: JSON.stringify(data),
-      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
     }).then((res) => {
-      console.log("🚀 ~ file: get-in-touch.js:38 ~ GetInTouch ~ res:", res)
+      console.log("🚀 ~ file: get-in-touch.js:38 ~ GetInTouch ~ res:", res);
       // if (!res.ok) throw new Error("Failed to send message");
       // return res.json();
     });
   const submitEmail = async (event) => {
     event.preventDefault();
     try {
-      setLoading(true)
+      setLoading(true);
       const res = await sendContactForm({
         email: email,
-      })
-      setEmail('')
-      setLoading(false)
+      });
+      setEmail("");
+      setLoading(false);
       openModal();
-    } catch (error) {
-
-    }
-
-
+    } catch (error) {}
   };
   return (
     <div className="footer ">
@@ -106,7 +105,11 @@ export default function Footer({ data }) {
                   value={email}
                   onChange={onChange}
                 />
-                <button type="submit" className="icon_footer" disabled={loading}>
+                <button
+                  type="submit"
+                  className="icon_footer"
+                  disabled={loading}
+                >
                   <Image src={Arrow} alt="imgs" className="input_arrow" />
                 </button>
               </form>
@@ -152,7 +155,6 @@ export default function Footer({ data }) {
                   </Link>
                 </ul>
               </div>
-
               <div className="colum_2_icon">
                 <div className="colum_2__icon image-container">
                   <Link href="mailto:info@timvest.ch">
@@ -168,6 +170,37 @@ export default function Footer({ data }) {
                   <Link href="mailto:info@timvest.ch">
                     <a>
                       <span>{data.columsContact.email.email}</span>
+                    </a>
+                  </Link>
+                </ul>
+              </div>
+              <div className="colum_2_icon">
+                <div className="colum_2__icon image-container">
+                  <Link
+                    href="https://www.linkedin.com/company/turicum-investment-management-ag?originalSubdomain=ch"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <Image
+                      src={data.columsContact.linkedin.img.sourceUrl}
+                      alt="icon"
+                      layout="fill"
+                      className=" image-item"
+                    />
+                  </Link>
+                </div>
+                <ul className="colum_2_link colum_2_link__PC">
+                  <Link
+                    href="https://www.linkedin.com/company/turicum-investment-management-ag?originalSubdomain=ch"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <a>
+                      <span
+                        dangerouslySetInnerHTML={{
+                          __html: data.columsContact.linkedin.linkedin,
+                        }}
+                      ></span>
                     </a>
                   </Link>
                 </ul>
@@ -245,7 +278,9 @@ export default function Footer({ data }) {
               <p>{data.turicumInvestment.turicumInvestment}</p>
               <div className="sup_footer_2">
                 <Link href="https://www.linkedin.com/company/turicum-investment-management-ag/?viewAsMember=true">
-                  <a target={"_blank"} rel="noreferrer">{data?.turicumInvestment?.linkedin}</a>
+                  <a target={"_blank"} rel="noreferrer">
+                    {data?.turicumInvestment?.linkedin}
+                  </a>
                 </Link>
                 <Link
                   href={data?.turicumInvestment?.finsapolicyfile?.link || ""}
@@ -262,7 +297,9 @@ export default function Footer({ data }) {
                   </a>
                 </Link>
                 <Link href={data?.turicumInvestment?.termOfUseFile?.link || ""}>
-                  <a target={"_blank"} rel="noreferrer">{data?.turicumInvestment?.termOfUse}</a>
+                  <a target={"_blank"} rel="noreferrer">
+                    {data?.turicumInvestment?.termOfUse}
+                  </a>
                 </Link>
               </div>
             </div>
