@@ -118,7 +118,7 @@ export const getFilterNews = (
   query MyQuery {
     posts(first: ${first},
       where: {
-        taxQuery: {taxArray: {taxonomy: CATEGORY, terms: "uncategorized", field: SLUG, operator: NOT_IN}},
+        taxQuery: {taxArray: {taxonomy: CATEGORY, terms: "60", field: SLUG, operator: NOT_IN}},
         search:"${searchKey}", 
         orderby: {field: DATE, order: DESC}, status: PUBLISH, 
         categoryId: ${categoryId}, dateQuery: {year: ${year}}, 
@@ -155,8 +155,7 @@ export const getFilterNews = (
 export const getAllCat = () => {
   const query = `
     query getAllCat {
-      categories (where: {exclude: "1"}){  
-        
+      categories {  
         nodes {
           id
           slug

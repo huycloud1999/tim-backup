@@ -91,6 +91,11 @@ export const getSolutions = () => {
             body
             header
           }
+             tableMultiChart {
+            caption
+            body
+            header
+          }
         }
         documents {
           title1

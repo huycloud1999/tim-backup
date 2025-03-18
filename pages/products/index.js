@@ -36,6 +36,7 @@ import { NextSeo } from "next-seo";
 import generateMetaData from "../api/generateMetaData";
 import MetaSEO from "../../components/Seo";
 import FactSheets from "./factsheets";
+import { Legend } from "chart.js";
 
 function Solutions(props) {
   gsap.registerPlugin(ScrollTrigger);
@@ -121,30 +122,71 @@ function Solutions(props) {
   ];
 
   // Dữ liệu từ assetManagement.tableChart
-  const tableData = assetManagement.tableChart.body;
+  const tableData = assetManagement.tableMultiChart.body;
   const years = assetManagement.tableChart.header;
   const tableData2 = mandates.tableChart.body;
   const years2 = mandates.tableChart.header;
   const chartData = [];
   const chartData2 = [];
-  tableData.forEach((yearData) => {
-    const year = yearData[0]; // Cột đầu tiên là năm
+  tableData.forEach((rowData) => {
+    const dateStr = rowData[0]; // e.g., "14/07/2017"
 
-    // Kiểm tra nếu year hợp lệ (tránh các giá trị lỗi như "0.92023", "2.22024")
-    if (!/^[0-9]{4}$/.test(year)) return;
+    // Validate date string
+    if (!dateStr || !/^\d{1,2}\/\d{1,2}\/\d{4}$/.test(dateStr)) return;
 
-    months.forEach((month, index) => {
-      const value = parseFloat(yearData[index + 1]); // Lấy giá trị của từng tháng
+    // Process the three index values (TIMVT, VN Index TR, FTSE VN TR)
+    const indices = [
+      {
+        name: "TIMVT",
+        value: parseFloat(rowData[1].replace("%", "").replace(",", ".")),
+      },
+      {
+        name: "VN Index TR",
+        value: parseFloat(rowData[2].replace("%", "").replace(",", ".")),
+      },
+      {
+        name: "FTSE VN TR",
+        value: parseFloat(rowData[3].replace("%", "").replace(",", ".")),
+      },
+    ];
 
-      if (!isNaN(value)) {
+    indices.forEach((index) => {
+      if (!isNaN(index.value)) {
         chartData.push({
-          date: `${month} ${year}`,
-          year: year,
-          value: value,
+          date: dateStr, // Keep as "DD/MM/YYYY"
+          index: index.name,
+          value: index.value,
         });
       }
     });
   });
+  const transformData = (chartData) => {
+    return chartData.reduce((acc, cur) => {
+      let existingEntry = acc.find((item) => item.date === cur.date);
+      if (!existingEntry) {
+        existingEntry = { date: cur.date };
+        acc.push(existingEntry);
+      }
+      existingEntry[cur.index] = cur.value;
+      return acc;
+    }, []);
+  };
+  const transformedData = transformData(chartData);
+  const lastDatesByYear = {};
+  transformedData.forEach((d) => {
+    const [day, month, year] = d.date.split("/").map(Number);
+    const currentDate = new Date(year, month - 1, day).getTime();
+    if (
+      !lastDatesByYear[year] ||
+      currentDate >
+        new Date(lastDatesByYear[year].split("/").reverse().join("-")).getTime()
+    ) {
+      lastDatesByYear[year] = d.date;
+    }
+  });
+
+  const yearEndDates = Object.values(lastDatesByYear);
+  console.log(yearEndDates);
   tableData2.forEach((yearData2, rowIndex) => {
     const year = String(yearData2[0]).trim(); // Chuyển về string và loại bỏ khoảng trắng
 
@@ -258,13 +300,13 @@ function Solutions(props) {
               <LineChart width={1200} height={400} data={chartData2}>
                 <CartesianGrid strokeDasharray="1 1" />
                 <XAxis
-                  dataKey="date" // Dùng "date" để vẽ tất cả các tháng
+                  dataKey="date"
                   tickFormatter={(value) => {
-                    // Chỉ hiển thị năm khi là tháng 1 (Jan) hoặc điểm đầu tiên của năm
-                    const [month, year] = value.split(" ");
-                    return month === "Jan" ? year : "";
+                    if (!value) return "";
+                    const [, , year] = value.split("/").map(Number);
+                    return value === lastDatesByYear[year] ? year : "";
                   }}
-                  interval={0} // Hiển thị tất cả các tick, nhưng chỉ nhãn năm ở Jan
+                  interval={0}
                   label={{
                     value: "Time",
                     position: "insideBottom",
@@ -355,25 +397,42 @@ function Solutions(props) {
                       />
                     )}
                   </div>
+                  <div className="title-sub">Performance since inception</div>
+                  <div className="list-description">
+                    <div>
+                      <div className="line line-tim"></div>
+                      <div className="text">TIMVT</div>
+                    </div>
+                    <div>
+                      <div className="line line-vnindex"></div>
+                      <div className="text">VN-Index TR</div>
+                    </div>
+                    <div>
+                      <div className="line line-FTSE"></div>
+                      <div className="text">FTSE Vietnam TR</div>
+                    </div>
+                  </div>
                   <div
                     style={{
                       display: "flex",
                       justifyContent: "center",
                       alignItems: "center",
-                      marginTop: "50px",
+                      marginTop: "20px",
+                      paddingRight: "20px",
                     }}
                     className="asset-management"
                   >
-                    <LineChart width={1200} height={400} data={chartData}>
-                      <CartesianGrid strokeDasharray="1 1" />
+                    <LineChart width={1200} height={420} data={transformedData}>
                       <XAxis
-                        dataKey="date" // Dùng "date" để vẽ tất cả các tháng
+                        dataKey="date"
                         tickFormatter={(value) => {
-                          // Chỉ hiển thị năm khi là tháng 1 (Jan) hoặc điểm đầu tiên của năm
-                          const [month, year] = value.split(" ");
-                          return month === "Jan" ? year : "";
+                          if (!value) return "";
+                          const [, , year] = value.split("/").map(Number);
+                          // Show year only if this is the last date of that year
+                          return yearEndDates.includes(value) ? year : "";
                         }}
-                        interval={0} // Hiển thị tất cả các tick, nhưng chỉ nhãn năm ở Jan
+                        ticks={yearEndDates} // Explicitly set ticks to year-end dates
+                        interval={0} // Ensure all specified ticks are shown
                         label={{
                           value: "Time",
                           position: "insideBottom",
@@ -382,24 +441,38 @@ function Solutions(props) {
                       />
                       <YAxis
                         label={{
-                          value: "Value",
+                          value: "Value (%)",
                           angle: -90,
                           position: "insideLeft",
                         }}
                       />
                       <Tooltip
-                        formatter={(value, name, props) => [
-                          value,
-                          props.payload.date,
-                        ]}
+                        formatter={(value, name) => [`${value}%`, name]}
+                      />
+                      <Legend />
+                      <Line
+                        type="monotone"
+                        dataKey="TIMVT"
+                        name="TIMVT"
+                        stroke="#000080"
+                        strokeWidth={2}
+                        dot={false}
                       />
                       <Line
                         type="monotone"
-                        dataKey="value"
-                        stroke="#0b2677"
-                        strokeWidth={3}
-                        dot={false} // Không hiển thị điểm ở mỗi tháng để tránh lộn xộn
-                        connectNulls={true} // Nối qua các giá trị null
+                        dataKey="VN Index TR"
+                        name="VN-Index TR"
+                        stroke="#B5B4A9"
+                        strokeWidth={2}
+                        dot={false}
+                      />
+                      <Line
+                        type="monotone"
+                        dataKey="FTSE VN TR"
+                        name="FTSE Vietnam TR"
+                        stroke="#2F6CE9"
+                        strokeWidth={2}
+                        dot={false}
                       />
                     </LineChart>
                   </div>

@@ -25,7 +25,7 @@ export const Countdown = ({isSymbol, startNumber, number, children,className }) 
   
   return (
     <div className={"countdown " + className}  ref={countRef}>
-      <CountUp start={startNumber || 0} end={number} duration={0.5}>
+      <CountUp start={startNumber || 0} end={number} duration={0.5} separator="">
         {({ countUpRef, start }) => (
           <VisibilitySensor onChange={(isVisible)=> handleStart(isVisible,start)}  delayedCall  >
             <div className="countdown-area">

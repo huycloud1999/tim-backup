@@ -110,7 +110,11 @@ function FactSheets(props) {
         <div
           key={index}
           className={"pagination-item" + active}
-          onClick={() => handleYearPagination(index)}
+          onClick={(event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            handleYearPagination(index);
+          }}
         >
           {yearList[index]}
         </div>
@@ -125,7 +129,7 @@ function FactSheets(props) {
       const results = await getFilterReportByYear(yearList[index]);
       setDocData(results?.data?.data?.documents?.nodes || []);
       setYear(index + 1);
-      scrollTo(0, 700);
+      // scrollTo(0, 700);
     } catch (error) {
       console.error("Error fetching reports by year:", error);
     } finally {
@@ -141,7 +145,7 @@ function FactSheets(props) {
     <div>
       {/* <HeroSection title={"FACTSHEETs"} className="factsheets-page" /> */}
       <div className="container page-wrapper">
-        {latest && (
+        {/* {latest && (
           <div className="latest results-area">
             <div className="title-heading">
               {"Monthly factsheet - " + monthName + " " + year}
@@ -156,7 +160,7 @@ function FactSheets(props) {
               />
             </div>
           </div>
-        )}
+        )} */}
 
         <div
           className={

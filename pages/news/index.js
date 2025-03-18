@@ -26,10 +26,9 @@ export default function NewsPage(props) {
   const [dataNews, setDataNews] = useState(props.AllNewPagination);
   const [page, setPage] = useState(1);
   const [year, setYear] = useState(null);
-  const [category, setCategory] = useState({ value: null, label: null });
+  const [category, setCategory] = useState({ value: 60, label: "NEWS" });
   const [length, setLength] = useState(props.totalPost);
   const [isLoading, setLoading] = useState(false);
-
   const router = useRouter();
 
   const { Categories } = props;
@@ -104,7 +103,7 @@ export default function NewsPage(props) {
       var size = parseInt(router.query.page);
 
       const res = await getFilterNews(
-        router.query.category || null,
+        router.query.category || 60,
         router.query.year || null,
         postsPerPage,
         (size - 1) * postsPerPage || 0,
@@ -121,7 +120,7 @@ export default function NewsPage(props) {
       var dataCatClone = dataCat.map((item) => item.value);
       var yearClone = optionsYear.map((item) => item.value);
       var indexCat = dataCatClone.indexOf(
-        parseInt(router.query.category || null)
+        parseInt(router.query.category || 60)
       );
       var indexYear = yearClone.indexOf(parseInt(router.query.year || null));
 
@@ -190,6 +189,7 @@ export default function NewsPage(props) {
   if (year) {
     yearString = year.toString();
   } else yearString = year;
+  console.log(Categories);
   return (
     <>
       <MetaSEO dataSEO={props.dataSEO} slug={props.slug} />
@@ -272,23 +272,25 @@ export default function NewsPage(props) {
                 slug={dataNews[0].slug}
               />
             )}
-            {dataNews.length > 0 &&
-              dataNews.map((ct, key) => {
-                if (key == 0) {
-                  return;
-                } else
-                  return (
-                    <PostLoop
-                      key={ct.slug}
-                      image={ct.featuredImage?.node?.sourceUrl}
-                      title={ct.title}
-                      date={ct.date}
-                      description={ct.excerpt}
-                      slug={ct.slug}
-                      category={ct.categories?.nodes}
-                    />
-                  );
-              })}
+            <div className="post-grid">
+              {dataNews.length > 0 &&
+                dataNews.map((ct, key) => {
+                  if (key == 0) {
+                    return;
+                  } else
+                    return (
+                      <PostLoop
+                        key={ct.slug}
+                        image={ct.featuredImage?.node?.sourceUrl}
+                        title={ct.title}
+                        date={ct.date}
+                        description={ct.excerpt}
+                        slug={ct.slug}
+                        category={ct.categories?.nodes}
+                      />
+                    );
+                })}
+            </div>
           </div>
 
           <div className="pagination-navigation">{pagination}</div>
@@ -303,7 +305,7 @@ export default function NewsPage(props) {
 export async function getStaticProps({ params }) {
   const [catNew, res1] = await Promise.all([getAllCat()]);
 
-  const [allNew2, res3] = await Promise.all([getAllNews(6)]);
+  const [allNew2, res3] = await Promise.all([getAllNews(7)]);
   const dataSEO = await generateMetaData("/news/");
 
   return {
