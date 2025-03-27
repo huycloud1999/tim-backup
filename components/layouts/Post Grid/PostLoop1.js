@@ -10,7 +10,7 @@ export const PostLoop1 = ({ image, title, category, date, description, slug }) =
     const day = newDate.getDate()
     const month = newDate.toLocaleString('en-us', { month: 'long' })
     const year = newDate.getFullYear()
-
+    console.log(image)
     return (
 
         <div className="loop-post1">

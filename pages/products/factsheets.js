@@ -144,7 +144,7 @@ function FactSheets(props) {
   return (
     <div>
       {/* <HeroSection title={"FACTSHEETs"} className="factsheets-page" /> */}
-      <div className="container page-wrapper">
+      <div className="container page-wrapper factsheets-page">
         {/* {latest && (
           <div className="latest results-area">
             <div className="title-heading">
@@ -167,7 +167,8 @@ function FactSheets(props) {
             "previous results-area " + (isLoading ? "isLoadingSlow" : "")
           }
         >
-          <div className="title-heading">Previous Factsheets</div>
+          <div className="title-heading">Factsheets</div>
+          <div className="pagination-navigation">{reportPagination}</div>
           <div className="custom">
             {docData?.map(
               (value, id) =>
@@ -184,7 +185,6 @@ function FactSheets(props) {
                 )
             )}
           </div>
-          <div className="pagination-navigation">{reportPagination}</div>
         </div>
       </div>
     </div>

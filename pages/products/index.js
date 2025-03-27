@@ -124,10 +124,11 @@ function Solutions(props) {
   // Dữ liệu từ assetManagement.tableChart
   const tableData = assetManagement.tableMultiChart.body;
   const years = assetManagement.tableChart.header;
-  const tableData2 = mandates.tableChart.body;
+  const tableData2 = mandates.tableMultiChart.body; // Đã sửa
   const years2 = mandates.tableChart.header;
   const chartData = [];
   const chartData2 = [];
+
   tableData.forEach((rowData) => {
     const dateStr = rowData[0]; // e.g., "14/07/2017"
 
@@ -160,6 +161,7 @@ function Solutions(props) {
       }
     });
   });
+
   const transformData = (chartData) => {
     return chartData.reduce((acc, cur) => {
       let existingEntry = acc.find((item) => item.date === cur.date);
@@ -167,10 +169,11 @@ function Solutions(props) {
         existingEntry = { date: cur.date };
         acc.push(existingEntry);
       }
-      existingEntry[cur.index] = cur.value;
+      existingEntry[cur.index] = Math.round(cur.value * 100) / 100;
       return acc;
     }, []);
   };
+
   const transformedData = transformData(chartData);
   const lastDatesByYear = {};
   transformedData.forEach((d) => {
@@ -186,35 +189,58 @@ function Solutions(props) {
   });
 
   const yearEndDates = Object.values(lastDatesByYear);
-  console.log(yearEndDates);
-  tableData2.forEach((yearData2, rowIndex) => {
-    const year = String(yearData2[0]).trim(); // Chuyển về string và loại bỏ khoảng trắng
 
-    if (!/^[0-9]{4}$/.test(year)) {
-      console.warn(
-        `Bỏ qua dòng ${rowIndex} do giá trị year không hợp lệ:`,
-        year
-      );
-      return;
-    }
+  tableData2.forEach((rowData) => {
+    const dateStr = rowData[0]; // e.g., "07/14/2017"
 
-    months.forEach((month, index) => {
-      const value = parseFloat(yearData2[index + 1]);
+    // Validate date string
+    if (!dateStr || !/^\d{1,2}\/\d{1,2}\/\d{4}$/.test(dateStr)) return;
 
-      if (!isNaN(value)) {
+    const [month, day, year] = dateStr.split("/").map(Number);
+    const formattedDate = `${day}/${month}/${year}`; // Chuyển thành DD/MM/YYYY
+
+    const indices = [
+      {
+        name: "TIMVT",
+        value: parseFloat(rowData[1].replace("%", "").replace(",", ".")),
+      },
+      {
+        name: "VN Index TR",
+        value: parseFloat(rowData[2].replace("%", "").replace(",", ".")),
+      },
+      {
+        name: "FTSE VN TR",
+        value: parseFloat(rowData[3].replace("%", "").replace(",", ".")),
+      },
+    ];
+
+    indices.forEach((index) => {
+      if (!isNaN(index.value)) {
         chartData2.push({
-          date: `${month} ${year}`,
-          year: year,
-          value: value,
+          date: formattedDate,
+          index: index.name,
+          value: index.value,
         });
-      } else {
-        console.warn(
-          `Bỏ qua giá trị không hợp lệ tại ${month} ${year}:`,
-          yearData2[index + 1]
-        );
       }
     });
   });
+
+  const transformedData2 = transformData(chartData2);
+  const lastDatesByYear2 = {};
+  transformedData2.forEach((d) => {
+    const [day, month, year] = d.date.split("/").map(Number);
+    if (year === 2025) return; // Bỏ qua năm 2025
+    const currentDate = new Date(year, month - 1, day).getTime();
+    if (
+      !lastDatesByYear2[year] ||
+      currentDate >
+        new Date(lastDatesByYear2[year].split("/").reverse().join("-")).getTime()
+    ) {
+      lastDatesByYear2[year] = d.date;
+    }
+  });
+  
+  const yearEndDates2 = Object.values(lastDatesByYear2);
   return (
     <>
       <MetaSEO dataSEO={props.dataSEO} slug={props.slug} />
@@ -288,59 +314,89 @@ function Solutions(props) {
                 );
               })}
             </div>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                marginTop: "50px",
-              }}
-              className="asset-management"
-            >
-              <LineChart width={1200} height={400} data={chartData2}>
-                <CartesianGrid strokeDasharray="1 1" />
-                <XAxis
-                  dataKey="date"
-                  tickFormatter={(value) => {
-                    if (!value) return "";
-                    const [, , year] = value.split("/").map(Number);
-                    return value === lastDatesByYear[year] ? year : "";
-                  }}
-                  interval={0}
-                  label={{
-                    value: "Time",
-                    position: "insideBottom",
-                    offset: -5,
-                  }}
+            <div className="asset-management container">
+              <div className="title-sub">Performance since inception</div>
+                    <div className="list-description">
+                      <div>
+                        <div className="line line-tim"></div>
+                        <div className="text">TIMVT</div>
+                      </div>
+                      <div>
+                        <div className="line line-vnindex"></div>
+                        <div className="text">VN-Index TR</div>
+                      </div>
+                      <div>
+                        <div className="line line-FTSE"></div>
+                        <div className="text">FTSE Vietnam TR</div>
+                      </div>
+                    </div>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  marginTop: "20px",
+                  paddingRight: "20px",
+                }}
+                className="asset-management"
+              >
+                <LineChart width={1200} height={420} data={transformedData2}>
+                  <XAxis
+                    dataKey="date"
+                    tickFormatter={(value) => {
+                      if (!value) return "";
+                      const [, , year] = value.split("/").map(Number);
+                      // Show year only if this is the last date of that year
+                      return yearEndDates2.includes(value) ? year : "";
+                    }}
+                    ticks={yearEndDates2} // Explicitly set ticks to year-end dates
+                    interval={0} // Ensure all specified ticks are shown
+                    tick={{ angle: -30, textAnchor: "end" }} 
+                    minTickGap={50} // Thử tăng giá trị này nếu vẫn bị đè
+  
+                  />
+                  <YAxis
+                    label={{
+                      value: "Value (%)",
+                      angle: -90,
+                      position: "insideLeft",
+                    }}
+                  />
+                  <Tooltip formatter={(value, name) => [`${value}%`, name]} />
+                  <Legend />
+                  <Line
+                    type="monotone"
+                    dataKey="TIMVT"
+                    name="TIMVT"
+                    stroke="#000080"
+                    strokeWidth={2}
+                    dot={false}
+                  />
+                  <Line
+                    type="monotone"
+                    dataKey="VN Index TR"
+                    name="VN-Index TR"
+                    stroke="#B5B4A9"
+                    strokeWidth={2}
+                    dot={false}
+                  />
+                  <Line
+                    type="monotone"
+                    dataKey="FTSE VN TR"
+                    name="FTSE Vietnam TR"
+                    stroke="#2F6CE9"
+                    strokeWidth={2}
+                    dot={false}
+                  />
+                </LineChart>
+              </div>
+              <div className="title-sub">MONTHLY PERFORMANCE</div>
+              <div className="asset-management table_chart">
+                <TableComponent
+                  data={mandates?.tableChart.body}
+                  header={[...assetManagement.tableChart.header, "YTD"]} // Thêm "YTD" vào cuối header
                 />
-                <YAxis
-                  label={{
-                    value: "Value",
-                    angle: -90,
-                    position: "insideLeft",
-                  }}
-                />
-                <Tooltip
-                  formatter={(value, name, props) => [
-                    value,
-                    props.payload.date,
-                  ]}
-                />
-                <Line
-                  type="monotone"
-                  dataKey="value"
-                  stroke="#0b2677"
-                  strokeWidth={3}
-                  dot={false} // Không hiển thị điểm ở mỗi tháng để tránh lộn xộn
-                  connectNulls={true} // Nối qua các giá trị null
-                />
-              </LineChart>
-            </div>
-            <div className="asset-management table_chart">
-              <TableComponent
-                data={mandates?.tableChart.body}
-                header={assetManagement.tableChart.header}
-              />
+              </div>
             </div>
           </TabPanel>
           <TabPanel>
@@ -433,11 +489,6 @@ function Solutions(props) {
                         }}
                         ticks={yearEndDates} // Explicitly set ticks to year-end dates
                         interval={0} // Ensure all specified ticks are shown
-                        label={{
-                          value: "Time",
-                          position: "insideBottom",
-                          offset: -5,
-                        }}
                       />
                       <YAxis
                         label={{
@@ -476,6 +527,7 @@ function Solutions(props) {
                       />
                     </LineChart>
                   </div>
+                  <div className="title-sub">MONTHLY PERFORMANCE</div>
                   <div className="asset-management table_chart">
                     <TableComponent
                       data={assetManagement.tableChart.body}

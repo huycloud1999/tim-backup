@@ -63,6 +63,11 @@ export const getSolutions = () => {
             body
             header
           }
+            tableMultiChart {
+            caption
+            body
+            header
+          }
         }
         otherProducts {
           title

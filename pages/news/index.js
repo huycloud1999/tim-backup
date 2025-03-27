@@ -293,7 +293,7 @@ export default function NewsPage(props) {
             </div>
           </div>
 
-          <div className="pagination-navigation">{pagination}</div>
+          <div className="pagination-navigation news">{pagination}</div>
         </div>
       </div>
 

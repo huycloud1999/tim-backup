@@ -4,7 +4,7 @@
   margin: 0 auto;
 }
 .asset-management.table_chart .table-Solutions thead th {
-  width: fit-content !important;
+  width: auto !important;
 }
 .solution-hero-text {
   margin-top: 60px;
@@ -156,7 +156,7 @@
   margin-bottom: 50px !important;
 }
 
-.asset-management .title {
+.title {
   font-family: Roboto;
   font-size: 40px;
   font-weight: 500;
@@ -166,7 +166,7 @@
   text-transform: uppercase;
   color: var(--blueTheme);
 }
-.asset-management .title-sub {
+ .title-sub {
   font-family: Roboto;
   font-size: 28px;
   font-weight: 500;
@@ -176,7 +176,7 @@
   text-transform: uppercase;
   color: var(--blueTheme);
 }
-.asset-management .asset-wrapper {
+.asset-wrapper {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-template-rows: repeat(2, auto);
@@ -329,7 +329,7 @@
   font-size: 18px;
   width: 50%;
   border-top: 1px solid var(--blueTheme);
-  border-right: 1px solid var(--blueTheme);
+  border-right: 1px solid lightgrey;
   border-bottom: 1px solid var(--blueTheme);
 }
 
@@ -342,12 +342,15 @@
   padding: 0.5em;
   border: 1px solid lightgrey;
 }
-
+.table-Solutions tr td:first-child {
+ text-align: left;
+}
 .table-Solutions tr td {
   font-size: 16px;
   font-family: Roboto;
   /* opacity: .5; */
   color: #333;
+  text-align: right;
 }
 
 .table-Solutions tbody tr:nth-child(2n + 1) {
