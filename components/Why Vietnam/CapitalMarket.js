@@ -11,7 +11,6 @@ import { CorporateBondChart } from "../Charts/CorporateBondChart";
 export const CapitalMarket = ({ data: CapitalMarketData }) => {
 
     const { aFrontierClassificationForAnEmergingMarket: emergingMarket } = CapitalMarketData;
-    console.log(CapitalMarketData);
 
     return (
         <>

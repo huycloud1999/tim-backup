@@ -37,7 +37,7 @@ export default function WhyVietnam(props) {
     CapitalMarket: capitalMarket,
   } = props;
 
-  const slides = whyvietnam.slideImages;
+  const slides = whyvietnam.slideImages || [];
 
   const tabs = useRef([]);
   const pagination = {
@@ -49,13 +49,19 @@ export default function WhyVietnam(props) {
   };
 
   const onSelectHanle = (index) => {
-    var selectedTab = document.querySelectorAll(
+    const tabs = document.querySelectorAll(
       `.tab-area-why-vietnam .react-tabs .react-tabs__tab-panel`
-    )[index];
+    );
+  
+    if (!tabs || tabs.length === 0 || !tabs[index]) {
+      console.error("Tab không tồn tại hoặc index không hợp lệ!");
+      return;
+    }
+  
     gsap.to(window, {
       duration: 0.6,
       scrollTo: {
-        y: selectedTab,
+        y: tabs[index],
         offsetY: 140,
       },
     });
@@ -103,7 +109,7 @@ export default function WhyVietnam(props) {
   //     ).style.maxHeight = `${maxHeight + 20}px`;
   //   }
   // });
-console.log(capitalMarket)
+  console.log(macroEconomy);
   return (
     <>
       <MetaSEO dataSEO={props.dataSEO} slug={props.slug} />
