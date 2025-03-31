@@ -33,11 +33,11 @@ import whyMobile from "../../public/imgs/whyMobile.png";
 // import Map from "../../components/Map.js";
 const Map = dynamic(() => import("../../components/Map.js"), { ssr: false });
 
-export const MacroEconomy = ({ data }) => {
+export const StockMarket = ({ data }) => {
   const {
-    risingFromTheAshes,
-    toOneOfTheMostGlobalizedPopulousCountries: populousCountries,
-    andTheRoarOfANewTiger: tigerSection,
+    risingFromTheAshesStock,
+    toOneOfTheMostGlobalizedPopulousCountriesStock: populousCountries,
+    andTheRoarOfANewTigerStock: tigerSection,
   } = data;
   const { map: mapData } = populousCountries;
   // console.log(populousCountries.tradeChart)
@@ -45,10 +45,10 @@ export const MacroEconomy = ({ data }) => {
   return (
     <>
       <SmallTitle
-        title={risingFromTheAshes.title}
+        title={risingFromTheAshesStock.title}
         className={"rising-from-ashes"}
       >
-        {risingFromTheAshes.description}
+        {risingFromTheAshesStock.description}
       </SmallTitle>
       <SmallTitle
         title={populousCountries.title}

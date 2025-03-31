@@ -140,6 +140,103 @@ export const getWhyVietNam = () => {
           }
         }
       }
+        stockMarketDemo {
+        titleTabStock
+        risingFromTheAshesStock {
+          title
+          description
+          subText
+          chartArea {
+            chartItem {
+              title
+              chartImage {
+                sourceUrl
+              }
+            }
+          }
+        }
+        toOneOfTheMostGlobalizedPopulousCountriesStock {
+          title
+          description
+          chartArea {
+            chartItem {
+              title
+              chartImage {
+                sourceUrl
+              }
+              visible
+              source
+            }
+          }
+          tradeChart {
+            body
+            caption
+            header
+          }
+          map {
+            sweden {
+              name
+              longtitude
+              lattitude
+            }
+            vietnam {
+              name
+              longtitude
+              lattitude
+              population
+            }
+            vietnamLocationIcon {
+              mediaItemUrl
+            }
+            swedenLocationIcon {
+              mediaItemUrl
+            }
+          }
+        }
+        andTheRoarOfANewTigerStock {
+          title
+          description
+          vietnamCircleChart {
+            title
+            iconTagBoxItem {
+              title
+              content
+              borderColor
+              textColor
+              icon {
+                sourceUrl
+              }
+            }
+          }
+          chartArea {
+            title
+            image {
+              sourceUrl
+            }
+            source
+          }
+          vietNamGrowthEngine {
+            fullCoverImage {
+              sourceUrl
+            }
+            fullCoverImageMobile {
+              sourceUrl
+            }
+            populationChart {
+              title
+              image {
+                sourceUrl
+              }
+            }
+            statistics {
+              title
+              icon {
+                sourceUrl
+              }
+            }
+          }
+        }
+      }
       capitalMarket {
         tabTitle
         aFrontierClassificationForAnEmergingMarket {

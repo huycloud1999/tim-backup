@@ -21,6 +21,7 @@ import { getWhyVietNam } from "../../store/action/why-vietnam";
 import { NextSeo } from "next-seo";
 import MetaSEO from "../../components/Seo";
 import generateMetaData from "../api/generateMetaData";
+import { StockMarket } from "../../components/Why Vietnam/StockMarket";
 
 SwiperCore.use([Autoplay, Pagination]);
 
@@ -35,8 +36,9 @@ export default function WhyVietnam(props) {
     HeroSection: herosection,
     MacroEconomy: macroEconomy,
     CapitalMarket: capitalMarket,
+    StockMarket: stockMarket,
   } = props;
-
+                  
   const slides = whyvietnam.slideImages || [];
 
   const tabs = useRef([]);
@@ -109,7 +111,7 @@ export default function WhyVietnam(props) {
   //     ).style.maxHeight = `${maxHeight + 20}px`;
   //   }
   // });
-  console.log(macroEconomy);
+  console.log(stockMarket);
   return (
     <>
       <MetaSEO dataSEO={props.dataSEO} slug={props.slug} />
@@ -181,7 +183,7 @@ export default function WhyVietnam(props) {
               <MacroEconomy data={macroEconomy} />
             </TabPanel>
             <TabPanel>
-              <CapitalMarket data={capitalMarket} />
+            <StockMarket data={stockMarket} />
             </TabPanel>
           </Tabs>
         </div>
@@ -200,6 +202,7 @@ export async function getStaticProps({ params }) {
       HeroSection: WhyVietnam.data.data.page.HeroSection,
       WhyVietnam: WhyVietnam.data.data.page.WhyVietnam,
       CapitalMarket: WhyVietnam.data.data.page.capitalMarket,
+      StockMarket: WhyVietnam.data.data.page.stockMarketDemo,
       MacroEconomy: WhyVietnam.data.data.page.macroEconomy,
       dataSEO: dataSEO.json,
       slug: "why-vietnam",
