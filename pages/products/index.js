@@ -135,10 +135,10 @@ function Solutions(props) {
     // Validate date string
     if (!dateStr || !/^\d{1,2}\/\d{1,2}\/\d{4}$/.test(dateStr)) return;
 
-    // Process the three index values (TIMVT, VN Index TR, FTSE VN TR)
+    // Process the three index values (Master Portfolio, VN Index TR, FTSE VN TR)
     const indices = [
       {
-        name: "TIMVT",
+        name: "Master Portfolio",
         value: parseFloat(rowData[1].replace("%", "").replace(",", ".")),
       },
       {
@@ -169,7 +169,7 @@ function Solutions(props) {
         existingEntry = { date: cur.date };
         acc.push(existingEntry);
       }
-      existingEntry[cur.index] = Math.round(cur.value * 100) / 100;
+      existingEntry[cur.index] = Number((cur.value).toFixed(1));
       return acc;
     }, []);
   };
@@ -201,7 +201,7 @@ function Solutions(props) {
 
     const indices = [
       {
-        name: "TIMVT",
+        name: "Master Portfolio",
         value: parseFloat(rowData[1].replace("%", "").replace(",", ".")),
       },
       {
@@ -229,18 +229,20 @@ function Solutions(props) {
   const lastDatesByYear2 = {};
   transformedData2.forEach((d) => {
     const [day, month, year] = d.date.split("/").map(Number);
-    if (year === 2025) return; // Bỏ qua năm 2025
     const currentDate = new Date(year, month - 1, day).getTime();
     if (
       !lastDatesByYear2[year] ||
       currentDate >
-        new Date(lastDatesByYear2[year].split("/").reverse().join("-")).getTime()
+        new Date(
+          lastDatesByYear2[year].split("/").reverse().join("-")
+        ).getTime()
     ) {
       lastDatesByYear2[year] = d.date;
     }
   });
-  
+
   const yearEndDates2 = Object.values(lastDatesByYear2);
+  console.log(transformedData2);
   return (
     <>
       <MetaSEO dataSEO={props.dataSEO} slug={props.slug} />
@@ -314,88 +316,92 @@ function Solutions(props) {
                 );
               })}
             </div>
-            <div className="asset-management container">
-              <div className="title-sub">Performance since inception</div>
-                    <div className="list-description">
-                      <div>
-                        <div className="line line-tim"></div>
-                        <div className="text">TIMVT</div>
-                      </div>
-                      <div>
-                        <div className="line line-vnindex"></div>
-                        <div className="text">VN-Index TR</div>
-                      </div>
-                      <div>
-                        <div className="line line-FTSE"></div>
-                        <div className="text">FTSE Vietnam TR</div>
-                      </div>
-                    </div>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  marginTop: "20px",
-                  paddingRight: "20px",
-                }}
-                className="asset-management"
-              >
-                <LineChart width={1200} height={420} data={transformedData2}>
-                  <XAxis
-                    dataKey="date"
-                    tickFormatter={(value) => {
-                      if (!value) return "";
-                      const [, , year] = value.split("/").map(Number);
-                      // Show year only if this is the last date of that year
-                      return yearEndDates2.includes(value) ? year : "";
-                    }}
-                    ticks={yearEndDates2} // Explicitly set ticks to year-end dates
-                    interval={0} // Ensure all specified ticks are shown
-                    tick={{ angle: -30, textAnchor: "end" }} 
-                    minTickGap={50} // Thử tăng giá trị này nếu vẫn bị đè
-  
-                  />
-                  <YAxis
-                    label={{
-                      value: "Value (%)",
-                      angle: -90,
-                      position: "insideLeft",
-                    }}
-                  />
-                  <Tooltip formatter={(value, name) => [`${value}%`, name]} />
-                  <Legend />
-                  <Line
-                    type="monotone"
-                    dataKey="TIMVT"
-                    name="TIMVT"
-                    stroke="#000080"
-                    strokeWidth={2}
-                    dot={false}
-                  />
-                  <Line
-                    type="monotone"
-                    dataKey="VN Index TR"
-                    name="VN-Index TR"
-                    stroke="#B5B4A9"
-                    strokeWidth={2}
-                    dot={false}
-                  />
-                  <Line
-                    type="monotone"
-                    dataKey="FTSE VN TR"
-                    name="FTSE Vietnam TR"
-                    stroke="#2F6CE9"
-                    strokeWidth={2}
-                    dot={false}
-                  />
-                </LineChart>
+            <div className="asset-management">
+              <div className="container">
+                <div className="title-sub">Performance since inception</div>
+                <div className="list-description">
+                  <div>
+                    <div className="line line-tim"></div>
+                    <div className="text">Master Portfolio</div>
+                  </div>
+                  <div>
+                    <div className="line line-vnindex"></div>
+                    <div className="text">VN-Index TR</div>
+                  </div>
+                  <div>
+                    <div className="line line-FTSE"></div>
+                    <div className="text">FTSE Vietnam TR</div>
+                  </div>
+                </div>
               </div>
-              <div className="title-sub">MONTHLY PERFORMANCE</div>
-              <div className="asset-management table_chart">
-                <TableComponent
-                  data={mandates?.tableChart.body}
-                  header={[...assetManagement.tableChart.header, "YTD"]} // Thêm "YTD" vào cuối header
-                />
+                                                                                                     
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    marginTop: "20px",
+                  }}
+                  className="asset-management"
+                >
+                  <LineChart width={1300} height={420} data={transformedData2}>
+                    <XAxis
+                      dataKey="date"
+                      tickFormatter={(value) => {
+                        if (!value) return "";
+                        const [, , year] = value.split("/").map(Number);
+                        // Show year only if this is the last date of that year
+                        return yearEndDates2.includes(value) ? year : "";
+                      }}
+                      ticks={yearEndDates2} // Explicitly set ticks to year-end dates
+                      interval={0} // Ensure all specified ticks are shown
+                      tick={{ angle: -45, textAnchor: "end" }}
+                    />
+                    <YAxis
+  
+  
+                      label={{
+                        value: "%",
+                        angle: 0,
+                        position: "insideLeft",
+                      }}
+                    />
+                    <Tooltip formatter={(value, name) => [`${value}%`, name]} />
+                    <Legend />
+                    <Line
+                      type="monotone"
+                      dataKey="Master Portfolio"
+                      name="Master Portfolio"
+                      stroke="#000080"
+                      strokeWidth={2}
+                      dot={false}
+                    />
+                    <Line
+                      type="monotone"
+                      dataKey="VN Index TR"
+                      name="VN-Index TR"
+                      stroke="#B5B4A9"
+                      strokeWidth={2}
+                      dot={false}
+                    />
+                    <Line
+                      type="monotone"
+                      dataKey="FTSE VN TR"
+                      name="FTSE Vietnam TR"
+                      stroke="#2F6CE9"
+                      strokeWidth={2}
+                      dot={false}
+                    />
+                  </LineChart>
+                </div>
+              <div className="container">
+                <div className="title-sub">MONTHLY PERFORMANCE</div>
+                <div className="asset-management table_chart">
+                  <TableComponent
+                    data={mandates?.tableChart.body}
+                    header={[...assetManagement.tableChart.header]} // Thêm "YTD" vào cuối header
+                  />
+                </div>
               </div>
             </div>
           </TabPanel>
@@ -421,7 +427,7 @@ function Solutions(props) {
                 </div> */}
                 <div className="asset-item">
                   <div className="text-container animation-item">
-                    {/* <div className="title-heading">TIMVT</div> */}
+                    {/* <div className="title-heading">Master Portfolio</div> */}
                     <div
                       className="text-area"
                       dangerouslySetInnerHTML={{
@@ -457,7 +463,7 @@ function Solutions(props) {
                   <div className="list-description">
                     <div>
                       <div className="line line-tim"></div>
-                      <div className="text">TIMVT</div>
+                      <div className="text">Master Portfolio</div>
                     </div>
                     <div>
                       <div className="line line-vnindex"></div>
@@ -474,7 +480,6 @@ function Solutions(props) {
                       justifyContent: "center",
                       alignItems: "center",
                       marginTop: "20px",
-                      paddingRight: "20px",
                     }}
                     className="asset-management"
                   >
@@ -492,8 +497,8 @@ function Solutions(props) {
                       />
                       <YAxis
                         label={{
-                          value: "Value (%)",
-                          angle: -90,
+                          value: "%",
+                          angle: 0,
                           position: "insideLeft",
                         }}
                       />
@@ -503,8 +508,8 @@ function Solutions(props) {
                       <Legend />
                       <Line
                         type="monotone"
-                        dataKey="TIMVT"
-                        name="TIMVT"
+                        dataKey="Master Portfolio"
+                        name="Master Portfolio"
                         stroke="#000080"
                         strokeWidth={2}
                         dot={false}

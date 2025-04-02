@@ -98,28 +98,20 @@ function FactSheets(props) {
   const reportPagination = [];
   for (let index = 0; index < yearList?.length; index++) {
     const active = index === activeYear - 1 ? " active-page" : "";
-    if (
-      index > 3 &&
-      index < yearList.length - 3 &&
-      index !== activeYear - 1 &&
-      (index < activeYear - 3 || index > activeYear + 2)
-    ) {
-      reportPagination.push("...");
-    } else {
-      reportPagination.push(
-        <div
-          key={index}
-          className={"pagination-item" + active}
-          onClick={(event) => {
-            event.preventDefault();
-            event.stopPropagation();
-            handleYearPagination(index);
-          }}
-        >
-          {yearList[index]}
-        </div>
-      );
-    }
+  
+    reportPagination.push(
+      <div
+        key={index}
+        className={"pagination-item" + active}
+        onClick={(event) => {
+          event.preventDefault();
+          event.stopPropagation();
+          handleYearPagination(index);
+        }}
+      >
+        {yearList[index]}
+      </div>
+    );
   }
 
   // Handle year pagination and fetch data

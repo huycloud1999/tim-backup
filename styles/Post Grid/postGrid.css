@@ -4,7 +4,9 @@
 .post-grid{
     margin-bottom: 120px
 }
-
+.post-grid.homepage{
+    display: block;
+}
 .post-grid .heading .section-title{
     font-family: Roboto;
 font-size: 40px;

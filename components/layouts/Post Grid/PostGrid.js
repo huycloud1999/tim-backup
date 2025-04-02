@@ -8,7 +8,7 @@ import { Button } from "../Button";
 
 export const PostGrid = ({ heading, data }) => {
   return (
-    <div className="post-grid">
+    <div className="post-grid homepage">
       <div className="container">
         <div className="heading">
           <div className="section-title">{heading || "News & Insights"}</div>
