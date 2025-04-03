@@ -403,6 +403,10 @@ function Solutions(props) {
                   />
                 </div>
               </div>
+               <div className="container">
+                  <h2 className="title-sub">Disclaimer</h2>
+                  <div className="disclaimer" dangerouslySetInnerHTML={{ __html: mandates.disclaimer }}></div>
+               </div>
             </div>
           </TabPanel>
           <TabPanel>
@@ -539,6 +543,8 @@ function Solutions(props) {
                       header={assetManagement.tableChart.header}
                     />
                   </div>
+                  <h2 className="title-sub">Disclaimer</h2>
+                  <div className="disclaimer" dangerouslySetInnerHTML={{ __html: assetManagement?.disclaimer || ''}}></div>
                 </div>
               </div>
 

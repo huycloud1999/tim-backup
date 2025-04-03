@@ -68,6 +68,7 @@ export const getSolutions = () => {
             body
             header
           }
+            disclaimer
         }
         otherProducts {
           title
@@ -101,6 +102,7 @@ export const getSolutions = () => {
             body
             header
           }
+            disclaimer
         }
         documents {
           title1
