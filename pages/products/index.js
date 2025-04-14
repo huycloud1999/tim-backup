@@ -294,7 +294,7 @@ function Solutions(props) {
     const currentDate = new Date(year, month - 1, day).getTime();
     if (
       !lastDatesByYear[year] ||
-      currentDate >
+      currentDate <
         new Date(lastDatesByYear[year].split("/").reverse().join("-")).getTime()
     ) {
       lastDatesByYear[year] = d.date;
@@ -345,7 +345,7 @@ function Solutions(props) {
     const currentDate = new Date(year, month - 1, day).getTime();
     if (
       !lastDatesByYear2[year] ||
-      currentDate >
+      currentDate <
         new Date(
           lastDatesByYear2[year].split("/").reverse().join("-")
         ).getTime()
