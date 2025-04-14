@@ -135,10 +135,10 @@ function Solutions(props) {
     // Validate date string
     if (!dateStr || !/^\d{1,2}\/\d{1,2}\/\d{4}$/.test(dateStr)) return;
 
-    // Process the three index values (Master Portfolio, VN Index TR, FTSE VN TR)
+    // Process the three index values (TIMVT, VN Index TR, FTSE VN TR)
     const indices = [
       {
-        name: "Master Portfolio",
+        name: "TIMVT",
         value: parseFloat(rowData[1].replace("%", "").replace(",", ".")),
       },
       {
@@ -161,7 +161,120 @@ function Solutions(props) {
       }
     });
   });
+  const fillMissingMonths = (rawData) => {
+    const filled = {};
+    const result = [];
 
+    // Sắp xếp rawData theo ngày để đảm bảo thứ tự
+    rawData.sort((a, b) => new Date(a.date) - new Date(b.date));
+
+    // Tìm năm lớn nhất
+    const years = rawData.map((d) => {
+      const [, , year] = d.date.split("/").map(Number);
+      return year;
+    });
+    const maxYear = Math.max(...years);
+
+    // Nhóm dữ liệu theo năm và tháng
+    rawData.forEach((d) => {
+      const [day, month, year] = d.date.split("/").map(Number);
+      const key = `${year}-${String(month).padStart(2, "0")}`;
+
+      if (!filled[year]) filled[year] = {};
+      filled[year][month] = d;
+    });
+
+    // Tạo danh sách tất cả các tháng
+    Object.keys(filled).forEach((year) => {
+      for (let month = 1; month <= 12; month++) {
+        const monthStr = String(month).padStart(2, "0");
+        const dateStr = `01/${monthStr}/${year}`;
+
+        if (filled[year][month]) {
+          result.push(filled[year][month]);
+        } else {
+          // Kiểm tra nếu là năm cuối cùng
+          if (parseInt(year) === maxYear) {
+            // Gán null cho các tháng thiếu trong năm cuối
+            result.push({
+              date: dateStr,
+              TIMVT: null,
+              "VN Index TR": null,
+              "FTSE VN TR": null,
+            });
+          } else {
+            // Lấy giá trị từ bản ghi trước cho các năm khác
+            const lastEntry = result[result.length - 1];
+            result.push({
+              date: dateStr,
+              TIMVT: lastEntry ? lastEntry.TIMVT : 0,
+              "VN Index TR": lastEntry ? lastEntry["VN Index TR"] : 0,
+              "FTSE VN TR": lastEntry ? lastEntry["FTSE VN TR"] : 0,
+            });
+          }
+        }
+      }
+    });
+
+    return result;
+  };
+  const fillMissingMonths2 = (rawData) => {
+    const filled = {};
+    const result = [];
+
+    // Sắp xếp rawData theo ngày để đảm bảo thứ tự
+    rawData.sort((a, b) => new Date(a.date) - new Date(b.date));
+
+    // Tìm năm lớn nhất
+    const years = rawData.map((d) => {
+      const [, , year] = d.date.split("/").map(Number);
+      return year;
+    });
+    const maxYear = Math.max(...years);
+
+    // Nhóm dữ liệu theo năm và tháng
+    rawData.forEach((d) => {
+      const [day, month, year] = d.date.split("/").map(Number);
+      const key = `${year}-${String(month).padStart(2, "0")}`;
+
+      if (!filled[year]) filled[year] = {};
+      filled[year][month] = d;
+    });
+
+    // Tạo danh sách tất cả các tháng
+    Object.keys(filled).forEach((year) => {
+      for (let month = 1; month <= 12; month++) {
+        const monthStr = String(month).padStart(2, "0");
+        const dateStr = `01/${monthStr}/${year}`;
+
+        if (filled[year][month]) {
+          result.push(filled[year][month]);
+        } else {
+          // Kiểm tra nếu là năm cuối cùng
+          if (parseInt(year) === maxYear) {
+            // Gán null cho các tháng thiếu trong năm cuối
+            result.push({
+              date: dateStr,
+              TIMVT: null,
+              "VN Index TR": null,
+              "FTSE VN TR": null,
+            });
+          } else {
+            // Lấy giá trị từ bản ghi trước cho các năm khác
+            const lastEntry = result[result.length - 1];
+            result.push({
+              date: dateStr,
+              "Master PortfolioT": lastEntry ? lastEntry["Master PortfolioT"] : 0,
+              "VN Index TR": lastEntry ? lastEntry["VN Index TR"] : 0,
+              "FTSE VN TR": lastEntry ? lastEntry["FTSE VN TR"] : 0,
+            });
+          }
+        }
+      }
+    });
+
+    return result;
+  };
   const transformData = (chartData) => {
     return chartData.reduce((acc, cur) => {
       let existingEntry = acc.find((item) => item.date === cur.date);
@@ -169,12 +282,12 @@ function Solutions(props) {
         existingEntry = { date: cur.date };
         acc.push(existingEntry);
       }
-      existingEntry[cur.index] = Number((cur.value).toFixed(1));
+      existingEntry[cur.index] = Number(cur.value.toFixed(1));
       return acc;
     }, []);
   };
 
-  const transformedData = transformData(chartData);
+  const transformedData = fillMissingMonths(transformData(chartData));
   const lastDatesByYear = {};
   transformedData.forEach((d) => {
     const [day, month, year] = d.date.split("/").map(Number);
@@ -187,7 +300,6 @@ function Solutions(props) {
       lastDatesByYear[year] = d.date;
     }
   });
-
   const yearEndDates = Object.values(lastDatesByYear);
 
   tableData2.forEach((rowData) => {
@@ -201,7 +313,7 @@ function Solutions(props) {
 
     const indices = [
       {
-        name: "Master Portfolio",
+        name: "Master PortfolioT",
         value: parseFloat(rowData[1].replace("%", "").replace(",", ".")),
       },
       {
@@ -225,7 +337,8 @@ function Solutions(props) {
     });
   });
 
-  const transformedData2 = transformData(chartData2);
+  const transformedData2 = fillMissingMonths2(transformData(chartData2));
+  console.log(transformedData2);
   const lastDatesByYear2 = {};
   transformedData2.forEach((d) => {
     const [day, month, year] = d.date.split("/").map(Number);
@@ -242,7 +355,6 @@ function Solutions(props) {
   });
 
   const yearEndDates2 = Object.values(lastDatesByYear2);
-  console.log(transformedData2);
   return (
     <>
       <MetaSEO dataSEO={props.dataSEO} slug={props.slug} />
@@ -334,66 +446,65 @@ function Solutions(props) {
                   </div>
                 </div>
               </div>
-                                                                                                     
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    marginTop: "20px",
-                  }}
-                  className="asset-management"
-                >
-                  <LineChart width={1300} height={420} data={transformedData2}>
-                    <XAxis
-                      dataKey="date"
-                      tickFormatter={(value) => {
-                        if (!value) return "";
-                        const [, , year] = value.split("/").map(Number);
-                        // Show year only if this is the last date of that year
-                        return yearEndDates2.includes(value) ? year : "";
-                      }}
-                      ticks={yearEndDates2} // Explicitly set ticks to year-end dates
-                      interval={0} // Ensure all specified ticks are shown
-                      tick={{ angle: -45, textAnchor: "end" }}
-                    />
-                    <YAxis
-  
-  
-                      label={{
-                        value: "%",
-                        angle: 0,
-                        position: "insideLeft",
-                      }}
-                    />
-                    <Tooltip formatter={(value, name) => [`${value}%`, name]} />
-                    <Legend />
-                    <Line
-                      type="monotone"
-                      dataKey="Master Portfolio"
-                      name="Master Portfolio"
-                      stroke="#000080"
-                      strokeWidth={2}
-                      dot={false}
-                    />
-                    <Line
-                      type="monotone"
-                      dataKey="VN Index TR"
-                      name="VN-Index TR"
-                      stroke="#B5B4A9"
-                      strokeWidth={2}
-                      dot={false}
-                    />
-                    <Line
-                      type="monotone"
-                      dataKey="FTSE VN TR"
-                      name="FTSE Vietnam TR"
-                      stroke="#2F6CE9"
-                      strokeWidth={2}
-                      dot={false}
-                    />
-                  </LineChart>
-                </div>
+
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  marginTop: "20px",
+                }}
+                className="asset-management"
+              >
+                <LineChart width={1300} height={420} data={transformedData2}>
+                  <XAxis
+                    dataKey="date"
+                    tickFormatter={(value) => {
+                      if (!value) return "";
+                      const [, , year] = value.split("/").map(Number);
+                      // Show year only if this is the last date of that year
+                      return yearEndDates2.includes(value) ? year : "";
+                    }}
+                    ticks={yearEndDates2} // Explicitly set ticks to year-end dates
+                    interval={0} // Ensure all specified ticks are shown
+                    tick={{ angle: 0, textAnchor: "end" }}
+                  />
+                  <YAxis
+                    domain={[-60, 100]}
+                    label={{
+                      value: "%",
+                      angle: 0,
+                      position: "insideLeft",
+                    }}
+                  />
+                  <Tooltip formatter={(value, name) => [`${value}%`, name]} />
+                  <Legend />
+                  <Line
+                    type="monotone"
+                    dataKey="Master PortfolioT"
+                    name="Master Portfolio"
+                    stroke="#000080"
+                    strokeWidth={2}
+                    dot={false}
+                  />
+                  <Line
+                    type="monotone"
+                    dataKey="VN Index TR"
+                    name="VN-Index TR"
+                    stroke="#B5B4A9"
+                    strokeWidth={2}
+                    dot={false}
+                  />
+                  <Line
+                    type="monotone"
+                    dataKey="FTSE VN TR"
+                    name="FTSE Vietnam TR"
+                    stroke="#2F6CE9"
+                    strokeWidth={2}
+                    dot={false}
+                  />
+                </LineChart>
+              </div>
               <div className="container">
                 <div className="title-sub">MONTHLY PERFORMANCE</div>
                 <div className="asset-management table_chart">
@@ -403,10 +514,13 @@ function Solutions(props) {
                   />
                 </div>
               </div>
-               <div className="container">
-                  <h2 className="title-sub">Disclaimer</h2>
-                  <div className="disclaimer" dangerouslySetInnerHTML={{ __html: mandates.disclaimer }}></div>
-               </div>
+              <div className="container">
+                <h2 className="title-sub">Disclaimer</h2>
+                <div
+                  className="disclaimer"
+                  dangerouslySetInnerHTML={{ __html: mandates.disclaimer }}
+                ></div>
+              </div>
             </div>
           </TabPanel>
           <TabPanel>
@@ -467,7 +581,7 @@ function Solutions(props) {
                   <div className="list-description">
                     <div>
                       <div className="line line-tim"></div>
-                      <div className="text">Master Portfolio</div>
+                      <div className="text">TIMVT</div>
                     </div>
                     <div>
                       <div className="line line-vnindex"></div>
@@ -490,16 +604,18 @@ function Solutions(props) {
                     <LineChart width={1200} height={420} data={transformedData}>
                       <XAxis
                         dataKey="date"
+                        type="category"
                         tickFormatter={(value) => {
                           if (!value) return "";
                           const [, , year] = value.split("/").map(Number);
-                          // Show year only if this is the last date of that year
                           return yearEndDates.includes(value) ? year : "";
                         }}
-                        ticks={yearEndDates} // Explicitly set ticks to year-end dates
-                        interval={0} // Ensure all specified ticks are shown
+                        ticks={yearEndDates}
+                        interval={0}
+                        minTickGap={20}
                       />
                       <YAxis
+                        domain={[-30, 100]}
                         label={{
                           value: "%",
                           angle: 0,
@@ -512,8 +628,8 @@ function Solutions(props) {
                       <Legend />
                       <Line
                         type="monotone"
-                        dataKey="Master Portfolio"
-                        name="Master Portfolio"
+                        dataKey="TIMVT"
+                        name="TIMVT"
                         stroke="#000080"
                         strokeWidth={2}
                         dot={false}
@@ -544,7 +660,12 @@ function Solutions(props) {
                     />
                   </div>
                   <h2 className="title-sub">Disclaimer</h2>
-                  <div className="disclaimer" dangerouslySetInnerHTML={{ __html: assetManagement?.disclaimer || ''}}></div>
+                  <div
+                    className="disclaimer"
+                    dangerouslySetInnerHTML={{
+                      __html: assetManagement?.disclaimer || "",
+                    }}
+                  ></div>
                 </div>
               </div>
 
