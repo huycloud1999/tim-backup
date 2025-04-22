@@ -28,6 +28,7 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
+  ReferenceLine,
 } from "recharts";
 import arrow_down from "../../public/imgs/arrow_down.svg";
 
@@ -264,7 +265,9 @@ function Solutions(props) {
             const lastEntry = result[result.length - 1];
             result.push({
               date: dateStr,
-              "Master PortfolioT": lastEntry ? lastEntry["Master PortfolioT"] : 0,
+              "Master PortfolioT": lastEntry
+                ? lastEntry["Master PortfolioT"]
+                : 0,
               "VN Index TR": lastEntry ? lastEntry["VN Index TR"] : 0,
               "FTSE VN TR": lastEntry ? lastEntry["FTSE VN TR"] : 0,
             });
@@ -287,7 +290,7 @@ function Solutions(props) {
     }, []);
   };
 
-  const transformedData = fillMissingMonths(transformData(chartData));
+  const transformedData = transformData(chartData);
   const lastDatesByYear = {};
   transformedData.forEach((d) => {
     const [day, month, year] = d.date.split("/").map(Number);
@@ -337,7 +340,7 @@ function Solutions(props) {
     });
   });
 
-  const transformedData2 = fillMissingMonths2(transformData(chartData2));
+  const transformedData2 = transformData(chartData2);
   console.log(transformedData2);
   const lastDatesByYear2 = {};
   transformedData2.forEach((d) => {
@@ -454,27 +457,37 @@ function Solutions(props) {
                   alignItems: "center",
                   marginTop: "20px",
                 }}
-                className="asset-management"
+                className="asset-management active-adv"
               >
-                <LineChart width={1300} height={420} data={transformedData2}>
+                <LineChart
+                  width={1300}
+                  height={650}
+                  data={transformedData2}
+                  margin={{ top: 20, right: 30, left: 30, bottom: 40 }}
+                >
                   <XAxis
                     dataKey="date"
+                    ticks={yearEndDates2}
+                    interval={0}
                     tickFormatter={(value) => {
-                      if (!value) return "";
+                      if (!value || !yearEndDates2.includes(value)) return "";
                       const [, , year] = value.split("/").map(Number);
-                      // Show year only if this is the last date of that year
-                      return yearEndDates2.includes(value) ? year : "";
+                      return year;
                     }}
-                    ticks={yearEndDates2} // Explicitly set ticks to year-end dates
-                    interval={0} // Ensure all specified ticks are shown
-                    tick={{ angle: 0, textAnchor: "end" }}
+                    axisLine={false}
+                    tickLine={true}
+                    tick={{ dy: 15, fontSize: 16, fill: "#000" }}
                   />
                   <YAxis
-                    domain={[-60, 100]}
+                    domain={[-100, 1000]}
+                    ticks={[-100, 0, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]}
+                    tickFormatter={(value) => `${value}`}
                     label={{
                       value: "%",
-                      angle: 0,
+                      angle: -90,
                       position: "insideLeft",
+                      offset: 10,
+                      style: { textAnchor: "middle" },
                     }}
                   />
                   <Tooltip formatter={(value, name) => [`${value}%`, name]} />
@@ -503,8 +516,10 @@ function Solutions(props) {
                     strokeWidth={2}
                     dot={false}
                   />
+                  <ReferenceLine y={0} stroke="black" strokeWidth={1} />
                 </LineChart>
               </div>
+
               <div className="container">
                 <div className="title-sub">MONTHLY PERFORMANCE</div>
                 <div className="asset-management table_chart">
@@ -592,6 +607,7 @@ function Solutions(props) {
                       <div className="text">FTSE Vietnam TR</div>
                     </div>
                   </div>
+                  {/* assets */}
                   <div
                     style={{
                       display: "flex",
@@ -605,17 +621,23 @@ function Solutions(props) {
                       <XAxis
                         dataKey="date"
                         type="category"
-                        tickFormatter={(value) => {
-                          if (!value) return "";
-                          const [, , year] = value.split("/").map(Number);
-                          return yearEndDates.includes(value) ? year : "";
-                        }}
                         ticks={yearEndDates}
+                        tickFormatter={(value) => {
+                          if (!value || !yearEndDates.includes(value))
+                            return "";
+                          const [, , year] = value.split("/").map(Number);
+                          return year;
+                        }}
                         interval={0}
                         minTickGap={20}
+                        axisLine={false} // Ẩn đường trục X
+                        tickLine={true} // Ẩn dấu tick
+                        tick={{ dy: 15, fontSize: 16, fill: "#000" }} // Dịch nhãn xuống dưới
                       />
                       <YAxis
-                        domain={[-30, 100]}
+                        domain={[-30, 150]}
+                        ticks={[-30, 0, 30, 60, 90, 120, 150]}
+                        tickFormatter={(value) => `${value}`}
                         label={{
                           value: "%",
                           angle: 0,
@@ -650,6 +672,7 @@ function Solutions(props) {
                         strokeWidth={2}
                         dot={false}
                       />
+                      <ReferenceLine y={0} stroke="black" strokeWidth={1} />
                     </LineChart>
                   </div>
                   <div className="title-sub">MONTHLY PERFORMANCE</div>

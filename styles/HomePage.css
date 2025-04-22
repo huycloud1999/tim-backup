@@ -20,7 +20,7 @@
 } */
 .about-us-countdown .info-area {
   display: grid;
-  grid-template-columns: 689px 1fr;
+  grid-template-columns: 426px 1fr;
   column-gap: 32px;
 }
 

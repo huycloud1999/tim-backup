@@ -385,6 +385,12 @@
 .list-description .line.line-FTSE {
   background-color: #2F6CE9;
 }
+g.recharts-layer.recharts-cartesian-axis.recharts-xAxis.xAxis {
+  transform: translateY(-70px);
+}
+.asset-management.active-adv .recharts-xAxis.xAxis{
+  transform: translateY(-56px) !important;
+}
 @media (max-width: 1024px) and (min-width: 769px) {
   .other-product-wrapper .image-other-product {
     margin-top: 30px !important;
