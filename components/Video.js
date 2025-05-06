@@ -60,22 +60,18 @@ export const Video = ({poster, url})=>{
     <div className="video-area container" onClick={handleClick}>
 
             <div className="button-trigger-play"  ref={triggerButton}>
-                <Image src={iconPlay} alt="play_icon"/>
+                {/* <Image src={iconPlay} alt="play_icon"/> */}
             </div>
             <VisibilitySensor onChange={handleVisible} partialVisibility={true} offset={{top:300,bottom:300}}  delayedCall  >
-
+            <iframe
+            width="100%"
+            height="700"
+            src={`https://www.youtube.com/embed/RwlsnqpC7HU?si=s7_mCYn5NBQWx1Tq`} 
+            frameBorder="0"
+            allowFullScreen
+        ></iframe>
             
-            <Player
-            playsInline
-            poster={poster}
-            src={url}
-            loop={true}
-            height={750}
-            ref={player}
-            controls={true}
-            muted={true}
-      
-            />
+
             </VisibilitySensor>
    
     </div>
