@@ -26,7 +26,7 @@ function OurApproach(props) {
 
   return (
     <>
-      <MetaSEO dataSEO={props.dataSEO} slug={props.slug} />
+      {/* <MetaSEO dataSEO={props?.dataSEO} slug={props.slug} /> */}
       <HeroSection
         title={props.HeroSection.title}
         //  image={props.HeroSection.image.sourceUrl}
@@ -117,7 +117,7 @@ export async function getStaticProps({ params }) {
       HeroSection: allData.data.data.page.HeroSection,
       OurApproach: allData.data.data.page.ourApproach,
       ResearchMaterial: allResearchMaterials.data.data,
-      dataSEO: dataSEO.json,
+      dataSEO: JSON.parse(JSON.stringify(dataSEO?.json || null)),
       slug: "who-we-are/our-approach",
     },
     revalidate: 60,

@@ -31,7 +31,7 @@ export default function Careers(props) {
 
   return (
     <>
-      <MetaSEO dataSEO={props.dataSEO} slug={props.slug} />
+      {/* <MetaSEO dataSEO={props?.dataSEO} slug={props.slug} /> */}
       <HeroSection
         title={props.careers?.HeroSection?.title}
         // image={props.careers.HeroSection.image.sourceUrl}
@@ -150,7 +150,7 @@ export async function getStaticProps() {
   return {
     props: {
       careers: resNew.data.data.page,
-      dataSEO: dataSEO.json,
+      dataSEO: JSON.parse(JSON.stringify(dataSEO?.json || null)),
       slug: "who-we-are/careers",
     },
     revalidate: 60,

@@ -37,7 +37,7 @@ export default function OurTeam(props) {
 
   return (
     <>
-      <MetaSEO dataSEO={props.dataSEO} slug={props.slug} />
+      {/* <MetaSEO dataSEO={props?.dataSEO} slug={props.slug} /> */}
       <HeroSection
         title={herosection?.title}
         //  image={herosection.image.sourceUrl}
@@ -165,7 +165,7 @@ export async function getStaticProps({ params }) {
       TIMJSC: TIMJSC.data.data.ourTeams.nodes,
       HeroSection: allDataTIMAG.data.data.page.HeroSection,
       content: allDataTIMAG.data.data.page.content,
-      dataSEO: dataSEO.json,
+      dataSEO: JSON.parse(JSON.stringify(dataSEO?.json || null)),
       slug: "who-we-are/our-team",
     },
     revalidate: 60,

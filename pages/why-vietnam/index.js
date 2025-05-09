@@ -114,7 +114,7 @@ export default function WhyVietnam(props) {
   console.log(stockMarket);
   return (
     <>
-      <MetaSEO dataSEO={props.dataSEO} slug={props.slug} />
+      {/* <MetaSEO dataSEO={props?.dataSEO} slug={props.slug} /> */}
       {/* <Header/> */}
       <HeroSection
         title={herosection.title}
@@ -204,7 +204,7 @@ export async function getStaticProps({ params }) {
       CapitalMarket: WhyVietnam.data.data.page.capitalMarket,
       StockMarket: WhyVietnam.data.data.page.stockMarketDemo,
       MacroEconomy: WhyVietnam.data.data.page.macroEconomy,
-      dataSEO: dataSEO.json,
+      dataSEO: JSON.parse(JSON.stringify(dataSEO?.json || null)),
       slug: "why-vietnam",
     },
     revalidate: 1,

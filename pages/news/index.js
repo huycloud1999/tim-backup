@@ -192,7 +192,7 @@ export default function NewsPage(props) {
   console.log(Categories);
   return (
     <>
-      <MetaSEO dataSEO={props.dataSEO} slug={props.slug} />
+      <MetaSEO dataSEO={props?.dataSEO} slug={props.slug} />
       <div className="post-grid-filter">
         <div className="container">
           <div className="heading-section">NEWS & INSIGHTS</div>

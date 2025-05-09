@@ -27,7 +27,7 @@ export default function About(props) {
 
   return (
     <>
-      <MetaSEO dataSEO={props.dataSEO} slug={props.slug} />
+      {/* <MetaSEO dataSEO={props?.dataSEO} slug={props.slug} /> */}
       <HeroSection
         title={props.about.HeroSection.title}
         // image={props.about.HeroSection.image.sourceUrl}
@@ -119,7 +119,7 @@ export async function getStaticProps({ params }) {
   return {
     props: {
       about: resNew.data.data.page,
-      dataSEO: dataSEO.json,
+      dataSEO: JSON.parse(JSON.stringify(dataSEO?.json || null)),
       slug: "who-we-are/about-us",
     },
     revalidate: 60,

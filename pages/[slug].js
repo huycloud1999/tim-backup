@@ -106,7 +106,7 @@ export default function SingleNew(props) {
             </div>
 
             {/* </Link> */}
-            <div className="title">{props.NewDetail.title}</div>
+            <h1 className="title">{props.NewDetail.title}</h1>
             <div
               className="content-post"
               dangerouslySetInnerHTML={{ __html: props.NewDetail.content }}

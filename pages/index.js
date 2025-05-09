@@ -70,7 +70,7 @@ export default function Home(props) {
   // })
   return (
     <>
-      <MetaSEO dataSEO={props.dataSEO} slug={props.slug} />
+      {/* <MetaSEO dataSEO={props?.dataSEO} slug={props.slug} /> */}
       <div>
         <Banner data={props.Banner.bannerItem} />
 

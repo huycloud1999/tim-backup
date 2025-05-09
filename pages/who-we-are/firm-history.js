@@ -113,7 +113,7 @@ export default function FirmHistory(props) {
 
   return (
     <>
-      <MetaSEO dataSEO={props.dataSEO} slug={props.slug} />
+      {/* <MetaSEO dataSEO={props?.dataSEO} slug={props.slug} /> */}
       <HeroSection
         title={herosection.title}
         // image={herosection.image.sourceUrl}
@@ -195,7 +195,7 @@ export async function getStaticProps({ params }) {
   return {
     props: {
       AllInfo: allFirmHistoryInfo.data.data.page,
-      dataSEO: dataSEO.json,
+      dataSEO: JSON.parse(JSON.stringify(dataSEO?.json || null)),
       slug: "who-we-are/firm-history",
     },
     revalidate: 60,

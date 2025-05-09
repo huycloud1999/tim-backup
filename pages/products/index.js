@@ -360,7 +360,7 @@ function Solutions(props) {
   const yearEndDates2 = Object.values(lastDatesByYear2);
   return (
     <>
-      <MetaSEO dataSEO={props.dataSEO} slug={props.slug} />
+      {/* <MetaSEO dataSEO={props.dataSEO} slug={props.slug} /> */}
       <div>
         <HeroSection
           title={heroSection.title}
