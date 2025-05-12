@@ -101,7 +101,7 @@ export const NewHeader = () => {
             <div className="menu-area">
               <Link href='/' className="menu-parent"><a className={"menu-parent " + (router.asPath == '/' ? 'active' : '')}>HOME</a></Link>
               <div className="menu-parent">
-                <div className="menu-text">Firm history</div>
+                <div className="menu-text">WHO WE ARE</div>
                 <div className="dropdown-icon image-container">
                   <Image src={dropdown} alt='' className="image-item" />
                 </div>
@@ -124,7 +124,7 @@ export const NewHeader = () => {
                 </ul>
               </div>
               <Link href='/why-vietnam' className="menu-parent"><a className={"menu-parent " + (router.asPath == '/why-vietnam' ? 'active' : '')}>Why Vietnam</a></Link>
-              <Link href='/products' className="menu-parent"><a className={"menu-parent " + (router.asPath == '/products' ? 'active' : '')}>Products</a></Link>
+              <Link href='/products' className="menu-parent"><a className={"menu-parent " + (router.asPath == '/products' ? 'active' : '')}>OUR SERVICES</a></Link>
               <Link href='/news' className="menu-parent"><a className={"menu-parent " + (router.asPath == '/news' ? 'active' : '')}>News & Insights</a></Link>
               <Link href='/get-in-touch' className="menu-parent"><a className={"menu-parent " + (router.asPath == '/get-in-touch' ? 'active' : '')}>Get in touch</a></Link>
             </div>
